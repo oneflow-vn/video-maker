@@ -13,7 +13,7 @@ import {
     TextToSpeechService,
     YoutubeUploadService,
     GenerateTitleServce,
-    GenerateImageService
+    GenerateImageService,
 } from '../services';
 import { getLatestFileCreated } from '../utils/getFiles';
 
@@ -48,7 +48,7 @@ export default class Create extends Command {
             name: 'option',
             required: true,
             description: 'Format to create content',
-            options: ['youtube', 'instagram', 'tts'],
+            options: ['youtube', 'instagram', 'tts', 'local'],
         },
     ];
 
@@ -67,6 +67,11 @@ export default class Create extends Command {
             case 'instagram':
                 await instagram({ filename, needTTS, upload, onlyUpload });
                 break;
+            case 'local':
+                await local({ filename, needTTS });
+                break;
+            default:
+                this.error('Invalid option');
         }
     }
 }
@@ -88,7 +93,10 @@ const youtube = async ({
     onlyUpload,
     upload,
 }: CreateConfig) => {
-    let { content, file } = await new GetContentService().execute(filename, 'landscape');
+    let { content, file } = await new GetContentService().execute(
+        filename,
+        'landscape',
+    );
 
     if (!onlyUpload) {
         if (needTTS) {
@@ -137,7 +145,10 @@ const instagram = async ({
     onlyUpload,
     upload,
 }: CreateConfig) => {
-    let { content, file } = await new GetContentService().execute(filename, 'portrait');
+    let { content, file } = await new GetContentService().execute(
+        filename,
+        'portrait',
+    );
 
     if (!onlyUpload) {
         if (needTTS) {
@@ -168,6 +179,32 @@ const instagram = async ({
             thumbnailPath,
         );
     }
+
+    await new ExportDataService(content).execute(file);
+};
+
+const local = async ({ filename }: CreateConfig) => {
+    let { content, file } = await new GetContentService().execute(
+        filename,
+        'landscape',
+    );
+
+    content = await new GenerateTitleServce(content).execute();
+
+    content = await new GenerateImageService(content).execute();
+
+    await new ExportDataService(content).execute(file);
+
+    const bundle = await new BundleVideoService().execute();
+
+    await new RenderVideoService(content).execute(
+        bundle,
+        'landscape',
+        true,
+        'youtube',
+    );
+
+    await new CreateThumbnailService(content).execute(bundle);
 
     await new ExportDataService(content).execute(file);
 };
