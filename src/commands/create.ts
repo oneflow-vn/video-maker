@@ -29,8 +29,14 @@ export default class Create extends Command {
             char: 'f',
             description: 'filename with content',
         }),
-        needTTS: Flags.boolean({
+        template: Flags.string({
             char: 't',
+            description: 'template to use',
+            options: ['podcast', 'lofi'],
+            default: 'podcast',
+        }),
+        needTTS: Flags.boolean({
+            char: 's',
             description:
                 "need to create TTS. If you haven't created TTS separately (with option tts), you can set this flag to create along the creation of video",
         }),
@@ -68,20 +74,18 @@ export default class Create extends Command {
     public async run(): Promise<void> {
         const { args, flags } = await this.parse(Create);
 
-        const { filename, needTTS, upload, onlyUpload, render, overwrite } = flags;
-
         switch (args.option) {
             case 'tts':
-                await tts({ filename });
+                await tts(flags);
                 break;
             case 'youtube':
-                await youtube({ filename, needTTS, upload, onlyUpload });
+                await youtube(flags);
                 break;
             case 'instagram':
-                await instagram({ filename, needTTS, upload, onlyUpload });
+                await instagram(flags);
                 break;
             case 'local':
-                await local({ filename, needTTS, render, overwrite });
+                await local(flags);
                 break;
             default:
                 this.error('Invalid option');
@@ -196,7 +200,16 @@ const instagram = async ({
     await new ExportDataService(content).execute(file);
 };
 
-const local = async ({ filename, render, overwrite }: CreateConfig) => {
+const local = async ({
+    filename,
+    render,
+    overwrite,
+    template,
+}: CreateConfig) => {
+    if (!template) {
+        throw new Error('Template is required');
+    }
+
     let { content, file } = await new GetContentService().execute(
         filename,
         'landscape',
@@ -214,7 +227,7 @@ const local = async ({ filename, render, overwrite }: CreateConfig) => {
 
     content = await new PrepareResourceService(content).execute();
 
-    const bundle = await new BundleVideoService().execute();
+    const bundle = await new BundleVideoService().execute({ template });
 
     if (render) {
         await new RenderVideoService(content).execute(

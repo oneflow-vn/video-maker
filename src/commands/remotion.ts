@@ -19,49 +19,68 @@ export default class Remotion extends Command {
             char: 'f',
             description: 'filename with content',
         }),
-    }
+        template: Flags.string({
+            char: 't',
+            description: 'template to use',
+            options: ['podcast', 'lofi'],
+            default: 'podcast',
+        }),
+    };
 
     static args = [
         {
             name: 'command',
             required: true,
             description: 'Command to run',
-            options: ['upgrade', 'preview', 'render-example', 'render-thumb-example'],
+            options: [
+                'upgrade',
+                'preview',
+                'render-example',
+                'render-thumb-example',
+            ],
         },
     ];
 
     public async run(): Promise<void> {
         const { args, flags } = await this.parse(Remotion);
 
-        const { content } = await new GetContentService().execute(flags.filename)
+        const { content } = await new GetContentService().execute(
+            flags.filename,
+        );
         if (!content) {
             throw new Error('Content not found');
         }
-        const durationInFrames = content.renderData ? Math.round(this.getFullDuration(content.renderData) * content.fps) : 1;
+        const durationInFrames = content.renderData
+            ? Math.round(this.getFullDuration(content.renderData) * content.fps)
+            : 1;
 
         const props = {
             content,
             destination: 'youtube',
             durationInFrames,
-        }
+        };
 
         const propsPath = '/tmp/props.json';
         fs.writeFileSync(propsPath, JSON.stringify(props));
 
         let command = '';
 
+        const { template } = flags;
+
+        const compPath = `video/${template}/index.tsx`;
+
         switch (args.command) {
             case 'upgrade':
                 command = 'pnpm remotion upgrade';
                 break;
             case 'preview':
-                command = `pnpm remotion preview video/src/index.tsx --props=${propsPath}`;
+                command = `pnpm remotion preview ${compPath} --props=${propsPath}`;
                 break;
             case 'render-example':
-                command = `pnpm remotion render video/src/index.tsx Main out.mp4 --props=${propsPath}`;
+                command = `pnpm remotion render ${compPath} Main out.mp4 --props=${propsPath}`;
                 break;
             case 'render-thumb-example':
-                command = `pnpm remotion still video/src/index.tsx Thumbnail thumb.png --props=${propsPath}`;
+                command = `pnpm remotion still ${compPath} Thumbnail thumb.png --props=${propsPath}`;
                 break;
         }
 
@@ -70,27 +89,23 @@ export default class Remotion extends Command {
         shell.exec(command);
     }
 
-    private getFullDuration(renderData: {
-        duration: number;
-    }[]): number {
+    private getFullDuration(
+        renderData: {
+            duration: number;
+        }[],
+    ): number {
         const transitionDurationInSeconds = 2.9;
 
-        return renderData.reduce(
-            (accumulator, currentValue, index) => {
-                if (
-                    !renderData ||
-                    index !== renderData.length - 1
-                ) {
-                    return (
-                        accumulator +
-                        currentValue.duration +
-                        transitionDurationInSeconds
-                    );
-                }
+        return renderData.reduce((accumulator, currentValue, index) => {
+            if (!renderData || index !== renderData.length - 1) {
+                return (
+                    accumulator +
+                    currentValue.duration +
+                    transitionDurationInSeconds
+                );
+            }
 
-                return accumulator + currentValue.duration;
-            },
-            0,
-        );
+            return accumulator + currentValue.duration;
+        }, 0);
     }
 }
