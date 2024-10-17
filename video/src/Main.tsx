@@ -10,6 +10,7 @@ import { Title } from './Podcast/Title';
 import { AudioWaveform } from './Podcast/AudioWaveform';
 import { Transition } from './Podcast/Transition';
 import { Logo } from './Podcast/Logo';
+import { Background } from './Podcast/Background';
 import { Intro } from './Podcast/Intro';
 import { Wrapper } from './Wrappers/index';
 import InterfaceJsonContent from '../../src/models/InterfaceJsonContent';
@@ -33,7 +34,7 @@ export const Main: React.FC = () => {
     const transitionDurationInFrames = 2.9 * fps;
     const showWrapperOnIndex =
         renderData.length > 2
-            ? Math.floor(random(title) * (renderData.length - 2 - 2) + 2) //Valor randomico entre 2 e (quantidade de noticias - final - ultima noticia)
+            ? Math.floor(random(title) * (renderData.length - 2 - 2) + 2) // Random value between 2 and (number of news - end - last news)
             : -1; //If have less then 2 news will not show wrapper
 
     const opacity = interpolate(
@@ -108,6 +109,8 @@ export const Main: React.FC = () => {
                                     title={title}
                                     show={index === showWrapperOnIndex}
                                 >
+                                    <Background image={prop.backgroundImage} video={prop.backgroundVideo} gif={prop.backgroundGif} />
+
                                     <Logo />
 
                                     <Title segments={prop.segments} />

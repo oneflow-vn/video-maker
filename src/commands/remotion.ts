@@ -39,7 +39,6 @@ export default class Remotion extends Command {
         }
         const durationInFrames = content.renderData ? Math.round(this.getFullDuration(content.renderData) * content.fps) : 1;
 
-
         const props = {
             content,
             destination: 'youtube',

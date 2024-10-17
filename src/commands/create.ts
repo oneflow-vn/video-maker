@@ -11,9 +11,11 @@ import {
     InstagramUploadService,
     RenderVideoService,
     TextToSpeechService,
+    TextToSpeechVettelService,
     YoutubeUploadService,
     GenerateTitleServce,
     GenerateImageService,
+    PrepareResourceService,
 } from '../services';
 import { getLatestFileCreated } from '../utils/getFiles';
 
@@ -31,6 +33,17 @@ export default class Create extends Command {
             char: 't',
             description:
                 "need to create TTS. If you haven't created TTS separately (with option tts), you can set this flag to create along the creation of video",
+        }),
+        render: Flags.boolean({
+            char: 'r',
+            allowNo: true,
+            description: 'should render video',
+            default: true,
+        }),
+        overwrite: Flags.boolean({
+            char: 'o',
+            description: 'overwrite existing files',
+            default: false,
         }),
         upload: Flags.boolean({
             char: 'u',
@@ -55,7 +68,7 @@ export default class Create extends Command {
     public async run(): Promise<void> {
         const { args, flags } = await this.parse(Create);
 
-        const { filename, needTTS, upload, onlyUpload } = flags;
+        const { filename, needTTS, upload, onlyUpload, render, overwrite } = flags;
 
         switch (args.option) {
             case 'tts':
@@ -68,7 +81,7 @@ export default class Create extends Command {
                 await instagram({ filename, needTTS, upload, onlyUpload });
                 break;
             case 'local':
-                await local({ filename, needTTS });
+                await local({ filename, needTTS, render, overwrite });
                 break;
             default:
                 this.error('Invalid option');
@@ -183,28 +196,38 @@ const instagram = async ({
     await new ExportDataService(content).execute(file);
 };
 
-const local = async ({ filename }: CreateConfig) => {
+const local = async ({ filename, render, overwrite }: CreateConfig) => {
     let { content, file } = await new GetContentService().execute(
         filename,
         'landscape',
     );
 
-    content = await new GenerateTitleServce(content).execute();
+    if (!content.renderData || overwrite) {
+        content = await new GenerateTitleServce(content).execute();
 
-    content = await new GenerateImageService(content).execute();
+        content = await new TextToSpeechVettelService(content).execute({
+            synthesizeIntro: true,
+        });
 
-    await new ExportDataService(content).execute(file);
+        // content = await new GenerateImageService(content).execute();
+    }
+
+    content = await new PrepareResourceService(content).execute();
 
     const bundle = await new BundleVideoService().execute();
 
-    await new RenderVideoService(content).execute(
-        bundle,
-        'landscape',
-        true,
-        'youtube',
-    );
+    if (render) {
+        await new RenderVideoService(content).execute(
+            bundle,
+            'landscape',
+            true,
+            'instagram',
+        );
+    }
 
-    await new CreateThumbnailService(content).execute(bundle);
+    // await new CreateThumbnailService(content).execute(bundle);
+
+    await new ExportDataService(content).execute(file);
 
     await new ExportDataService(content).execute(file);
 };

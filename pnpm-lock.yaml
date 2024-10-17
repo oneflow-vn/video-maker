@@ -22,25 +22,37 @@ importers:
         version: 2.4.7(@types/node@20.10.5)(typescript@5.3.3)
       '@remotion/bundler':
         specifier: 4.0.206
-        version: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@remotion/cli':
         specifier: 4.0.206
-        version: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@remotion/eslint-config':
         specifier: 4.0.206
         version: 4.0.206(eslint@8.56.0)(typescript@5.3.3)
+      '@remotion/gif':
+        specifier: 4.0.221
+        version: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@remotion/media-utils':
         specifier: 4.0.206
-        version: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@remotion/renderer':
         specifier: 4.0.206
-        version: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/zod-types':
+        specifier: 4.0.221
+        version: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(zod@3.22.3)
       audioconcat:
         specifier: ^0.1.4
         version: 0.1.4
       axios:
         specifier: ^1.6.2
         version: 1.6.2
+      axios-logger:
+        specifier: ^2.8.1
+        version: 2.8.1
+      axios-rate-limit:
+        specifier: ^1.4.0
+        version: 1.4.0(axios@1.6.2)
       commander:
         specifier: ^11.1.0
         version: 11.1.0
@@ -52,25 +64,28 @@ importers:
         version: 16.3.1
       google-auth-library:
         specifier: ^9.4.1
-        version: 9.4.1
+        version: 9.4.1(encoding@0.1.13)
       googleapis:
         specifier: ^129.0.0
-        version: 129.0.0
+        version: 129.0.0(encoding@0.1.13)
       googleapis-common:
         specifier: ^7.0.1
-        version: 7.0.1
+        version: 7.0.1(encoding@0.1.13)
       http:
         specifier: 0.0.1-security
         version: 0.0.1-security
       microsoft-cognitiveservices-speech-sdk:
         specifier: ^1.34.0
         version: 1.34.0
+      mp3-duration:
+        specifier: ^1.1.0
+        version: 1.1.0
       node-html-parser:
         specifier: ^6.1.11
         version: 6.1.11
       puppeteer:
         specifier: ^21.6.1
-        version: 21.6.1(typescript@5.3.3)
+        version: 21.6.1(encoding@0.1.13)(typescript@5.3.3)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -82,7 +97,7 @@ importers:
         version: 4.12.0(react@18.2.0)
       remotion:
         specifier: 4.0.206
-        version: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rss-parser:
         specifier: ^3.13.0
         version: 3.13.0
@@ -94,13 +109,16 @@ importers:
         version: 7.0.0
       styled-components:
         specifier: ^6.1.2
-        version: 6.1.2(react-dom@18.2.0)(react@18.2.0)
+        version: 6.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsx:
         specifier: ^4.7.0
         version: 4.7.0
       util:
         specifier: ^0.12.5
         version: 0.12.5
+      zod:
+        specifier: 3.22.3
+        version: 3.22.3
     devDependencies:
       '@babel/cli':
         specifier: ^7.23.4
@@ -137,7 +155,7 @@ importers:
         version: 5.1.34
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.15.0
-        version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
+        version: 6.15.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser':
         specifier: ^6.15.0
         version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
@@ -146,7 +164,7 @@ importers:
         version: 5.0.0
       babel-plugin-transform-typescript-metadata:
         specifier: ^0.3.2
-        version: 0.3.2(@babel/core@7.23.6)
+        version: 0.3.2(@babel/core@7.23.6)(@babel/traverse@7.23.6)
       copyfiles:
         specifier: ^2.4.1
         version: 2.4.1
@@ -155,7 +173,7 @@ importers:
         version: 8.56.0
       eslint-config-airbnb-base:
         specifier: ^15.0.0
-        version: 15.0.0(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+        version: 15.0.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0))(eslint@8.56.0)
       eslint-config-oclif:
         specifier: ^5.0.0
         version: 5.0.0(eslint@8.56.0)
@@ -167,16 +185,16 @@ importers:
         version: 9.1.0(eslint@8.56.0)
       eslint-import-resolver-typescript:
         specifier: ^3.6.1
-        version: 3.6.1(@typescript-eslint/parser@6.15.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+        version: 3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0)
       eslint-plugin-import:
         specifier: ^2.29.1
-        version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-prettier:
         specifier: ^5.1.0
-        version: 5.1.0(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+        version: 5.1.0(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0(eslint@8.56.0))(eslint@8.56.0)(prettier@3.1.1)
       oclif:
         specifier: ^4.1.0
-        version: 4.1.0(@types/node@20.10.5)(eslint@8.56.0)(typescript@5.3.3)
+        version: 4.1.0(@types/node@20.10.5)(bluebird@3.7.2)(encoding@0.1.13)(eslint@8.56.0)(mem-fs@2.3.0)(typescript@5.3.3)
       prettier:
         specifier: ^3.1.1
         version: 3.1.1
@@ -1433,6 +1451,12 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
+  '@remotion/gif@4.0.221':
+    resolution: {integrity: sha512-ou3cWr2W9eePS/2ttDI+X3aQPc17mJ1qinJu04+Y4HyubaezchTsG2yD8mDWKP4uVBC7pVseMD0Fc/EC6yJfbw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   '@remotion/media-utils@4.0.206':
     resolution: {integrity: sha512-mV+9VHseqtZzlFUAPFOHZ9BBB7W4u+TBm2Ccn7q63iDPv2NF5ccgUe/MNM5pGR4RCUEhAgguYa9+6AY9Bhb3Xg==}
     peerDependencies:
@@ -1462,6 +1486,11 @@ packages:
 
   '@remotion/studio@4.0.206':
     resolution: {integrity: sha512-iuj/HlIo5envtIsm0me7ansSuUWsaMu6zt4ievzlVjAHbmY2JQpbv3r+/RGjK//S2Rm/4J87ksnfpCaQBwJ5ng==}
+
+  '@remotion/zod-types@4.0.221':
+    resolution: {integrity: sha512-M6R7obrVig5k1jKfVkW6NjmXHVoSR5QXvIrIjIaPuFLwB0bY++eD5qw1p3gyUgy8fAzR3hOOrZfhsxXpv/wUiQ==}
+    peerDependencies:
+      zod: 3.22.3
 
   '@sigstore/bundle@1.1.0':
     resolution: {integrity: sha512-PFutXEy0SmQxYI4texPw3dd2KewuNqv7OuK1ZFtY2fM754yhvG2KdgwIhRnoEE2uHdtdGNQ8s0lb94dW9sELog==}
@@ -1985,6 +2014,14 @@ packages:
     resolution: {integrity: sha512-jQ3a7IiJm2g7ko5q7a/PzyFhdSDDTR2j5sv37hU+lBprHYq5xL+JTS5aO7yJDpZKo9syUaykmUkmgBD0qVSp5A==}
     engines: {node: '>= 10.0.0'}
 
+  axios-logger@2.8.1:
+    resolution: {integrity: sha512-Bbl7XRR/Rkxg2Owv/kRgAZ/0qf8kMPLc08LtiUcGCWV5RmoI7vHr+eee6SUc8jRi2nE5KWShziCVh35C1SBEaw==}
+
+  axios-rate-limit@1.4.0:
+    resolution: {integrity: sha512-uM5PbmSUdSle1I+59Av/wpLuNRobfatIR+FyylSoHcVHT20ohjflNnLMEHZQr7N2QVG/Wlt8jekIPhWwoKtpXQ==}
+    peerDependencies:
+      axios: '*'
+
   axios@1.6.2:
     resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
 
@@ -2059,6 +2096,14 @@ packages:
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
+
+  bluebird-co@2.2.0:
+    resolution: {integrity: sha512-p8EZTlGgWO6lUZkWbtmK90zhKNGy4CY9rLUUlI6aApZH0U7lAaJTb/KxkH2nHjKNpktN+iWtikXzAM+Z2dQJ5g==}
+    peerDependencies:
+      bluebird: ^3.x
+
+  bluebird@3.7.2:
+    resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -2412,6 +2457,9 @@ packages:
 
   date-fns@3.0.1:
     resolution: {integrity: sha512-cr9igCUa0QSqgAMj7JOrYTY6Nh1rmyGrFDko7ADqfmaQqP/I2N4rlfrLl7AWuzDaoIpz6MNjoEcTPzgZYIrhnA==}
+
+  dateformat@3.0.3:
+    resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
@@ -3902,6 +3950,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  mp3-duration@1.1.0:
+    resolution: {integrity: sha512-5zO6ZLEHEPb1Da5p+et7zsMQ0pt0x2YCZLyUPayBqLMhLPQt3fFAXxvCyznZZQnhXCeIX99tXhvQocm8+VmpvA==}
+    engines: {node: '>=0.11.0'}
+
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -4590,6 +4642,12 @@ packages:
 
   remotion@4.0.206:
     resolution: {integrity: sha512-2RTM3BG6ep2POLndSG3EhgwzwVuQyho14hkxtZWZSRo1m1fW9NxtSDi4ULkifEupmwUMJQBWusGU+54/7E1TEQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  remotion@4.0.221:
+    resolution: {integrity: sha512-QlKRZIh6KXrjrVlo+1Gqbry8HWd79gA3jjOposSxaveTyWwQx5rQxm8Q4NhqYEK8rp+otA8KU6Hdgmed6b/oZg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -5477,6 +5535,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zod@3.22.3:
+    resolution: {integrity: sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==}
 
 snapshots:
 
@@ -6514,19 +6575,19 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
 
-  '@npmcli/arborist@4.3.1':
+  '@npmcli/arborist@4.3.1(bluebird@3.7.2)':
     dependencies:
       '@isaacs/string-locale-compare': 1.1.0
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/map-workspaces': 2.0.4
-      '@npmcli/metavuln-calculator': 2.0.0
+      '@npmcli/metavuln-calculator': 2.0.0(bluebird@3.7.2)
       '@npmcli/move-file': 1.1.2
       '@npmcli/name-from-folder': 1.0.1
       '@npmcli/node-gyp': 1.0.3
       '@npmcli/package-json': 1.0.1
-      '@npmcli/run-script': 2.0.0
+      '@npmcli/run-script': 2.0.0(bluebird@3.7.2)
       bin-links: 3.0.3
-      cacache: 15.3.0
+      cacache: 15.3.0(bluebird@3.7.2)
       common-ancestor-path: 1.0.1
       json-parse-even-better-errors: 2.3.1
       json-stringify-nice: 1.1.4
@@ -6535,8 +6596,8 @@ snapshots:
       npm-install-checks: 4.0.0
       npm-package-arg: 8.1.5
       npm-pick-manifest: 6.1.1
-      npm-registry-fetch: 12.0.2
-      pacote: 12.0.3
+      npm-registry-fetch: 12.0.2(bluebird@3.7.2)
+      pacote: 12.0.3(bluebird@3.7.2)
       parse-conflict-json: 2.0.2
       proc-log: 1.0.0
       promise-all-reject-late: 1.0.1
@@ -6566,26 +6627,26 @@ snapshots:
     dependencies:
       semver: 7.5.4
 
-  '@npmcli/git@2.1.0':
+  '@npmcli/git@2.1.0(bluebird@3.7.2)':
     dependencies:
       '@npmcli/promise-spawn': 1.3.2
       lru-cache: 6.0.0
       mkdirp: 1.0.4
       npm-pick-manifest: 6.1.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-retry: 2.0.1
       semver: 7.5.4
       which: 2.0.2
     transitivePeerDependencies:
       - bluebird
 
-  '@npmcli/git@4.1.0':
+  '@npmcli/git@4.1.0(bluebird@3.7.2)':
     dependencies:
       '@npmcli/promise-spawn': 6.0.2
       lru-cache: 7.18.3
       npm-pick-manifest: 8.0.2
       proc-log: 3.0.0
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-retry: 2.0.1
       semver: 7.5.4
       which: 3.0.1
@@ -6609,11 +6670,11 @@ snapshots:
       minimatch: 5.1.6
       read-package-json-fast: 2.0.3
 
-  '@npmcli/metavuln-calculator@2.0.0':
+  '@npmcli/metavuln-calculator@2.0.0(bluebird@3.7.2)':
     dependencies:
-      cacache: 15.3.0
+      cacache: 15.3.0(bluebird@3.7.2)
       json-parse-even-better-errors: 2.3.1
-      pacote: 12.0.3
+      pacote: 12.0.3(bluebird@3.7.2)
       semver: 7.5.4
     transitivePeerDependencies:
       - bluebird
@@ -6647,21 +6708,21 @@ snapshots:
     dependencies:
       which: 3.0.1
 
-  '@npmcli/run-script@2.0.0':
+  '@npmcli/run-script@2.0.0(bluebird@3.7.2)':
     dependencies:
       '@npmcli/node-gyp': 1.0.3
       '@npmcli/promise-spawn': 1.3.2
-      node-gyp: 8.4.1
+      node-gyp: 8.4.1(bluebird@3.7.2)
       read-package-json-fast: 2.0.3
     transitivePeerDependencies:
       - bluebird
       - supports-color
 
-  '@npmcli/run-script@6.0.2':
+  '@npmcli/run-script@6.0.2(bluebird@3.7.2)':
     dependencies:
       '@npmcli/node-gyp': 3.0.0
       '@npmcli/promise-spawn': 6.0.2
-      node-gyp: 9.4.1
+      node-gyp: 9.4.1(bluebird@3.7.2)
       read-package-json-fast: 3.0.2
       which: 3.0.1
     transitivePeerDependencies:
@@ -6834,11 +6895,11 @@ snapshots:
     dependencies:
       '@octokit/types': 6.41.0
 
-  '@octokit/core@3.6.0':
+  '@octokit/core@3.6.0(encoding@0.1.13)':
     dependencies:
       '@octokit/auth-token': 2.5.0
-      '@octokit/graphql': 4.8.0
-      '@octokit/request': 5.6.3
+      '@octokit/graphql': 4.8.0(encoding@0.1.13)
+      '@octokit/request': 5.6.3(encoding@0.1.13)
       '@octokit/request-error': 2.1.0
       '@octokit/types': 6.41.0
       before-after-hook: 2.2.3
@@ -6852,9 +6913,9 @@ snapshots:
       is-plain-object: 5.0.0
       universal-user-agent: 6.0.1
 
-  '@octokit/graphql@4.8.0':
+  '@octokit/graphql@4.8.0(encoding@0.1.13)':
     dependencies:
-      '@octokit/request': 5.6.3
+      '@octokit/request': 5.6.3(encoding@0.1.13)
       '@octokit/types': 6.41.0
       universal-user-agent: 6.0.1
     transitivePeerDependencies:
@@ -6862,18 +6923,18 @@ snapshots:
 
   '@octokit/openapi-types@12.11.0': {}
 
-  '@octokit/plugin-paginate-rest@2.21.3(@octokit/core@3.6.0)':
+  '@octokit/plugin-paginate-rest@2.21.3(@octokit/core@3.6.0(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 3.6.0
+      '@octokit/core': 3.6.0(encoding@0.1.13)
       '@octokit/types': 6.41.0
 
-  '@octokit/plugin-request-log@1.0.4(@octokit/core@3.6.0)':
+  '@octokit/plugin-request-log@1.0.4(@octokit/core@3.6.0(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 3.6.0
+      '@octokit/core': 3.6.0(encoding@0.1.13)
 
-  '@octokit/plugin-rest-endpoint-methods@5.16.2(@octokit/core@3.6.0)':
+  '@octokit/plugin-rest-endpoint-methods@5.16.2(@octokit/core@3.6.0(encoding@0.1.13))':
     dependencies:
-      '@octokit/core': 3.6.0
+      '@octokit/core': 3.6.0(encoding@0.1.13)
       '@octokit/types': 6.41.0
       deprecation: 2.3.1
 
@@ -6883,23 +6944,23 @@ snapshots:
       deprecation: 2.3.1
       once: 1.4.0
 
-  '@octokit/request@5.6.3':
+  '@octokit/request@5.6.3(encoding@0.1.13)':
     dependencies:
       '@octokit/endpoint': 6.0.12
       '@octokit/request-error': 2.1.0
       '@octokit/types': 6.41.0
       is-plain-object: 5.0.0
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
       universal-user-agent: 6.0.1
     transitivePeerDependencies:
       - encoding
 
-  '@octokit/rest@18.12.0':
+  '@octokit/rest@18.12.0(encoding@0.1.13)':
     dependencies:
-      '@octokit/core': 3.6.0
-      '@octokit/plugin-paginate-rest': 2.21.3(@octokit/core@3.6.0)
-      '@octokit/plugin-request-log': 1.0.4(@octokit/core@3.6.0)
-      '@octokit/plugin-rest-endpoint-methods': 5.16.2(@octokit/core@3.6.0)
+      '@octokit/core': 3.6.0(encoding@0.1.13)
+      '@octokit/plugin-paginate-rest': 2.21.3(@octokit/core@3.6.0(encoding@0.1.13))
+      '@octokit/plugin-request-log': 1.0.4(@octokit/core@3.6.0(encoding@0.1.13))
+      '@octokit/plugin-rest-endpoint-methods': 5.16.2(@octokit/core@3.6.0(encoding@0.1.13))
     transitivePeerDependencies:
       - encoding
 
@@ -6931,18 +6992,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@remotion/bundler@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/bundler@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@remotion/studio': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      css-loader: 5.2.7(webpack@5.83.1)
+      '@remotion/studio': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      css-loader: 5.2.7(webpack@5.83.1(esbuild@0.18.6))
       esbuild: 0.18.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-refresh: 0.9.0
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       source-map: 0.7.3
-      style-loader: 2.0.0(webpack@5.83.1)
+      style-loader: 2.0.0(webpack@5.83.1(esbuild@0.18.6))
       webpack: 5.83.1(esbuild@0.18.6)
     transitivePeerDependencies:
       - '@swc/core'
@@ -6952,21 +7013,21 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@remotion/cli@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/cli@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@remotion/bundler': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/media-utils': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/player': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/renderer': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio-server': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      '@remotion/bundler': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/media-utils': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/player': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/renderer': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio-server': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       dotenv: 9.0.2
       minimist: 1.2.6
       prompts: 2.4.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     transitivePeerDependencies:
       - '@swc/core'
       - bufferutil
@@ -6999,7 +7060,7 @@ snapshots:
   '@remotion/eslint-config@4.0.206(eslint@8.56.0)(typescript@5.3.3)':
     dependencies:
       '@remotion/eslint-plugin': 4.0.206(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 6.21.0(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
       eslint-plugin-10x: 1.5.2(eslint@8.56.0)
@@ -7017,26 +7078,32 @@ snapshots:
       - supports-color
       - typescript
 
-  '@remotion/media-utils@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/gif@4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
-  '@remotion/player@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/media-utils@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
-  '@remotion/renderer@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/player@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+
+  '@remotion/renderer@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@remotion/streaming': 4.0.206
       execa: 5.1.1
       extract-zip: 2.0.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       source-map: 0.8.0-beta.0
       ws: 8.17.1
     optionalDependencies:
@@ -7054,16 +7121,16 @@ snapshots:
 
   '@remotion/streaming@4.0.206': {}
 
-  '@remotion/studio-server@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/studio-server@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@babel/parser': 7.24.1
-      '@remotion/bundler': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/renderer': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      '@remotion/bundler': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/renderer': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       memfs: 3.4.3
       open: 8.4.2
       recast: 0.23.6
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       semver: 7.5.3
       source-map: 0.7.3
     transitivePeerDependencies:
@@ -7076,22 +7143,22 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@remotion/studio-shared@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/studio-shared@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@remotion/studio@4.0.206(react-dom@18.2.0)(react@18.2.0)':
+  '@remotion/studio@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@remotion/media-utils': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/player': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/renderer': 4.0.206(react-dom@18.2.0)(react@18.2.0)
-      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      '@remotion/media-utils': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/player': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/renderer': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remotion/studio-shared': 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       memfs: 3.4.3
       open: 8.4.2
-      remotion: 4.0.206(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       semver: 7.5.3
       source-map: 0.7.3
     transitivePeerDependencies:
@@ -7100,6 +7167,14 @@ snapshots:
       - react-dom
       - supports-color
       - utf-8-validate
+
+  '@remotion/zod-types@4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(zod@3.22.3)':
+    dependencies:
+      remotion: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      zod: 3.22.3
+    transitivePeerDependencies:
+      - react
+      - react-dom
 
   '@sigstore/bundle@1.1.0':
     dependencies:
@@ -7247,7 +7322,7 @@ snapshots:
       '@types/node': 20.10.5
     optional: true
 
-  '@typescript-eslint/eslint-plugin@6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@6.15.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
@@ -7262,11 +7337,12 @@ snapshots:
       natural-compare: 1.4.0
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 6.21.0(eslint@8.56.0)(typescript@5.3.3)
@@ -7281,6 +7357,7 @@ snapshots:
       natural-compare: 1.4.0
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7293,6 +7370,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 6.15.0
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.56.0
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7305,6 +7383,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 6.21.0
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.56.0
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7331,6 +7410,7 @@ snapshots:
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.56.0
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7342,6 +7422,7 @@ snapshots:
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.56.0
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7361,6 +7442,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       tsutils: 3.21.0(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7374,6 +7456,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7388,6 +7471,7 @@ snapshots:
       minimatch: 9.0.3
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -7737,6 +7821,15 @@ snapshots:
       uuid: 8.0.0
       xml2js: 0.5.0
 
+  axios-logger@2.8.1:
+    dependencies:
+      chalk: 4.1.2
+      dateformat: 3.0.3
+
+  axios-rate-limit@1.4.0(axios@1.6.2):
+    dependencies:
+      axios: 1.6.2
+
   axios@1.6.2:
     dependencies:
       follow-redirects: 1.15.3
@@ -7779,10 +7872,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-transform-typescript-metadata@0.3.2(@babel/core@7.23.6):
+  babel-plugin-transform-typescript-metadata@0.3.2(@babel/core@7.23.6)(@babel/traverse@7.23.6):
     dependencies:
       '@babel/core': 7.23.6
       '@babel/helper-plugin-utils': 7.22.5
+    optionalDependencies:
+      '@babel/traverse': 7.23.6
 
   balanced-match@1.0.2: {}
 
@@ -7823,6 +7918,12 @@ snapshots:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+
+  bluebird-co@2.2.0(bluebird@3.7.2):
+    dependencies:
+      bluebird: 3.7.2
+
+  bluebird@3.7.2: {}
 
   boolbase@1.0.0: {}
 
@@ -7886,7 +7987,7 @@ snapshots:
 
   bytesish@0.4.4: {}
 
-  cacache@15.3.0:
+  cacache@15.3.0(bluebird@3.7.2):
     dependencies:
       '@npmcli/fs': 1.1.1
       '@npmcli/move-file': 1.1.2
@@ -7901,7 +8002,7 @@ snapshots:
       minipass-pipeline: 1.2.4
       mkdirp: 1.0.4
       p-map: 4.0.0
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       rimraf: 3.0.2
       ssri: 8.0.1
       tar: 6.2.0
@@ -7909,7 +8010,7 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
 
-  cacache@16.1.3:
+  cacache@16.1.3(bluebird@3.7.2):
     dependencies:
       '@npmcli/fs': 2.1.2
       '@npmcli/move-file': 2.0.1
@@ -7924,7 +8025,7 @@ snapshots:
       minipass-pipeline: 1.2.4
       mkdirp: 1.0.4
       p-map: 4.0.0
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       rimraf: 3.0.2
       ssri: 9.0.1
       tar: 6.2.0
@@ -8192,13 +8293,14 @@ snapshots:
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
+    optionalDependencies:
       typescript: 5.3.3
 
   create-require@1.1.1: {}
 
-  cross-fetch@4.0.0:
+  cross-fetch@4.0.0(encoding@0.1.13):
     dependencies:
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
@@ -8210,7 +8312,7 @@ snapshots:
 
   css-color-keywords@1.0.0: {}
 
-  css-loader@5.2.7(webpack@5.83.1):
+  css-loader@5.2.7(webpack@5.83.1(esbuild@0.18.6)):
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.32)
       loader-utils: 2.0.4
@@ -8250,6 +8352,8 @@ snapshots:
 
   date-fns@3.0.1: {}
 
+  dateformat@3.0.3: {}
+
   dateformat@4.6.3: {}
 
   debug@3.2.7:
@@ -8259,6 +8363,7 @@ snapshots:
   debug@4.3.4(supports-color@8.1.1):
     dependencies:
       ms: 2.1.2
+    optionalDependencies:
       supports-color: 8.1.1
 
   debuglog@1.0.1: {}
@@ -8542,22 +8647,22 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.29.1)(eslint@8.56.0):
+  eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0))(eslint@8.56.0):
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 8.56.0
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       object.assign: 4.1.5
       object.entries: 1.1.7
       semver: 6.3.1
 
   eslint-config-oclif-typescript@3.0.29(eslint@8.56.0)(typescript@5.3.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/eslint-plugin': 6.15.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
       eslint-config-xo-space: 0.34.0(eslint@8.56.0)
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.15.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-mocha: 10.2.0(eslint@8.56.0)
       eslint-plugin-node: 11.1.0(eslint@8.56.0)
       eslint-plugin-perfectionist: 2.5.0(eslint@8.56.0)(typescript@5.3.3)
@@ -8603,13 +8708,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.15.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0):
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       enhanced-resolve: 5.15.0
       eslint: 8.56.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0))(eslint@8.56.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.2
       is-core-module: 2.13.1
@@ -8620,13 +8725,14 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0))(eslint@8.56.0):
     dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
       debug: 3.2.7
+    optionalDependencies:
+      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.15.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8641,9 +8747,8 @@ snapshots:
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0):
     dependencies:
-      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
       array-includes: 3.1.7
       array.prototype.findlastindex: 1.2.3
       array.prototype.flat: 1.3.2
@@ -8652,7 +8757,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.15.0(eslint@8.56.0)(typescript@5.3.3))(eslint-plugin-import@2.29.1)(eslint@8.56.0))(eslint@8.56.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -8662,6 +8767,8 @@ snapshots:
       object.values: 1.1.7
       semver: 6.3.1
       tsconfig-paths: 3.15.0
+    optionalDependencies:
+      '@typescript-eslint/parser': 6.15.0(eslint@8.56.0)(typescript@5.3.3)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -8693,13 +8800,15 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-prettier@5.1.0(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1):
+  eslint-plugin-prettier@5.1.0(@types/eslint@8.56.0)(eslint-config-prettier@9.1.0(eslint@8.56.0))(eslint@8.56.0)(prettier@3.1.1):
     dependencies:
       eslint: 8.56.0
-      eslint-config-prettier: 9.1.0(eslint@8.56.0)
       prettier: 3.1.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.6
+    optionalDependencies:
+      '@types/eslint': 8.56.0
+      eslint-config-prettier: 9.1.0(eslint@8.56.0)
 
   eslint-plugin-react-hooks@4.6.0(eslint@8.56.0):
     dependencies:
@@ -9065,19 +9174,19 @@ snapshots:
       strip-ansi: 6.0.1
       wide-align: 1.1.5
 
-  gaxios@6.1.1:
+  gaxios@6.1.1(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
       https-proxy-agent: 7.0.2
       is-stream: 2.0.1
-      node-fetch: 2.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  gcp-metadata@6.1.0:
+  gcp-metadata@6.1.0(encoding@0.1.13):
     dependencies:
-      gaxios: 6.1.1
+      gaxios: 6.1.1(encoding@0.1.13)
       json-bigint: 1.0.0
     transitivePeerDependencies:
       - encoding
@@ -9124,9 +9233,9 @@ snapshots:
 
   github-slugger@1.5.0: {}
 
-  github-username@6.0.0:
+  github-username@6.0.0(encoding@0.1.13):
     dependencies:
-      '@octokit/rest': 18.12.0
+      '@octokit/rest': 18.12.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
 
@@ -9184,23 +9293,23 @@ snapshots:
       merge2: 1.4.1
       slash: 3.0.0
 
-  google-auth-library@9.4.1:
+  google-auth-library@9.4.1(encoding@0.1.13):
     dependencies:
       base64-js: 1.5.1
       ecdsa-sig-formatter: 1.0.11
-      gaxios: 6.1.1
-      gcp-metadata: 6.1.0
-      gtoken: 7.0.1
+      gaxios: 6.1.1(encoding@0.1.13)
+      gcp-metadata: 6.1.0(encoding@0.1.13)
+      gtoken: 7.0.1(encoding@0.1.13)
       jws: 4.0.0
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  googleapis-common@7.0.1:
+  googleapis-common@7.0.1(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
-      gaxios: 6.1.1
-      google-auth-library: 9.4.1
+      gaxios: 6.1.1(encoding@0.1.13)
+      google-auth-library: 9.4.1(encoding@0.1.13)
       qs: 6.11.2
       url-template: 2.0.8
       uuid: 9.0.1
@@ -9208,10 +9317,10 @@ snapshots:
       - encoding
       - supports-color
 
-  googleapis@129.0.0:
+  googleapis@129.0.0(encoding@0.1.13):
     dependencies:
-      google-auth-library: 9.4.1
-      googleapis-common: 7.0.1
+      google-auth-library: 9.4.1(encoding@0.1.13)
+      googleapis-common: 7.0.1(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -9240,9 +9349,9 @@ snapshots:
 
   grouped-queue@2.0.0: {}
 
-  gtoken@7.0.1:
+  gtoken@7.0.1(encoding@0.1.13):
     dependencies:
-      gaxios: 6.1.1
+      gaxios: 6.1.1(encoding@0.1.13)
       jws: 4.0.0
     transitivePeerDependencies:
       - encoding
@@ -9793,10 +9902,10 @@ snapshots:
 
   make-error@1.3.6: {}
 
-  make-fetch-happen@10.2.1:
+  make-fetch-happen@10.2.1(bluebird@3.7.2):
     dependencies:
       agentkeepalive: 4.5.0
-      cacache: 16.1.3
+      cacache: 16.1.3(bluebird@3.7.2)
       http-cache-semantics: 4.1.1
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
@@ -9835,10 +9944,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  make-fetch-happen@9.1.0:
+  make-fetch-happen@9.1.0(bluebird@3.7.2):
     dependencies:
       agentkeepalive: 4.5.0
-      cacache: 15.3.0
+      cacache: 15.3.0(bluebird@3.7.2)
       http-cache-semantics: 4.1.1
       http-proxy-agent: 4.0.1
       https-proxy-agent: 5.0.1
@@ -9865,11 +9974,12 @@ snapshots:
       ejs: 3.1.9
       globby: 11.1.0
       isbinaryfile: 5.0.0
-      mem-fs: 2.3.0
       minimatch: 7.4.6
       multimatch: 5.0.0
       normalize-path: 3.0.0
       textextensions: 5.16.0
+    optionalDependencies:
+      mem-fs: 2.3.0
 
   mem-fs@2.3.0:
     dependencies:
@@ -10010,6 +10120,11 @@ snapshots:
 
   mkdirp@1.0.4: {}
 
+  mp3-duration@1.1.0:
+    dependencies:
+      bluebird: 3.7.2
+      bluebird-co: 2.2.0(bluebird@3.7.2)
+
   ms@2.1.2: {}
 
   ms@2.1.3: {}
@@ -10048,16 +10163,18 @@ snapshots:
       object.getownpropertydescriptors: 2.1.7
       semver: 5.7.2
 
-  node-fetch@2.7.0:
+  node-fetch@2.7.0(encoding@0.1.13):
     dependencies:
       whatwg-url: 5.0.0
+    optionalDependencies:
+      encoding: 0.1.13
 
-  node-gyp@8.4.1:
+  node-gyp@8.4.1(bluebird@3.7.2):
     dependencies:
       env-paths: 2.2.1
       glob: 7.2.3
       graceful-fs: 4.2.11
-      make-fetch-happen: 9.1.0
+      make-fetch-happen: 9.1.0(bluebird@3.7.2)
       nopt: 5.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
@@ -10068,13 +10185,13 @@ snapshots:
       - bluebird
       - supports-color
 
-  node-gyp@9.4.1:
+  node-gyp@9.4.1(bluebird@3.7.2):
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.1
       glob: 7.2.3
       graceful-fs: 4.2.11
-      make-fetch-happen: 10.2.1
+      make-fetch-happen: 10.2.1(bluebird@3.7.2)
       nopt: 6.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
@@ -10190,9 +10307,9 @@ snapshots:
       npm-package-arg: 10.1.0
       semver: 7.5.4
 
-  npm-registry-fetch@12.0.2:
+  npm-registry-fetch@12.0.2(bluebird@3.7.2):
     dependencies:
-      make-fetch-happen: 10.2.1
+      make-fetch-happen: 10.2.1(bluebird@3.7.2)
       minipass: 3.3.6
       minipass-fetch: 1.4.1
       minipass-json-stream: 1.0.1
@@ -10293,7 +10410,7 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.22.3
 
-  oclif@4.1.0(@types/node@20.10.5)(eslint@8.56.0)(typescript@5.3.3):
+  oclif@4.1.0(@types/node@20.10.5)(bluebird@3.7.2)(encoding@0.1.13)(eslint@8.56.0)(mem-fs@2.3.0)(typescript@5.3.3):
     dependencies:
       '@oclif/core': 3.15.0(typescript@5.3.3)
       '@oclif/plugin-help': 5.2.20(@types/node@20.10.5)(typescript@5.3.3)
@@ -10311,8 +10428,8 @@ snapshots:
       lodash.template: 4.5.0
       normalize-package-data: 3.0.3
       semver: 7.5.4
-      yeoman-environment: 3.19.3
-      yeoman-generator: 5.10.0(yeoman-environment@3.19.3)
+      yeoman-environment: 3.19.3(bluebird@3.7.2)
+      yeoman-generator: 5.10.0(bluebird@3.7.2)(encoding@0.1.13)(mem-fs@2.3.0)(yeoman-environment@3.19.3(bluebird@3.7.2))
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -10441,13 +10558,13 @@ snapshots:
       ip: 1.1.8
       netmask: 2.0.2
 
-  pacote@12.0.3:
+  pacote@12.0.3(bluebird@3.7.2):
     dependencies:
-      '@npmcli/git': 2.1.0
+      '@npmcli/git': 2.1.0(bluebird@3.7.2)
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/promise-spawn': 1.3.2
-      '@npmcli/run-script': 2.0.0
-      cacache: 15.3.0
+      '@npmcli/run-script': 2.0.0(bluebird@3.7.2)
+      cacache: 15.3.0(bluebird@3.7.2)
       chownr: 2.0.0
       fs-minipass: 2.1.0
       infer-owner: 1.0.4
@@ -10456,7 +10573,7 @@ snapshots:
       npm-package-arg: 8.1.5
       npm-packlist: 3.0.0
       npm-pick-manifest: 6.1.1
-      npm-registry-fetch: 12.0.2
+      npm-registry-fetch: 12.0.2(bluebird@3.7.2)
       promise-retry: 2.0.1
       read-package-json-fast: 2.0.3
       rimraf: 3.0.2
@@ -10466,12 +10583,12 @@ snapshots:
       - bluebird
       - supports-color
 
-  pacote@15.2.0:
+  pacote@15.2.0(bluebird@3.7.2):
     dependencies:
-      '@npmcli/git': 4.1.0
+      '@npmcli/git': 4.1.0(bluebird@3.7.2)
       '@npmcli/installed-package-contents': 2.0.2
       '@npmcli/promise-spawn': 6.0.2
-      '@npmcli/run-script': 6.0.2
+      '@npmcli/run-script': 6.0.2(bluebird@3.7.2)
       cacache: 17.1.4
       fs-minipass: 3.0.3
       minipass: 5.0.0
@@ -10644,7 +10761,9 @@ snapshots:
 
   promise-call-limit@1.0.2: {}
 
-  promise-inflight@1.0.1: {}
+  promise-inflight@1.0.1(bluebird@3.7.2):
+    optionalDependencies:
+      bluebird: 3.7.2
 
   promise-retry@2.0.1:
     dependencies:
@@ -10686,11 +10805,11 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  puppeteer-core@21.6.1:
+  puppeteer-core@21.6.1(encoding@0.1.13):
     dependencies:
       '@puppeteer/browsers': 1.9.0
       chromium-bidi: 0.5.1(devtools-protocol@0.0.1203626)
-      cross-fetch: 4.0.0
+      cross-fetch: 4.0.0(encoding@0.1.13)
       debug: 4.3.4(supports-color@8.1.1)
       devtools-protocol: 0.0.1203626
       ws: 8.15.1
@@ -10700,11 +10819,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@21.6.1(typescript@5.3.3):
+  puppeteer@21.6.1(encoding@0.1.13)(typescript@5.3.3):
     dependencies:
       '@puppeteer/browsers': 1.9.0
       cosmiconfig: 8.3.6(typescript@5.3.3)
-      puppeteer-core: 21.6.1
+      puppeteer-core: 21.6.1(encoding@0.1.13)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -10878,7 +10997,12 @@ snapshots:
     dependencies:
       jsesc: 0.5.0
 
-  remotion@4.0.206(react-dom@18.2.0)(react@18.2.0):
+  remotion@4.0.206(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
+  remotion@4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -11257,13 +11381,13 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-loader@2.0.0(webpack@5.83.1):
+  style-loader@2.0.0(webpack@5.83.1(esbuild@0.18.6)):
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
       webpack: 5.83.1(esbuild@0.18.6)
 
-  styled-components@6.1.2(react-dom@18.2.0)(react@18.2.0):
+  styled-components@6.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@emotion/is-prop-valid': 1.2.1
       '@emotion/unitless': 0.8.1
@@ -11329,12 +11453,13 @@ snapshots:
   terser-webpack-plugin@5.3.9(esbuild@0.18.6)(webpack@5.83.1):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.20
-      esbuild: 0.18.6
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.26.0
       webpack: 5.83.1(esbuild@0.18.6)
+    optionalDependencies:
+      esbuild: 0.18.6
 
   terser@5.26.0:
     dependencies:
@@ -11399,7 +11524,7 @@ snapshots:
       yn: 3.1.1
 
   tsconfck@3.0.0(typescript@5.3.3):
-    dependencies:
+    optionalDependencies:
       typescript: 5.3.3
 
   tsconfig-paths@3.15.0:
@@ -11793,9 +11918,9 @@ snapshots:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
 
-  yeoman-environment@3.19.3:
+  yeoman-environment@3.19.3(bluebird@3.7.2):
     dependencies:
-      '@npmcli/arborist': 4.3.1
+      '@npmcli/arborist': 4.3.1(bluebird@3.7.2)
       are-we-there-yet: 2.0.0
       arrify: 2.0.1
       binaryextensions: 4.19.0
@@ -11822,7 +11947,7 @@ snapshots:
       npmlog: 5.0.1
       p-queue: 6.6.2
       p-transform: 1.3.0
-      pacote: 12.0.3
+      pacote: 12.0.3(bluebird@3.7.2)
       preferred-pm: 3.1.2
       pretty-bytes: 5.6.0
       readable-stream: 4.5.1
@@ -11836,24 +11961,25 @@ snapshots:
       - bluebird
       - supports-color
 
-  yeoman-generator@5.10.0(yeoman-environment@3.19.3):
+  yeoman-generator@5.10.0(bluebird@3.7.2)(encoding@0.1.13)(mem-fs@2.3.0)(yeoman-environment@3.19.3(bluebird@3.7.2)):
     dependencies:
       chalk: 4.1.2
       dargs: 7.0.0
       debug: 4.3.4(supports-color@8.1.1)
       execa: 5.1.1
-      github-username: 6.0.0
+      github-username: 6.0.0(encoding@0.1.13)
       lodash: 4.17.21
       mem-fs-editor: 9.7.0(mem-fs@2.3.0)
       minimist: 1.2.8
-      pacote: 15.2.0
+      pacote: 15.2.0(bluebird@3.7.2)
       read-pkg-up: 7.0.1
       run-async: 2.4.1
       semver: 7.5.4
       shelljs: 0.8.5
       sort-keys: 4.2.0
       text-table: 0.2.0
-      yeoman-environment: 3.19.3
+    optionalDependencies:
+      yeoman-environment: 3.19.3(bluebird@3.7.2)
     transitivePeerDependencies:
       - bluebird
       - encoding
@@ -11863,3 +11989,5 @@ snapshots:
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.22.3: {}

@@ -194,6 +194,8 @@ export const YoutubeWrapper: React.FC<WrapperProps> = ({children, title}) => {
 	);
 
 	//Scale change
+    console.log('frame', {frame, durationInFrames, startScaleAnimationAtFrame, startClickAnimationAtFrame})
+    
 	const scale = interpolate(
 		frame,
 		[
@@ -206,6 +208,7 @@ export const YoutubeWrapper: React.FC<WrapperProps> = ({children, title}) => {
 		],
 		[1.57, 1.57, 1, 1, 1.57, 1.57]
 	);
+    
 	const translateX = interpolate(
 		frame,
 		[

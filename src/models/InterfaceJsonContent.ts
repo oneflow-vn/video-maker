@@ -7,6 +7,7 @@ export default interface InterfaceJsonContent {
     intro?: { text: string; url?: string; shortLink?: string };
     end?: { text: string; url?: string; shortLink?: string };
     news: { text: string; url?: string; shortLink?: string }[];
+    chapters: { text: string; image?: string; }[];
     fps: number;
     title: string;
     thumbnail_text?: string;
@@ -17,7 +18,10 @@ export default interface InterfaceJsonContent {
         text: string;
         duration: number;
         audioFilePath: string;
-        segments: Segment[]
+        segments: Segment[],
+        backgroundImage?: string;
+        backgroundVideo?: string;
+        backgroundGif?: string;
     }[];
     youtube?: {
         viewCount: string;

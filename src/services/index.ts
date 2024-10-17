@@ -13,6 +13,8 @@ import MailToJsonService from './MailToJsonService';
 import GetYoutubeInfoService from './GetYoutubeInfoService';
 import GenerateTitleServce from './GenerateTitleService';
 import GenerateImageService from './GenerateImageService';
+import TextToSpeechVettelService from './TextToSpeechViettelService';
+import PrepareResourceService from './PrepareResourceService';
 
 export {
     GetContentService,
@@ -30,4 +32,6 @@ export {
     GetYoutubeInfoService,
     GenerateTitleServce,
     GenerateImageService,
+    TextToSpeechVettelService,
+    PrepareResourceService
 };

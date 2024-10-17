@@ -3,4 +3,6 @@ export type CreateConfig = {
     needTTS?: boolean;
     upload?: boolean;
     onlyUpload?: boolean;
+    render?: boolean;
+    overwrite?: boolean;
 };

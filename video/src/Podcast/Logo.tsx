@@ -57,7 +57,7 @@ export const Logo: React.FC = () => {
 					fontSize: 40,
 				}}
 			>
-				CodeStack
+				Truyenmoi
 			</h1>
 		</div>
 	);
