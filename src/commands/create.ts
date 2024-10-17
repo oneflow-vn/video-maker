@@ -210,7 +210,7 @@ const local = async ({
         throw new Error('Template is required');
     }
 
-    let { content, file } = await new GetContentService().execute(
+    let { content, file, directory } = await new GetContentService().execute(
         filename,
         'landscape',
     );
@@ -225,7 +225,7 @@ const local = async ({
         // content = await new GenerateImageService(content).execute();
     }
 
-    content = await new PrepareResourceService(content).execute();
+    content = await new PrepareResourceService(content, directory).execute();
 
     const bundle = await new BundleVideoService().execute({ template });
 
@@ -239,8 +239,6 @@ const local = async ({
     }
 
     // await new CreateThumbnailService(content).execute(bundle);
-
-    await new ExportDataService(content).execute(file);
 
     await new ExportDataService(content).execute(file);
 };

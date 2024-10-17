@@ -1,4 +1,18 @@
-import Segment from "./Segments";
+import Segment from './Segments';
+
+export type ContentSectionVoice = {
+    path: string;
+    durationFrames: number;
+};
+
+export type ContentSection = {
+    sectionDurationFrames: number;
+    bgm: ContentSectionVoice;
+    type: string;
+    startVoice: ContentSectionVoice;
+    endVoice: ContentSectionVoice;
+    index: number;
+};
 
 export default interface InterfaceJsonContent {
     timestamp: number;
@@ -7,7 +21,8 @@ export default interface InterfaceJsonContent {
     intro?: { text: string; url?: string; shortLink?: string };
     end?: { text: string; url?: string; shortLink?: string };
     news: { text: string; url?: string; shortLink?: string }[];
-    chapters: { text: string; image?: string; }[];
+    chapters: { text: string; image?: string }[];
+    sections?: ContentSection[];
     fps: number;
     title: string;
     thumbnail_text?: string;
@@ -18,7 +33,7 @@ export default interface InterfaceJsonContent {
         text: string;
         duration: number;
         audioFilePath: string;
-        segments: Segment[],
+        segments: Segment[];
         backgroundImage?: string;
         backgroundVideo?: string;
         backgroundGif?: string;
@@ -27,5 +42,5 @@ export default interface InterfaceJsonContent {
         viewCount: string;
         subscriberCount: string;
         videoCount: string;
-    }
+    };
 }

@@ -12,7 +12,11 @@ export default class GetContentService {
     public async execute(
         filename?: string,
         videoFormat?: 'portrait' | 'landscape' | 'square',
-    ): Promise<{ content: InterfaceJsonContent; file: string }> {
+    ): Promise<{
+        content: InterfaceJsonContent;
+        file: string;
+        directory: string;
+    }> {
         const contentPath = await getPath('content');
         const cwdPath = process.cwd();
 
@@ -42,7 +46,9 @@ export default class GetContentService {
                 jsonContent.height = format[videoFormat].height;
             }
 
-            return { content: jsonContent, file: contentFilePath };
+            const directory = path.dirname(contentFilePath);
+
+            return { content: jsonContent, file: contentFilePath, directory };
         } catch {
             error(`${contentFilePath} not found`, 'GetContentService');
             process.exit(1);

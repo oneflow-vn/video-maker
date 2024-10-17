@@ -2,7 +2,7 @@ import { Command, Flags } from '@oclif/core';
 import shell from 'shelljs';
 import fs from 'fs';
 
-import { GetContentService } from '../services';
+import { GetContentService, PrepareResourceService } from '../services';
 
 export default class Remotion extends Command {
     static description = 'Remotion framework related commands';
@@ -44,7 +44,7 @@ export default class Remotion extends Command {
     public async run(): Promise<void> {
         const { args, flags } = await this.parse(Remotion);
 
-        const { content } = await new GetContentService().execute(
+        const { content, directory } = await new GetContentService().execute(
             flags.filename,
         );
         if (!content) {
@@ -53,6 +53,8 @@ export default class Remotion extends Command {
         const durationInFrames = content.renderData
             ? Math.round(this.getFullDuration(content.renderData) * content.fps)
             : 1;
+
+        await new PrepareResourceService(content, directory).execute();
 
         const props = {
             content,

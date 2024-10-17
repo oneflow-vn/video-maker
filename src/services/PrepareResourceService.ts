@@ -1,26 +1,34 @@
-import axios, { AxiosInstance } from 'axios'
+import axios, { AxiosInstance } from 'axios';
 import fs from 'fs';
 
 import { log } from '../utils/log';
-import InterfaceJsonContent from '../models/InterfaceJsonContent';
+import InterfaceJsonContent, {
+    ContentSection,
+} from '../models/InterfaceJsonContent';
 import { getPath } from 'config/defaultPaths';
 
 export default class PrepareResourceService {
     private content: InterfaceJsonContent;
-    private client: AxiosInstance;
+    private directory: string;
 
-    constructor(content: InterfaceJsonContent) {
+    constructor(content: InterfaceJsonContent, directory: string) {
         this.content = content;
-        this.client = axios.create()
+        this.directory = directory;
     }
 
-    public async execute():  Promise<InterfaceJsonContent>  {
+    public async execute(): Promise<InterfaceJsonContent> {
         try {
             log(`Preparing resources for ${this.content.title}`);
 
             if (!this.content) {
                 throw new Error('Content is missing');
             }
+
+            const targetPath = await getPath('tmp');
+
+            log(`Copying files from ${this.directory} to ${targetPath}`);
+
+            this.copyFileRecursive(this.directory, targetPath);
 
             if (this.content?.chapters?.length > 0) {
                 this.prepareChapters();
@@ -34,10 +42,12 @@ export default class PrepareResourceService {
     }
 
     private prepareChapters() {
-        const chapterPromises = this.content.chapters.map(async (chapter, index) => {
-            log(`Preparing resources for chapter ${index}`);
-            await this.prepareChapter(chapter, index);
-        });
+        const chapterPromises = this.content.chapters.map(
+            async (chapter, index) => {
+                log(`Preparing resources for chapter ${index}`);
+                await this.prepareChapter(chapter, index);
+            },
+        );
 
         return Promise.all(chapterPromises);
     }
@@ -46,7 +56,7 @@ export default class PrepareResourceService {
         if (chapter?.background) {
             log(`Preparing background for chapter ${index}`);
             const image = await this.prepareImage(chapter.background, index);
-            
+
             // update renderData with image path
             if (this.content.renderData && this.content.renderData[index + 1]) {
                 this.content.renderData[index + 1].backgroundImage = image;
@@ -74,18 +84,30 @@ export default class PrepareResourceService {
         }
     }
 
-    private async prepareVideo(videoUrl: string, index: number): Promise<string> {
+    private async prepareVideo(
+        videoUrl: string,
+        index: number,
+    ): Promise<string> {
         const tmpPath = await getPath('tmp');
         const ext = videoUrl.split('.').pop();
-        const videoPath = await this.copyFile(videoUrl, `${tmpPath}/video_${index}.${ext}`);
+        const videoPath = await this.copyFile(
+            videoUrl,
+            `${tmpPath}/video_${index}.${ext}`,
+        );
 
         return videoPath;
     }
 
-    private async prepareImage(imageUrl: string, index: number): Promise<string> {
+    private async prepareImage(
+        imageUrl: string,
+        index: number,
+    ): Promise<string> {
         const tmpPath = await getPath('tmp');
         const ext = imageUrl.split('.').pop();
-        const imagePath = await this.copyFile(imageUrl, `${tmpPath}/background_${index}.${ext}`);
+        const imagePath = await this.copyFile(
+            imageUrl,
+            `${tmpPath}/background_${index}.${ext}`,
+        );
 
         return imagePath;
     }
@@ -93,24 +115,47 @@ export default class PrepareResourceService {
     private async prepareGif(gifUrl: string, index: number): Promise<string> {
         const tmpPath = await getPath('tmp');
         const ext = gifUrl.split('.').pop();
-        const gifPath = await this.copyFile(gifUrl, `${tmpPath}/gif_${index}.${ext}`);
+        const gifPath = await this.copyFile(
+            gifUrl,
+            `${tmpPath}/gif_${index}.${ext}`,
+        );
 
         return gifPath;
     }
 
-    private async copyFile(
-        from: string,
-        to: string
-     ): Promise<string> {
-       return new Promise((resolve, reject) => {
-         fs.copyFile(from, to, (err) => {
-           if (err) {
-             reject(err);
-             return;
-           }
- 
-           resolve(to);
-         });
-       });
-     }
+    private async copyFile(from: string, to: string): Promise<string> {
+        return new Promise((resolve, reject) => {
+            fs.copyFile(from, to, err => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                resolve(to);
+            });
+        });
+    }
+
+    private copyFileRecursive(from: string, to: string) {
+        fs.readdirSync(from).forEach(file => {
+            const fromPath = `${from}/${file}`;
+            const toPath = `${to}/${file}`;
+
+            if (fs.lstatSync(fromPath).isDirectory()) {
+                if (!fs.existsSync(toPath)) {
+                    fs.mkdirSync(toPath);
+                }
+
+                this.copyFileRecursive(fromPath, toPath);
+                return;
+            }
+
+            // handle file duplication
+            if (fs.existsSync(toPath)) {
+                fs.unlinkSync(toPath);
+            }
+
+            fs.copyFileSync(fromPath, toPath);
+        });
+    }
 }

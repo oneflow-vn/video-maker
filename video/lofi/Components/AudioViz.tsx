@@ -1,20 +1,12 @@
-import {useAudioData, visualizeAudio} from '@remotion/media-utils';
-import React, {useEffect, useRef, useState} from 'react';
+import { useAudioData, visualizeAudio } from '@remotion/media-utils';
+import React from 'react';
 import {
-	AbsoluteFill,
-	Audio,
-	continueRender,
-	delayRender,
-	Img,
-	Sequence,
-	useCurrentFrame,
-	useVideoConfig,
+    useCurrentFrame,
+    useVideoConfig
 } from 'remotion';
 
 export const fps = 30;
 
-import {z} from 'zod';
-import {zColor} from '@remotion/zod-types';
 
 export const AudioViz: React.FC<{
 	waveColor: string;

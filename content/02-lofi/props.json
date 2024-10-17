@@ -1,20 +1,20 @@
 {
     "totalHours": 1,
-    "backgroundPath": "2024_05_16_12_26_English_1_hours/background.png",
+    "backgroundPath": "background.png",
     "sections": [
         {
             "sectionDurationFrames": 45000,
             "bgm": {
-                "path": "2024_05_16_12_26_English_1_hours/bgm/0_25_bgm.mp3",
+                "path": "bgm/0_25_bgm.mp3",
                 "durationFrames": 45000
             },
             "type": "Pomodoro",
             "startVoice": {
-                "path": "2024_05_16_12_26_English_1_hours/voiceover/0_begin.mp3",
+                "path": "voiceover/0_begin.mp3",
                 "durationFrames": 330
             },
             "endVoice": {
-                "path": "2024_05_16_12_26_English_1_hours/voiceover/0_end.mp3",
+                "path": "voiceover/0_end.mp3",
                 "durationFrames": 270
             },
             "index": 0
@@ -22,12 +22,12 @@
         {
             "sectionDurationFrames": 9000,
             "bgm": {
-                "path": "2024_05_16_12_26_English_1_hours/bgm/1_5_bgm.mp3",
+                "path": "bgm/1_5_bgm.mp3",
                 "durationFrames": 9000
             },
             "type": "Break",
             "startVoice": {
-                "path": "2024_05_16_12_26_English_1_hours/voiceover/1_begin.mp3",
+                "path": "voiceover/1_begin.mp3",
                 "durationFrames": 300
             },
             "index": 1
@@ -35,12 +35,12 @@
         {
             "sectionDurationFrames": 45000,
             "bgm": {
-                "path": "2024_05_16_12_26_English_1_hours/bgm/2_25_bgm.mp3",
+                "path": "bgm/2_25_bgm.mp3",
                 "durationFrames": 45000
             },
             "type": "Pomodoro",
             "endVoice": {
-                "path": "2024_05_16_12_26_English_1_hours/voiceover/1_end.mp3",
+                "path": "voiceover/1_end.mp3",
                 "durationFrames": 300
             },
             "index": 2
@@ -48,7 +48,7 @@
         {
             "sectionDurationFrames": 9000,
             "bgm": {
-                "path": "2024_05_16_12_26_English_1_hours/bgm/3_5_bgm.mp3",
+                "path": "bgm/3_5_bgm.mp3",
                 "durationFrames": 9000
             },
             "type": "Break",
