@@ -9,12 +9,24 @@ import format from '../config/format';
 
 export default class GetContentService {
     // eslint-disable-next-line
-    public async execute(filename?: string, videoFormat?: 'portrait' | 'landscape' | 'square'): Promise<{ content: InterfaceJsonContent, file: string }> {
+    public async execute(
+        filename?: string,
+        videoFormat?: 'portrait' | 'landscape' | 'square',
+    ): Promise<{ content: InterfaceJsonContent; file: string }> {
         const contentPath = await getPath('content');
+        const cwdPath = process.cwd();
 
-        const contentFilePath = filename
+        let contentFilePath = filename
             ? path.resolve(contentPath, filename)
             : await getLatestFileCreated('json', contentPath);
+
+        // If the file is not in the default path, try to find it in the cwd
+        if (filename) {
+            const relativePath = path.resolve(cwdPath, filename);
+            if (fs.existsSync(relativePath)) {
+                contentFilePath = relativePath;
+            }
+        }
 
         log(`Getting content from ${contentFilePath}`, 'GetContentService');
 

@@ -40,6 +40,7 @@ export default class CreateContentTemplateService {
             news: content?.news
                 ? content?.news.map(text => ({ text, url: '' }))
                 : newsTemplate,
+            chapters: [],
         };
 
         const contentFileName = path.resolve(

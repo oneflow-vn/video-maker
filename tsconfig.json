@@ -20,5 +20,5 @@
         "importHelpers": true,
         "lib": ["es2022", "DOM"]
     },
-    "include": ["src/**/*", "video/**/*", "assets/**/*", "remotion.config.ts"]
+    "include": ["src/**/*", "video/**/*", "assets/**/*", "remotion.config.ts", "webpack-override.ts"]
 }
