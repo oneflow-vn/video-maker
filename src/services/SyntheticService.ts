@@ -1,122 +1,155 @@
-import {
-    SpeechSynthesisOutputFormat,
-    SpeechConfig,
-    AudioConfig,
-    SpeechSynthesizer,
-    SpeechSynthesisBoundaryType,
-} from 'microsoft-cognitiveservices-speech-sdk';
 import path from 'path';
-
-import { error, log } from '../utils/log';
-import { getPath } from '../config/defaultPaths';
-import InterfaceJsonContent from '../models/InterfaceJsonContent';
-import Segment from '../models/Segments';
+import { log } from '../utils/log';
+import InterfaceJsonContent, {
+    ContentSection,
+    ContentSectionVoice,
+} from '../models/InterfaceJsonContent';
+import mp3Duration from 'mp3-duration';
+import fs from 'fs';
 
 class SyntheticService {
-
-
     private content: InterfaceJsonContent;
+    private directory: string;
 
-    constructor(content: InterfaceJsonContent) {
+    constructor(content: InterfaceJsonContent, directory: string) {
         this.content = content;
+        this.directory = directory;
         this.content.renderData = [];
     }
 
-    public async execute({
-        synthesizeIntro,
-        synthesizeEnd,
-    }: {
-        synthesizeIntro?: boolean;
-        synthesizeEnd?: boolean;
-    }): Promise<InterfaceJsonContent> {
-        const synthesizePromises: Promise<void>[] = [];
+    public async execute(): Promise<InterfaceJsonContent> {
+        log('Synthesizing content', 'SyntheticService');
 
-        if (synthesizeIntro) {
-            synthesizePromises.push(this.synthesizeIntro());
-        }
+        this.content.duration = 0;
+        this.content.durationFrames = 0;
+        this.content.totalHours = 0;
 
-        synthesizePromises.push(this.synthesizeNews());
-
-        await Promise.all(synthesizePromises);
-
-        if (synthesizeEnd) {
-            await this.synthesizeEnd();
+        if (this.content.sections) {
+            await this.synthesizeSections();
         }
 
         return this.content;
     }
 
-    private async synthesizeIntro(): Promise<void> {
-        if (!this.content.intro?.text) {
-            log('Intro text is not defined, skipping...', 'TextToSeechService');
+    private async synthesizeSections(): Promise<void> {
+        if (!this.content.sections) {
+            return;
+        }
+        const promises = this.content.sections.map(async section => {
+            return this.synthesizeSection(section);
+        });
+
+        await Promise.all(promises);
+    }
+
+    private async synthesizeSection(section: ContentSection): Promise<void> {
+        section.duration = 0;
+        section.durationFrames = 0;
+
+        if (section.bgm) {
+            await this.synthesizeAudio(section.bgm);
+
+            this.addSectionDuration(section, section.bgm);
+        }
+
+        if (section.startVoice) {
+            await this.synthesizeAudio(section.startVoice);
+
+            this.addSectionDuration(section, section.startVoice);
+        }
+
+        if (section.endVoice) {
+            await this.synthesizeAudio(section.endVoice);
+
+            this.addSectionDuration(section, section.endVoice);
+        }
+
+        this.addTotalDuration(section);
+    }
+
+    private addTotalDuration(section: ContentSection): void {
+        if (!section.duration) {
             return;
         }
 
-        if (typeof this.content.renderData !== 'object') {
-            error('Render data is not defined', 'TextToSeechService');
-            throw new Error('Render data is not defined');
+        if (!this.content.duration) {
+            this.content.duration = 0;
         }
 
-        log(`Synthesizing Intro`, 'TextToSpeechService');
-        const { audioFilePath, segments, duration } = await this.synthesize(
-            this.content.intro.text,
-            'intro',
-        );
+        this.content.duration += section.duration;
 
-        this.content.renderData[0] = {
-            text: this.content.intro.text,
-            duration,
-            audioFilePath,
-            segments,
-        };
+        if (!this.content.durationFrames) {
+            this.content.durationFrames = 0;
+        }
+
+        if (section.durationFrames) {
+            this.content.durationFrames += section.durationFrames;
+        }
+
+        this.content.totalHours = this.content.duration / 3600;
     }
 
-    private async synthesizeNews(): Promise<void> {
-    }
-
-    private async synthesizeEnd(): Promise<void> {
-        if (!this.content.end?.text) {
-            log('End text is not defined, skipping...', 'TextToSeechService');
+    private async synthesizeAudio(audio: ContentSectionVoice): Promise<void> {
+        if (!audio) {
             return;
         }
 
-        if (typeof this.content.renderData !== 'object') {
-            error('Render data is not defined', 'TextToSeechService');
-            throw new Error('Render data is not defined');
+        const audioFilePath = path.join(this.directory, audio.path);
+
+        if (!audioFilePath) {
+            return;
         }
 
-        log('Synthesizing end', 'TextToSpeechService');
-        const { audioFilePath, segments, duration } = await this.synthesize(
-            this.content.end.text,
-            'end',
-        );
+        if (!fs.existsSync(audioFilePath)) {
+            return;
+        }
 
-        this.content.renderData.push({
-            text: this.content.end.text,
-            duration,
-            audioFilePath,
-            segments,
+        const duration = await this.getDuration(audioFilePath);
+
+        // set the duration of the audio
+        audio.duration = duration;
+
+        // calculate duration in frames
+        if (this.content.fps) {
+            audio.durationFrames = Math.round(duration * this.content.fps);
+        }
+    }
+
+    private addSectionDuration(
+        section: ContentSection,
+        audio: ContentSectionVoice,
+    ): void {
+        if (!audio.duration) {
+            return;
+        }
+
+        if (!section.duration) {
+            section.duration = 0;
+        }
+
+        section.duration += audio.duration;
+
+        if (!section.durationFrames) {
+            section.durationFrames = 0;
+        }
+
+        if (audio.durationFrames) {
+            section.durationFrames += audio.durationFrames;
+        }
+    }
+
+    private async getDuration(audioFilePath: string): Promise<number> {
+        return new Promise((resolve, reject) => {
+            mp3Duration(audioFilePath, (err, duration) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                resolve(duration);
+            });
         });
     }
-
-    private async synthesize(
-        text: string,
-        segmentName: string,
-    ): Promise<{ audioFilePath: string; segments: Segment[]; duration: number }> {
-        // Mock data
-        const audioFilePath = path.join(await getPath('assets'), `${segmentName}.wav`);
-        const duration = 10;
-        const segments: Segment[] = [
-            {
-                word: text,
-                start: 0,
-                end: duration,
-            },
-        ];
-
-        return { audioFilePath, segments, duration };
-    }
-
 }
 
 export default SyntheticService;

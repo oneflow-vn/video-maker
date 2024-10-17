@@ -16,6 +16,7 @@ import {
     GenerateTitleServce,
     GenerateImageService,
     PrepareResourceService,
+    SyntheticService,
 } from '../services';
 import { getLatestFileCreated } from '../utils/getFiles';
 
@@ -215,7 +216,7 @@ const local = async ({
         'landscape',
     );
 
-    if (!content.renderData || overwrite) {
+    if (overwrite) {
         content = await new GenerateTitleServce(content).execute();
 
         content = await new TextToSpeechVettelService(content).execute({
@@ -224,6 +225,8 @@ const local = async ({
 
         // content = await new GenerateImageService(content).execute();
     }
+
+    content = await new SyntheticService(content, directory).execute();
 
     content = await new PrepareResourceService(content, directory).execute();
 

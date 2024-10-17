@@ -16,14 +16,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = ({
 }) => {
     const { totalHours, sections, backgroundPath } = LofiSchema;
     const frame = useCurrentFrame();
-    const fps = 30;
-    const minutes = getMinutesWithHours(totalHours);
-    const progressTimerFrames = minutesToFrames(minutes, fps) + 30;
     const introFrames = 120;
-    // let fromFrame = 120;
-    const sectionHalflength = sections.length / 2;
-    let promodoroIndex = 0;
-    let breakIndex = 0;
 
     return (
         <AbsoluteFill className="bg-gray-100 justify-center items-center">
@@ -37,20 +30,11 @@ export const LofiComposition: React.FC<LofiContentSchema> = ({
                     <LofiIntro />
                 </Series.Sequence>
                 {sections.map((section, index) => {
-                    let subtitle = '';
-
-                    if (section.type === 'Pomodoro') {
-                        promodoroIndex++;
-                        subtitle = 'Pomodoro ' + promodoroIndex + '/' + sectionHalflength;
-                    } else {
-                        breakIndex++;
-                        subtitle = 'Breaking ' + breakIndex + '/' + sectionHalflength;
-                    }
-
-                    const { sectionDurationFrames } = section;
+                    let subtitle = section.subtitle;
+                    const { durationFrames } = section;
                     return (
                         <Series.Sequence
-                            durationInFrames={sectionDurationFrames}
+                            durationInFrames={durationFrames}
                             key={'sqx_' + index}
                         >
                             <LofiVisualization section={section} />

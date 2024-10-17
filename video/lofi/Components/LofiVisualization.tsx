@@ -103,8 +103,8 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
         [
             0,
             300,
-            section.sectionDurationFrames - 300,
-            section.sectionDurationFrames,
+            section.durationFrames - 300,
+            section.durationFrames,
         ],
         [0, 1, 1, 0],
         {
@@ -156,7 +156,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
                     </Sequence>
                     <Sequence
                         from={
-                            section.sectionDurationFrames -
+                            section.durationFrames -
                             (section.endVoice?.durationFrames || 0)
                         }
                         durationInFrames={section.endVoice?.durationFrames}
@@ -170,7 +170,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
                         <>
                             <Sequence
                                 from={
-                                    section.sectionDurationFrames -
+                                    section.durationFrames -
                                     (section.endVoice?.durationFrames || 0)
                                 }
                                 durationInFrames={section.endVoice?.durationFrames}
@@ -182,7 +182,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
                         <>
                             <Sequence
                                 from={
-                                    section.sectionDurationFrames -
+                                    section.durationFrames -
                                     (section.startVoice?.durationFrames || 0)
                                 }
                                 durationInFrames={section.startVoice?.durationFrames}

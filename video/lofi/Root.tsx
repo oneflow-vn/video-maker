@@ -23,6 +23,7 @@ import './style.css';
 export const RemotionRoot: React.FC = () => {
     const dProps: LofiContentSchema = {
         content: {
+            duration: 0,
             totalHours: 0,
             backgroundPath: 'background.png',
             sections: [],
@@ -45,11 +46,9 @@ export const RemotionRoot: React.FC = () => {
                 height={1080}
                 schema={lofiSchema}
                 defaultProps={dProps as any}
-                calculateMetadata={async ({ props, defaultProps, abortSignal }) => {
-                    console.log('props: ', props);
+                calculateMetadata={async ({ props }) => {
                     const fps = 30;
-                    const minutes = getMinutesWithHours(props.content.totalHours);
-                    const totalFrames = minutesToFrames(minutes, fps) + 30 + 120;
+                    const totalFrames = Math.round(props.content.duration * fps);
                     return {
                         durationInFrames: totalFrames,
                         props,

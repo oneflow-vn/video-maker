@@ -26,7 +26,10 @@ export default class PrepareResourceService {
 
             const targetPath = await getPath('tmp');
 
-            log(`Copying files from ${this.directory} to ${targetPath}`);
+            log(
+                `Copying files from ${this.directory} to ${targetPath}`,
+                'PrepareResourceService',
+            );
 
             this.copyFileRecursive(this.directory, targetPath);
 

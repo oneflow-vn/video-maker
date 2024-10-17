@@ -1,0 +1,25 @@
+{
+    "title": "Story Lofi",
+    "totalHours": 0.5147138888888889,
+    "fps": 30,
+    "backgroundPath": "background.png",
+    "sections": [
+        {
+            "subtitle": "Chapter 1",
+            "bgm": {
+                "path": "1.mp3",
+                "duration": 1852.97,
+                "durationFrames": 55589
+            },
+            "type": "chapter",
+            "index": 0,
+            "duration": 1852.97,
+            "durationFrames": 55589
+        }
+    ],
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "duration": 1852.97,
+    "durationFrames": 55589
+}

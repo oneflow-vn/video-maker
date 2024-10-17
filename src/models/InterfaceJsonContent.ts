@@ -2,11 +2,13 @@ import Segment from './Segments';
 
 export type ContentSectionVoice = {
     path: string;
-    durationFrames: number;
+    duration?: number;
+    durationFrames?: number;
 };
 
 export type ContentSection = {
-    sectionDurationFrames: number;
+    duration?: number;
+    durationFrames?: number;
     bgm: ContentSectionVoice;
     type: string;
     startVoice: ContentSectionVoice;
@@ -16,6 +18,8 @@ export type ContentSection = {
 
 export default interface InterfaceJsonContent {
     timestamp: number;
+    durationFrames?: number;
+    totalHours?: number;
     width: number;
     height: number;
     intro?: { text: string; url?: string; shortLink?: string };

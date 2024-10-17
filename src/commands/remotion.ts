@@ -2,7 +2,11 @@ import { Command, Flags } from '@oclif/core';
 import shell from 'shelljs';
 import fs from 'fs';
 
-import { GetContentService, PrepareResourceService } from '../services';
+import {
+    GetContentService,
+    PrepareResourceService,
+    SyntheticService,
+} from '../services';
 
 export default class Remotion extends Command {
     static description = 'Remotion framework related commands';
@@ -53,6 +57,8 @@ export default class Remotion extends Command {
         const durationInFrames = content.renderData
             ? Math.round(this.getFullDuration(content.renderData) * content.fps)
             : 1;
+
+        await new SyntheticService(content, directory).execute();
 
         await new PrepareResourceService(content, directory).execute();
 

@@ -3,7 +3,7 @@
     "backgroundPath": "background.png",
     "sections": [
         {
-            "sectionDurationFrames": 45000,
+            "durationFrames": 45000,
             "bgm": {
                 "path": "bgm/0_25_bgm.mp3",
                 "durationFrames": 45000
@@ -20,7 +20,7 @@
             "index": 0
         },
         {
-            "sectionDurationFrames": 9000,
+            "durationFrames": 9000,
             "bgm": {
                 "path": "bgm/1_5_bgm.mp3",
                 "durationFrames": 9000
@@ -33,7 +33,7 @@
             "index": 1
         },
         {
-            "sectionDurationFrames": 45000,
+            "durationFrames": 45000,
             "bgm": {
                 "path": "bgm/2_25_bgm.mp3",
                 "durationFrames": 45000
@@ -46,7 +46,7 @@
             "index": 2
         },
         {
-            "sectionDurationFrames": 9000,
+            "durationFrames": 9000,
             "bgm": {
                 "path": "bgm/3_5_bgm.mp3",
                 "durationFrames": 9000

@@ -6,11 +6,12 @@ export const lofiAudioDataSchema = z.object({
 });
 
 export const lofiSectionSchema = z.object({
-    type: z.enum(['Pomodoro', 'Break']),
+    subtitle: z.string(),
+    type: z.enum(['Pomodoro', 'Break', 'chapter']),
     bgm: lofiAudioDataSchema,
     startVoice: lofiAudioDataSchema.nullish(),
     endVoice: lofiAudioDataSchema.nullish(),
-    sectionDurationFrames: z.number(),
+    durationFrames: z.number(),
     index: z.number().nullish(),
 });
 
@@ -18,6 +19,7 @@ export const lofiSchema = z.object({
     totalHours: z.number(),
     sections: z.array(lofiSectionSchema),
     backgroundPath: z.string(),
+    duration: z.number(),
 });
 
 export const lofiContentSchema = z.object({
