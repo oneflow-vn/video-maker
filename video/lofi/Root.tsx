@@ -2,27 +2,28 @@ import { Composition } from 'remotion';
 import { LofiComposition } from './Composition';
 import { getMinutesWithHours, minutesToFrames } from './Utilities/Tools';
 import { LofiContentSchema, lofiSchema } from './Schema/props.schema';
+import { loadFont } from "@remotion/fonts";
+import { staticFile } from "remotion";
 
 import './style.css';
 
-// const calculateMetadata: CalculateMetadataFunction<lofiSchema> = ({
-//   props,
-//   defaultProps,
-//   abortSignal,
-// }) => {
-//   return {
-//     // Change the metadata
-//     durationInFrames: props.duration,
-//     // or transform some props
-//     props,
-//     // or add per-composition default codec
-//     defaultCodec: "h264",
-//   };
-// };
+// @ts-ignore
+import fontVarelmo from '../../assets/Fontvn-DVN-Varelmo.ttf';
+
+const fontFamily = "Varelmo";
+ 
+loadFont({
+  family: fontFamily,
+  url: fontVarelmo,
+  weight: "500",
+}).then(() => {
+  console.log("Font loaded!");
+});
 
 export const RemotionRoot: React.FC = () => {
     const dProps: LofiContentSchema = {
         content: {
+            backgrounds: [],
             duration: 0,
             totalHours: 0,
             backgroundPath: 'background.png',

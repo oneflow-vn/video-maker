@@ -29,6 +29,9 @@ importers:
       '@remotion/eslint-config':
         specifier: 4.0.221
         version: 4.0.221(eslint@8.56.0)(typescript@5.3.3)
+      '@remotion/fonts':
+        specifier: ^4.0.221
+        version: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@remotion/gif':
         specifier: 4.0.221
         version: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1674,6 +1677,9 @@ packages:
     resolution: {integrity: sha512-IbpLzKwbA4Kuqu3/9Bc/TktvzcIEJwRj+WvPwD90u8nMgZMsPqWjSiISGqgFdUfRdd4Vbf2h27ObW9V50lHw6Q==}
     peerDependencies:
       eslint: '>=7.0.0'
+
+  '@remotion/fonts@4.0.221':
+    resolution: {integrity: sha512-V+KEykHNujhbpKvZDxrY/83nNhjt8ISTPNUiDO11CjbBAN2eCO1xWz8o8oU/hiknDvd2wbFxN3+V3viqaCOv8A==}
 
   '@remotion/gif@4.0.221':
     resolution: {integrity: sha512-ou3cWr2W9eePS/2ttDI+X3aQPc17mJ1qinJu04+Y4HyubaezchTsG2yD8mDWKP4uVBC7pVseMD0Fc/EC6yJfbw==}
@@ -8074,6 +8080,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  '@remotion/fonts@4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      remotion: 4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+      - react-dom
 
   '@remotion/gif@4.0.221(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:

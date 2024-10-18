@@ -1,7 +1,15 @@
 import { z } from 'zod';
+import { Background } from '../Components/Background';
+import { title } from 'process';
 
 export const lofiAudioDataSchema = z.object({
     path: z.string(),
+    durationFrames: z.number(),
+});
+
+export const lofiImageDataSchema = z.object({
+    path: z.string(),
+    duration: z.number(),
     durationFrames: z.number(),
 });
 
@@ -13,13 +21,17 @@ export const lofiSectionSchema = z.object({
     endVoice: lofiAudioDataSchema.nullish(),
     durationFrames: z.number(),
     index: z.number().nullish(),
+    background: lofiImageDataSchema.nullish(),
 });
 
 export const lofiSchema = z.object({
+    title: z.string(),
+    subtitle: z.string(),
     totalHours: z.number(),
     sections: z.array(lofiSectionSchema),
     backgroundPath: z.string(),
     duration: z.number(),
+    backgrounds: z.array(lofiImageDataSchema),
 });
 
 export const lofiContentSchema = z.object({

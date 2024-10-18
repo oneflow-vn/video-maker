@@ -6,6 +6,12 @@ export type ContentSectionVoice = {
     durationFrames?: number;
 };
 
+export type ContentImage = {
+    path: string;
+    duration: number;
+    durationFrames: number;
+};
+
 export type ContentSection = {
     duration?: number;
     durationFrames?: number;
@@ -14,6 +20,7 @@ export type ContentSection = {
     startVoice: ContentSectionVoice;
     endVoice: ContentSectionVoice;
     index: number;
+    background: ContentImage;
 };
 
 export default interface InterfaceJsonContent {
@@ -33,6 +40,7 @@ export default interface InterfaceJsonContent {
     thumbnail_image_src?: string;
     duration?: number;
     date: string;
+    backgrounds?: ContentImage[];
     renderData?: {
         text: string;
         duration: number;

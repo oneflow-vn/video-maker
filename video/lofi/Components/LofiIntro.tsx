@@ -1,7 +1,7 @@
 import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Courgette';
-const { fontFamily } = loadFont(); // "Titan One"
+
+const fontFamily = 'Varelmo';
 
 const cursor: React.CSSProperties = {
     height: 120,
@@ -14,7 +14,7 @@ const cursor: React.CSSProperties = {
 
 export const LofiIntro = () => {
     const frame = useCurrentFrame();
-    const text = 'LofiFocus Timer';
+    const text = 'Truyện Khoa Viễn';
     // A new character every 3 frames
     const charsShown = Math.floor(frame / 3);
     const textToShow = text.slice(0, charsShown);

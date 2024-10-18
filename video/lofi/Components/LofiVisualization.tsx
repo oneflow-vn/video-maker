@@ -106,7 +106,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
             section.durationFrames - 300,
             section.durationFrames,
         ],
-        [0, 1, 1, 0],
+        [1, 1, 1, 1],
         {
             extrapolateLeft: 'clamp',
         },

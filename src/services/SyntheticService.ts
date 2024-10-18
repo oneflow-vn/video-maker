@@ -115,6 +115,32 @@ class SyntheticService {
         }
     }
 
+    private updateBackground(section: ContentSection, index: number): void {
+        if (!this.content.backgrounds) {
+            this.content.backgrounds = [];
+        }
+
+        if (!this.content.backgrounds[index]) {
+            this.content.backgrounds[index] = {};
+        }
+
+        const background = section.background;
+
+        if (!background) {
+            return;
+        }
+
+        if (!background.path) {
+            return;
+        }
+
+        this.content.backgrounds[index] = {
+            ...this.content.backgrounds[index],
+            ...background,
+        };
+
+    }
+
     private addSectionDuration(
         section: ContentSection,
         audio: ContentSectionVoice,

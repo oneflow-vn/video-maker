@@ -48,6 +48,7 @@
         "@remotion/bundler": "4.0.221",
         "@remotion/cli": "4.0.221",
         "@remotion/eslint-config": "4.0.221",
+        "@remotion/fonts": "^4.0.221",
         "@remotion/gif": "4.0.221",
         "@remotion/google-fonts": "^4.0.221",
         "@remotion/media-utils": "4.0.221",

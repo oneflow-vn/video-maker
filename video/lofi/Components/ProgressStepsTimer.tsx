@@ -11,6 +11,7 @@ export const progressStepsTimerInputSchema = z.object({
     processBarColour: z.string().nullish(),
     section: lofiSectionSchema.nullish(),
     subtitle: z.string().nullish(),
+    durationInFrames: z.number().default(0),
 });
 
 export type ProgressStepsTimerInputSchema = z.infer<
@@ -24,10 +25,10 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
     processBarColour = 'bg-slate-400',
     section = null,
     subtitle = '',
+    durationInFrames = 0,
 }) => {
     const frame = useCurrentFrame();
 
-    const durationInFrames = section?.durationFrames ?? 0;
     const progress = interpolate(frame, [0, durationInFrames], [0, 100], {
         extrapolateLeft: 'clamp',
         extrapolateRight: 'clamp',

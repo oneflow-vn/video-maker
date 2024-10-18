@@ -16,6 +16,7 @@ import GenerateImageService from './GenerateImageService';
 import TextToSpeechVettelService from './TextToSpeechViettelService';
 import PrepareResourceService from './PrepareResourceService';
 import SyntheticService from './SyntheticService';
+import StoryComposerService from './StoryComposerService';
 
 export {
     GetContentService,
@@ -36,4 +37,5 @@ export {
     TextToSpeechVettelService,
     PrepareResourceService,
     SyntheticService,
+    StoryComposerService
 };
