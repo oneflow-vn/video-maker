@@ -44,15 +44,10 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
         },
     );
 
-    const opacity = interpolate(
-        frame,
-        [0, 15, durationInFrames - 15, durationInFrames],
-        [0, 0.8, 0.8, 0],
-        {
-            extrapolateLeft: 'clamp',
-            extrapolateRight: 'clamp',
-        },
-    );
+    const opacity = interpolate(frame, [140, 170], [0, 1], {
+        extrapolateLeft: 'clamp',
+        extrapolateRight: 'clamp',
+    });
 
     const countUpNumber = secondsToTimeFormat(Math.floor(countUp));
     let view = <></>;
@@ -88,5 +83,11 @@ function secondsToTimeFormat(seconds: number): string {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    
+    const formattedMinutes = `${minutes < 10 ? '0' : ''}${minutes}`;
+    const formattedSeconds = `${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    
+    return hours > 0 
+        ? `${hours}:${formattedMinutes}:${formattedSeconds}`
+        : `${minutes}:${formattedSeconds}`;
 }

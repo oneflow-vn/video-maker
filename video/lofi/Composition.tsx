@@ -8,14 +8,22 @@ import { LofiContentSchema } from './Schema/props.schema';
 import { ProgressStepsTimer } from './Components/ProgressStepsTimer';
 import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
-import { Title } from './Components/LofiTitle'
+import { Title } from './Components/LofiTitle';
 import { Subtitle } from './Components/LofiSubtitle';
+import { LofiMain } from './Components/LofiMain';
 
 export const LofiComposition: React.FC<LofiContentSchema> = ({
     content: LofiSchema,
 }) => {
-    const { totalHours, sections, backgroundPath, duration, backgrounds, title, subtitle } =
-        LofiSchema;
+    const {
+        totalHours,
+        sections,
+        backgroundPath,
+        duration,
+        backgrounds,
+        title,
+        subtitle,
+    } = LofiSchema;
     const durationInFrames = duration * 30;
     const frame = useCurrentFrame();
     const introFrames = 120;
@@ -43,13 +51,10 @@ export const LofiComposition: React.FC<LofiContentSchema> = ({
             </Series>
 
             <AbsoluteFill>
-                <div style={{ top: '15%', left: '10%', position: 'absolute' }}>
-                    <Title titleText={title} titleColor={'blue'} />
-                    <Subtitle text={subtitle} color={'red'} />
-                </div>
+                <LofiMain title={title} subtitle={subtitle} />
             </AbsoluteFill>
 
-            <div className="p-8 w-1/4 fixed bottom-0 right-0">
+            <div className="p-8 w-1/4 fixed bottom-10 right-0">
                 <ProgressStepsTimer
                     absoluteFrame={frame}
                     durationInFrames={durationInFrames}

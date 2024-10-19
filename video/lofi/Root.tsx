@@ -1,4 +1,4 @@
-import { Composition } from 'remotion';
+import { Composition, useVideoConfig } from 'remotion';
 import { LofiComposition } from './Composition';
 import { getMinutesWithHours, minutesToFrames } from './Utilities/Tools';
 import { LofiContentSchema, lofiSchema } from './Schema/props.schema';
@@ -9,6 +9,7 @@ import './style.css';
 
 // @ts-ignore
 import fontVarelmo from '../../assets/Fontvn-DVN-Varelmo.ttf';
+import { Thumbnail } from './Thumbnail';
 
 const fontFamily = "Varelmo";
  
@@ -28,14 +29,13 @@ export const RemotionRoot: React.FC = () => {
             totalHours: 0,
             backgroundPath: 'background.png',
             sections: [],
+            title: '',
+            subtitle: ''
         },
         destination: 'youtube',
         durationInFrames: 0,
     };
-    const fps = 30;
-    // const totalFrames = 25320;
-    // const minutes = getMinutesWithHours(dProps.totalHours);
-    // const totalFrames = minutesToFrames(minutes, fps) + 30 + 120;
+    const fps = 30;    
     return (
         <>
             <Composition
@@ -55,6 +55,15 @@ export const RemotionRoot: React.FC = () => {
                         props,
                     };
                 }}
+            />
+            <Composition
+                id="Thumbnail"
+                component={Thumbnail}
+                durationInFrames={1}
+                fps={fps}
+                width={1920}
+                height={1080}
+                defaultProps={dProps as any}
             />
         </>
     );

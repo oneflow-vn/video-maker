@@ -17,6 +17,7 @@ import TextToSpeechVettelService from './TextToSpeechViettelService';
 import PrepareResourceService from './PrepareResourceService';
 import SyntheticService from './SyntheticService';
 import StoryComposerService from './StoryComposerService';
+import InitContentService from './InitContentService';
 
 export {
     GetContentService,
@@ -37,5 +38,6 @@ export {
     TextToSpeechVettelService,
     PrepareResourceService,
     SyntheticService,
-    StoryComposerService
+    StoryComposerService,
+    InitContentService
 };

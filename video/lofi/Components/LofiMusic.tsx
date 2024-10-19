@@ -15,7 +15,6 @@ export const LofiMusic: React.FC = () => {
     const frame = useCurrentFrame();
     const { width, height, fps } = useVideoConfig();
     const audioData = useAudioData(music);
-    console.log('frame: ', frame);
 
     if (!audioData) {
         return null;

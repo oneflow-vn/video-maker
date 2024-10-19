@@ -26,6 +26,7 @@ export type ContentSection = {
 export default interface InterfaceJsonContent {
     timestamp: number;
     durationFrames?: number;
+    thumbnail?: string;
     totalHours?: number;
     width: number;
     height: number;

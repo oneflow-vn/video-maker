@@ -17,6 +17,11 @@ export default class GetContentService {
         file: string;
         directory: string;
     }> {
+
+        if (filename && !filename.endsWith('.json')) {
+           filename = filename + '/props.json';
+        }
+
         const contentPath = await getPath('content');
         const cwdPath = process.cwd();
 

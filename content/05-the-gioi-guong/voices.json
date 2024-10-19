@@ -1,0 +1,62 @@
+[
+    {
+      "key": "speech_synthesis-1729271999065.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729271999065.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272048822.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272048822.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272117648.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272117648.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272165653.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272165653.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272206872.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272206872.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272262953.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272262953.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272332774.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272332774.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272394531.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272394531.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272429713.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272429713.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272485119.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272485119.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272541548.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272541548.mp3&version_id=null"
+    },
+    {
+      "key": "speech_synthesis-1729272556213.mp3",
+      "bucket": "stories",
+      "url": "https://s3.oneflow.vn/api/v1/buckets/stories/objects/download?prefix=speech_synthesis-1729272556213.mp3&version_id=null"
+    }
+  ]

@@ -1,6 +1,7 @@
 import path from 'path';
 import { log } from '../utils/log';
 import InterfaceJsonContent, {
+    ContentImage,
     ContentSection,
     ContentSectionVoice,
 } from '../models/InterfaceJsonContent';
@@ -35,14 +36,62 @@ class SyntheticService {
         if (!this.content.sections) {
             return;
         }
-        const promises = this.content.sections.map(async section => {
-            return this.synthesizeSection(section);
+        const promises = this.content.sections.map(async (section, index) => {
+            return this.synthesizeSection(section, index);
         });
 
         await Promise.all(promises);
     }
 
-    private async synthesizeSection(section: ContentSection): Promise<void> {
+
+    private updateSection(section: any, index: number): void {
+        if (!this.content.sections) {
+            this.content.sections = [];
+        }
+
+        if (!this.content.sections[index]) {
+            this.content.sections[index] = {} as ContentSection;
+        }
+
+        this.content.sections[index] = {
+            ...this.content.sections[index],
+            ...section,
+        };
+    }
+
+    private updateBackground(section: ContentSection, index: number): void {
+
+        if (!section.background) {
+            return;
+        }
+        
+        if (!this.content.backgrounds) {
+            this.content.backgrounds = [];
+        }
+
+        if (!this.content.backgrounds[index]) {
+            this.content.backgrounds[index] = {} as ContentImage;
+        }
+
+        const background = section.background;
+
+        if (!background) {
+            return;
+        }
+
+        if (!background.path) {
+            return;
+        }
+
+
+        this.content.backgrounds[index] = {
+            ...this.content.backgrounds[index],
+            ...background,
+            duration: section.duration || 0,
+        };
+    }
+
+    private async synthesizeSection(section: ContentSection, index: number): Promise<void> {
         section.duration = 0;
         section.durationFrames = 0;
 
@@ -65,6 +114,8 @@ class SyntheticService {
         }
 
         this.addTotalDuration(section);
+
+        this.updateBackground(section, index);
     }
 
     private addTotalDuration(section: ContentSection): void {
@@ -113,32 +164,6 @@ class SyntheticService {
         if (this.content.fps) {
             audio.durationFrames = Math.round(duration * this.content.fps);
         }
-    }
-
-    private updateBackground(section: ContentSection, index: number): void {
-        if (!this.content.backgrounds) {
-            this.content.backgrounds = [];
-        }
-
-        if (!this.content.backgrounds[index]) {
-            this.content.backgrounds[index] = {};
-        }
-
-        const background = section.background;
-
-        if (!background) {
-            return;
-        }
-
-        if (!background.path) {
-            return;
-        }
-
-        this.content.backgrounds[index] = {
-            ...this.content.backgrounds[index],
-            ...background,
-        };
-
     }
 
     private addSectionDuration(

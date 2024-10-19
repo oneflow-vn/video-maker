@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import { getPath } from '../config/defaultPaths';
 
-import { ExportDataService, GetContentService, StoryComposerService } from '../services'
+import { ExportDataService, GetContentService, InitContentService, StoryComposerService } from '../services'
 
 export default class Compose extends Command {
     static description = 'Compose content';
@@ -16,6 +16,10 @@ export default class Compose extends Command {
         dir: Flags.string({
             char: 'd',
             description: 'Get content directory path',
+        }),
+        url: Flags.string({
+            char: 'u',
+            description: 'Get content from url',
         }),
     };
 
@@ -49,13 +53,18 @@ export default class Compose extends Command {
         const directory = path.join(process.cwd(), flags.dir || 'content');
         const filePath = `${directory}/${filename}`;
 
+        if (!fs.existsSync(filePath)) {
+            // init content
+            await new InitContentService().execute(filename, directory);
+        }
+
         let { content, file } = await new GetContentService().execute(filePath);
 
         if (!fs.existsSync(directory)) {
             fs.mkdirSync(directory);
         }
 
-        content = await new StoryComposerService(content, directory).execute();
+        content = await new StoryComposerService(content, directory).execute({ url: flags.url });
 
         await new ExportDataService(content).execute(file);
     }
