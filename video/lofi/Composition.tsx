@@ -1,4 +1,4 @@
-import { AbsoluteFill, staticFile, Audio, Series } from 'remotion';
+import { AbsoluteFill, staticFile, Audio, Series, getInputProps } from 'remotion';
 import { useCurrentFrame } from 'remotion';
 // import { LofiLogo } from './Components/LofiLogo';
 import { Background } from './Components/Background';
@@ -12,18 +12,22 @@ import { Title } from './Components/LofiTitle';
 import { Subtitle } from './Components/LofiSubtitle';
 import { LofiMain } from './Components/LofiMain';
 
-export const LofiComposition: React.FC<LofiContentSchema> = ({
-    content: LofiSchema,
-}) => {
+const { withoutIntro } = getInputProps();
+
+const { 
+    content, 
+ } = getInputProps() as LofiContentSchema;
+
+export const LofiComposition: React.FC<LofiContentSchema> = () => {
     const {
-        totalHours,
         sections,
         backgroundPath,
         duration,
         backgrounds,
         title,
         subtitle,
-    } = LofiSchema;
+    } = content;
+
     const durationInFrames = duration * 30;
     const frame = useCurrentFrame();
     const introFrames = 120;

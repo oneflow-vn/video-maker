@@ -34,7 +34,7 @@ export default interface InterfaceJsonContent {
     end?: { text: string; url?: string; shortLink?: string };
     news: { text: string; url?: string; shortLink?: string }[];
     chapters: { text: string; image?: string }[];
-    sections?: ContentSection[];
+    sections: ContentSection[];
     fps: number;
     title: string;
     thumbnail_text?: string;

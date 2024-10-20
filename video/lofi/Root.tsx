@@ -39,7 +39,7 @@ export const RemotionRoot: React.FC = () => {
     return (
         <>
             <Composition
-                id="MyComp"
+                id="Main"
                 component={LofiComposition}
                 durationInFrames={0}
                 fps={fps}

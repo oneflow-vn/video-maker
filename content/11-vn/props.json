@@ -1,0 +1,67 @@
+{
+    "title": "",
+    "subtitle": "",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.png",
+    "duration": 2367.008,
+    "durationFrames": 71010,
+    "totalHours": 0.6575022222222222,
+    "sections": [
+        {
+            "background": {
+                "path": "scene-0.png"
+            },
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3",
+                "duration": 884.193,
+                "durationFrames": 26526
+            },
+            "duration": 884.193,
+            "durationFrames": 26526
+        },
+        {
+            "background": {
+                "path": "scene-1.png"
+            },
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3",
+                "duration": 622.916,
+                "durationFrames": 18687
+            },
+            "duration": 622.916,
+            "durationFrames": 18687
+        },
+        {
+            "background": {
+                "path": "scene-2.png"
+            },
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3",
+                "duration": 859.899,
+                "durationFrames": 25797
+            },
+            "duration": 859.899,
+            "durationFrames": 25797
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.png",
+            "duration": 884.193
+        },
+        {
+            "path": "scene-1.png",
+            "duration": 622.916
+        },
+        {
+            "path": "scene-2.png",
+            "duration": 859.899
+        }
+    ]
+}

@@ -16,6 +16,10 @@ class RenderVideoService {
 
     constructor(content: InterfaceJsonContent) {
         this.content = content;
+
+        if (!this.content.renderData || this.content.renderData.length === 0) {
+            this.transitionDurationInSeconds = 0;
+        }
     }
 
     public async execute(
@@ -82,7 +86,7 @@ class RenderVideoService {
             process.exit(1);
         }
 
-        return this.content.renderData.reduce(
+        return this.content.sections.reduce(
             (accumulator, currentValue, index) => {
                 if (
                     !this.content.renderData ||
@@ -90,12 +94,12 @@ class RenderVideoService {
                 ) {
                     return (
                         accumulator +
-                        currentValue.duration +
+                        (currentValue.duration || 0) +
                         this.transitionDurationInSeconds
                     );
                 }
 
-                return accumulator + currentValue.duration;
+                return accumulator + (currentValue.duration || 0);
             },
             0,
         );

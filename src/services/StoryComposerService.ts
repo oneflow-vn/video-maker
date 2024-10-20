@@ -12,14 +12,15 @@ class StoryComposerService {
     private rawContent: any;
     voicesJson: any;
     scenesJson: any;
+    loadContent: boolean | undefined;
 
     constructor(content: any, directory: string) {
         this.content = content;
         this.directory = directory;
     }
 
-    public async execute({ url }: { url?: string } = {}): Promise<any> {
-
+    public async execute({ url, loadContent }: { url?: string, loadContent?: boolean } = {}): Promise<any> {
+        this.loadContent = loadContent;
         if (url) {
             await this.runE2EStory({url});
         }
@@ -47,6 +48,11 @@ class StoryComposerService {
 
         if (this.scenesJson) {
             await this.composeScenes(this.scenesJson);
+        }
+
+        if (this.rawContent && this.rawContent.preface) {
+            this.content.title = this.rawContent.preface?.title || '';
+            this.content.subtitle = `Tác giả: ${this.rawContent.preface?.author || ''}`;
         }
 
         try {
@@ -134,7 +140,10 @@ class StoryComposerService {
             return;
         }
         const filename = `voice-${index}.mp3`;
-        await this.downloadFile(voice.url, filename);
+
+        if (this.loadContent) {
+            await this.downloadFile(voice.url, filename);
+        }
 
         this.updateSection(
             {
@@ -180,8 +189,11 @@ class StoryComposerService {
                 return;
             }
             const filename = `scene-${index}.png`;
-            await this.downloadFile(scene.url, filename);
-    
+
+            if (this.loadContent) {
+                await this.downloadFile(scene.url, filename);
+            }
+
             this.updateSection(
                 {
                     background: {

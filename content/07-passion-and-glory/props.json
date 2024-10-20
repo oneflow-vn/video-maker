@@ -1,0 +1,152 @@
+{
+    "title": "Vinh Quang và Giấc Mơ",
+    "subtitle": "Tác giả: Lưu Tư Hinh",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.png",
+    "duration": 4804.728,
+    "durationFrames": 144142,
+    "totalHours": 1.3346466666666668,
+    "sections": [
+        {
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3",
+                "duration": 571.063,
+                "durationFrames": 17132
+            },
+            "background": {
+                "path": "scene-0.png"
+            },
+            "duration": 571.063,
+            "durationFrames": 17132
+        },
+        {
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3",
+                "duration": 492.748,
+                "durationFrames": 14782
+            },
+            "background": {
+                "path": "scene-1.png"
+            },
+            "duration": 492.748,
+            "durationFrames": 14782
+        },
+        {
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3",
+                "duration": 611.37,
+                "durationFrames": 18341
+            },
+            "background": {
+                "path": "scene-2.png"
+            },
+            "duration": 611.37,
+            "durationFrames": 18341
+        },
+        {
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3",
+                "duration": 789.76,
+                "durationFrames": 23693
+            },
+            "background": {
+                "path": "scene-3.png"
+            },
+            "duration": 789.76,
+            "durationFrames": 23693
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3",
+                "duration": 463.856,
+                "durationFrames": 13916
+            },
+            "background": {
+                "path": "scene-4.png"
+            },
+            "duration": 463.856,
+            "durationFrames": 13916
+        },
+        {
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3",
+                "duration": 774.949,
+                "durationFrames": 23248
+            },
+            "background": {
+                "path": "scene-5.png"
+            },
+            "duration": 774.949,
+            "durationFrames": 23248
+        },
+        {
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3",
+                "duration": 755.931,
+                "durationFrames": 22678
+            },
+            "background": {
+                "path": "scene-6.png"
+            },
+            "duration": 755.931,
+            "durationFrames": 22678
+        },
+        {
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3",
+                "duration": 345.051,
+                "durationFrames": 10352
+            },
+            "background": {
+                "path": "scene-7.png"
+            },
+            "duration": 345.051,
+            "durationFrames": 10352
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.png",
+            "duration": 571.063
+        },
+        {
+            "path": "scene-1.png",
+            "duration": 492.748
+        },
+        {
+            "path": "scene-2.png",
+            "duration": 611.37
+        },
+        {
+            "path": "scene-3.png",
+            "duration": 789.76
+        },
+        {
+            "path": "scene-4.png",
+            "duration": 463.856
+        },
+        {
+            "path": "scene-5.png",
+            "duration": 774.949
+        },
+        {
+            "path": "scene-6.png",
+            "duration": 755.931
+        },
+        {
+            "path": "scene-7.png",
+            "duration": 345.051
+        }
+    ]
+}

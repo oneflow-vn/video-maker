@@ -1,0 +1,169 @@
+{
+    "title": "Địa Cầu Lưu Lạc",
+    "subtitle": "Tác giả: Lưu Từ Hân",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.png",
+    "duration": 4661.343000000001,
+    "durationFrames": 139840,
+    "totalHours": 1.2948175000000002,
+    "sections": [
+        {
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3",
+                "duration": 188.97,
+                "durationFrames": 5669
+            },
+            "background": {
+                "path": "scene-0.png"
+            },
+            "duration": 188.97,
+            "durationFrames": 5669
+        },
+        {
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3",
+                "duration": 673.907,
+                "durationFrames": 20217
+            },
+            "background": {
+                "path": "scene-1.png"
+            },
+            "duration": 673.907,
+            "durationFrames": 20217
+        },
+        {
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3",
+                "duration": 605.153,
+                "durationFrames": 18155
+            },
+            "background": {
+                "path": "scene-2.png"
+            },
+            "duration": 605.153,
+            "durationFrames": 18155
+        },
+        {
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3",
+                "duration": 600.503,
+                "durationFrames": 18015
+            },
+            "background": {
+                "path": "scene-3.png"
+            },
+            "duration": 600.503,
+            "durationFrames": 18015
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3",
+                "duration": 436.454,
+                "durationFrames": 13094
+            },
+            "background": {
+                "path": "scene-4.png"
+            },
+            "duration": 436.454,
+            "durationFrames": 13094
+        },
+        {
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3",
+                "duration": 803.709,
+                "durationFrames": 24111
+            },
+            "background": {
+                "path": "scene-5.png"
+            },
+            "duration": 803.709,
+            "durationFrames": 24111
+        },
+        {
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3",
+                "duration": 753.476,
+                "durationFrames": 22604
+            },
+            "background": {
+                "path": "scene-6.png"
+            },
+            "duration": 753.476,
+            "durationFrames": 22604
+        },
+        {
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3",
+                "duration": 289.28,
+                "durationFrames": 8678
+            },
+            "background": {
+                "path": "scene-7.png"
+            },
+            "duration": 289.28,
+            "durationFrames": 8678
+        },
+        {
+            "voice": "voice-8.mp3",
+            "bgm": {
+                "path": "voice-8.mp3",
+                "duration": 309.891,
+                "durationFrames": 9297
+            },
+            "background": {
+                "path": "scene-8.png"
+            },
+            "duration": 309.891,
+            "durationFrames": 9297
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.png",
+            "duration": 188.97
+        },
+        {
+            "path": "scene-1.png",
+            "duration": 673.907
+        },
+        {
+            "path": "scene-2.png",
+            "duration": 605.153
+        },
+        {
+            "path": "scene-3.png",
+            "duration": 600.503
+        },
+        {
+            "path": "scene-4.png",
+            "duration": 436.454
+        },
+        {
+            "path": "scene-5.png",
+            "duration": 803.709
+        },
+        {
+            "path": "scene-6.png",
+            "duration": 753.476
+        },
+        {
+            "path": "scene-7.png",
+            "duration": 289.28
+        },
+        {
+            "path": "scene-8.png",
+            "duration": 309.891
+        }
+    ]
+}

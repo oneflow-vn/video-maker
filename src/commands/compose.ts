@@ -21,6 +21,12 @@ export default class Compose extends Command {
             char: 'u',
             description: 'Get content from url',
         }),
+        loadContent: Flags.boolean({
+            char: 'l',
+            description: 'Load content remotely',
+            default: true,
+            allowNo: true,            
+        }),
     };
 
     static args = [
@@ -64,7 +70,7 @@ export default class Compose extends Command {
             fs.mkdirSync(directory);
         }
 
-        content = await new StoryComposerService(content, directory).execute({ url: flags.url });
+        content = await new StoryComposerService(content, directory).execute({ url: flags.url, loadContent: flags.loadContent });
 
         await new ExportDataService(content).execute(file);
     }

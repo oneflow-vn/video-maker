@@ -27,13 +27,15 @@ export default class InitContentService {
         const relativePath = path.resolve(cwdPath, filename);
         const contentFilePath = relativePath;
 
+        const contentDir = path.dirname(contentFilePath);
+
         log(`Init content from ${contentFilePath}`, 'GetContentService');
 
         try {
 
             const content = {
-                "title": "Thầy giáo làng",
-                "subtitle": "tác giả: Lưu Từ Hân",
+                "title": "",
+                "subtitle": "",
                 "fps": 30,
                 "width": 1920,
                 "height": 1080,
@@ -43,6 +45,10 @@ export default class InitContentService {
                 "durationFrames": 120073,
                 "totalHours": 1.111778888888889
             } as unknown as InterfaceJsonContent;
+
+            if (!fs.existsSync(contentDir)) {
+                fs.mkdirSync(contentDir, { recursive: true });
+            }
 
             fs.writeFileSync(contentFilePath, JSON.stringify(content, null, 4));
 

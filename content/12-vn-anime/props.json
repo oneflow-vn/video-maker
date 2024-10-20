@@ -1,0 +1,186 @@
+{
+    "title": "",
+    "subtitle": "",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.png",
+    "duration": 2508.59,
+    "durationFrames": 75257,
+    "totalHours": 0.6968305555555556,
+    "sections": [
+        {
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3",
+                "duration": 260.415,
+                "durationFrames": 7812
+            },
+            "background": {
+                "path": "scene-0.png"
+            },
+            "duration": 260.415,
+            "durationFrames": 7812
+        },
+        {
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3",
+                "duration": 260.624,
+                "durationFrames": 7819
+            },
+            "background": {
+                "path": "scene-1.png"
+            },
+            "duration": 260.624,
+            "durationFrames": 7819
+        },
+        {
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3",
+                "duration": 278.047,
+                "durationFrames": 8341
+            },
+            "background": {
+                "path": "scene-2.png"
+            },
+            "duration": 278.047,
+            "durationFrames": 8341
+        },
+        {
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3",
+                "duration": 249.626,
+                "durationFrames": 7489
+            },
+            "background": {
+                "path": "scene-3.png"
+            },
+            "duration": 249.626,
+            "durationFrames": 7489
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3",
+                "duration": 254.459,
+                "durationFrames": 7634
+            },
+            "background": {
+                "path": "scene-4.png"
+            },
+            "duration": 254.459,
+            "durationFrames": 7634
+        },
+        {
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3",
+                "duration": 241.946,
+                "durationFrames": 7258
+            },
+            "background": {
+                "path": "scene-5.png"
+            },
+            "duration": 241.946,
+            "durationFrames": 7258
+        },
+        {
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3",
+                "duration": 246.256,
+                "durationFrames": 7388
+            },
+            "background": {
+                "path": "scene-6.png"
+            },
+            "duration": 246.256,
+            "durationFrames": 7388
+        },
+        {
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3",
+                "duration": 237.113,
+                "durationFrames": 7113
+            },
+            "background": {
+                "path": "scene-7.png"
+            },
+            "duration": 237.113,
+            "durationFrames": 7113
+        },
+        {
+            "voice": "voice-8.mp3",
+            "bgm": {
+                "path": "voice-8.mp3",
+                "duration": 237.322,
+                "durationFrames": 7120
+            },
+            "background": {
+                "path": "scene-8.png"
+            },
+            "duration": 237.322,
+            "durationFrames": 7120
+        },
+        {
+            "voice": "voice-9.mp3",
+            "bgm": {
+                "path": "voice-9.mp3",
+                "duration": 242.782,
+                "durationFrames": 7283
+            },
+            "background": {
+                "path": "scene-9.png"
+            },
+            "duration": 242.782,
+            "durationFrames": 7283
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.png",
+            "duration": 260.415
+        },
+        {
+            "path": "scene-1.png",
+            "duration": 260.624
+        },
+        {
+            "path": "scene-2.png",
+            "duration": 278.047
+        },
+        {
+            "path": "scene-3.png",
+            "duration": 249.626
+        },
+        {
+            "path": "scene-4.png",
+            "duration": 254.459
+        },
+        {
+            "path": "scene-5.png",
+            "duration": 241.946
+        },
+        {
+            "path": "scene-6.png",
+            "duration": 246.256
+        },
+        {
+            "path": "scene-7.png",
+            "duration": 237.113
+        },
+        {
+            "path": "scene-8.png",
+            "duration": 237.322
+        },
+        {
+            "path": "scene-9.png",
+            "duration": 242.782
+        }
+    ]
+}
