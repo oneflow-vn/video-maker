@@ -2,7 +2,7 @@ import React from 'react';
 
 export const LogoText: React.FC  = () => {
 return (
-        <div className="fixed top-10 left-10">
+        <div style={{ position: 'fixed', top: '50px', left: '50px' }}>
             <span style={{ fontFamily: 'Varelmo', fontSize: 36, color: 'white' }}>
                 TRUYỆN KHOA VIỄN
             </span>

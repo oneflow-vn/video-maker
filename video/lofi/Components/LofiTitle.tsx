@@ -13,10 +13,14 @@ export const Title: React.FC<{
 }> = ({ titleText, titleColor }) => {
     return (
         <div
-            style={{ color: titleColor, fontFamily, fontSize }}
-            className="font-bold leading-relaxed"
+            style={{
+            color: titleColor,
+            fontFamily: fontFamily,
+            fontSize: fontSize,
+            fontWeight: 'bold',
+            lineHeight: '1.5',
+            }}
         >
-            {' '}
             {titleText}
         </div>
     );

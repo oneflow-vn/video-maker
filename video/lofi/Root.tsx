@@ -3,7 +3,6 @@ import { LofiComposition } from './Composition';
 import { getMinutesWithHours, minutesToFrames } from './Utilities/Tools';
 import { LofiContentSchema, lofiSchema } from './Schema/props.schema';
 import { loadFont } from "@remotion/fonts";
-import { staticFile } from "remotion";
 
 import './style.css';
 

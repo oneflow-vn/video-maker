@@ -45,7 +45,7 @@ export default class Create extends Command {
             char: 'r',
             allowNo: true,
             description: 'should render video',
-            default: true,
+            default: false,
         }),
         overwrite: Flags.boolean({
             char: 'o',
@@ -241,7 +241,7 @@ const local = async ({
         );
     }
 
-    // await new CreateThumbnailService(content).execute(bundle);
+    await new CreateThumbnailService(content).execute(bundle);
 
     await new ExportDataService(content).execute(file);
 };

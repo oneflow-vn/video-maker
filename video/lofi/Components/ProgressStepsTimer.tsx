@@ -19,11 +19,9 @@ export type ProgressStepsTimerInputSchema = z.infer<
 >;
 
 export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
-    absoluteFrame = 0,
     type = 1,
-    countdownTextColour: textColour = 'text-slate-200',
-    processBarColour = 'bg-slate-400',
-    section = null,
+    countdownTextColour: textColour = 'rgb(226 232 240)',
+    processBarColour = 'rgb(148 163 184)',
     subtitle = '',
     durationInFrames = 0,
 }) => {
@@ -54,20 +52,68 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
     switch (type) {
         case 1:
             view = (
-                <div style={{ opacity: opacity }} className="flex flex-col gap-2">
-                    <div className="flex justify-center w-full items-center">
-                        <span className={`text-8xl font-medium ${textColour}`}>
+                <div
+                    style={{
+                        opacity: opacity,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.5rem',
+                    }}
+                >
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            width: '100%',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <span
+                            style={{
+                                fontSize: '4rem',
+                                fontWeight: '500',
+                                color: textColour || 'white',
+                            }}
+                        >
                             {countUpNumber}
                         </span>
                     </div>
-                    <div className="w-full outline outline-gray-200 rounded-full h-8 text-center font-bold flex items-center">
+                    <div
+                        style={{
+                            width: '100%',
+                            outline: '1px solid #E5E7EB',
+                            borderRadius: '9999px',
+                            height: '2rem',
+                            textAlign: 'center',
+                            fontWeight: 'bold',
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}
+                    >
                         <div
-                            className={`h-6 rounded-full ${processBarColour} m-1`}
-                            style={{ width: `${progress}%` }}
+                            style={{
+                                height: '1.5rem',
+                                borderRadius: '9999px',
+                                backgroundColor: processBarColour || 'white',
+                                margin: '0.25rem',
+                                width: `${progress}%`,
+                            }}
                         ></div>
                     </div>
-                    <div className={`flex justify-center items-center `}>
-                        <span className={`text-5xl font-thin ${textColour} `}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <span
+                            style={{
+                                fontSize: '2.5rem',
+                                fontWeight: '300',
+                                color: textColour || 'white',
+                            }}
+                        >
                             {subtitle}
                         </span>
                     </div>
@@ -83,11 +129,13 @@ function secondsToTimeFormat(seconds: number): string {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
-    
+
     const formattedMinutes = `${minutes < 10 ? '0' : ''}${minutes}`;
-    const formattedSeconds = `${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-    
-    return hours > 0 
+    const formattedSeconds = `${
+        remainingSeconds < 10 ? '0' : ''
+    }${remainingSeconds}`;
+
+    return hours > 0
         ? `${hours}:${formattedMinutes}:${formattedSeconds}`
         : `${minutes}:${formattedSeconds}`;
 }

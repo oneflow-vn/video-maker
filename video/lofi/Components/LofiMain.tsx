@@ -15,16 +15,43 @@ export const LofiMain: React.FC<{
     });
     return (
         <div
-            className="absolute top-0 left-0 w-full h-full flex justify-center items-end"
-            style={{ opacity }}
+            style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'end',
+                opacity,
+            }}
         >
-            <div className="w-1/2 flex flex-col justify-center items-center mt-4">
-                <div className="mb-40">
+            <div
+                style={{
+                    width: '50%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: '1rem',
+                }}
+            >
+                <div style={{ marginBottom: '10rem' }}>
                     <Title titleText={title} titleColor={'#fe2858'} />
                     <Subtitle text={subtitle} color={'#2af0ea'} />
                 </div>
             </div>
-            <div className="w-1/2 flex flex-col justify-center items-center mt-4"></div>
+            <div
+                style={{
+                    width: '50%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: '1rem',
+                }}
+            ></div>
         </div>
     );
 };

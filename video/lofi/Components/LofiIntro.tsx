@@ -28,22 +28,23 @@ export const LofiIntro = () => {
     });
 
     return (
-        <AbsoluteFill className="justify-center items-center" style={{ opacity }}>
-            {/* set font color is white */}
+        <AbsoluteFill style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', opacity }}>
             <div
-                className="text-9xl text-white font-bold"
-                style={{
-                    fontFamily,
-                }}
+            style={{
+                fontSize: '9rem',
+                color: 'white',
+                fontWeight: 'bold',
+                fontFamily,
+            }}
             >
-                {textToShow}
-                <span
-                    style={{
-                        ...cursor,
-                        verticalAlign: 'middle',
-                        opacity: Number(cursorShown),
-                    }}
-                />
+            {textToShow}
+            <span
+                style={{
+                ...cursor,
+                verticalAlign: 'middle',
+                opacity: Number(cursorShown),
+                }}
+            />
             </div>
         </AbsoluteFill>
     );

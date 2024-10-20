@@ -8,7 +8,9 @@
         {
             "subtitle": "",
             "bgm": {
-                "path": "voice-0.mp3"
+                "path": "voice-0.mp3",
+                "duration": 112.588,
+                "durationFrames": 3378
             },
             "type": "chapter",
             "index": 0,
@@ -22,7 +24,9 @@
         {
             "voice": "voice-1.mp3",
             "bgm": {
-                "path": "voice-1.mp3"
+                "path": "voice-1.mp3",
+                "duration": 391.34,
+                "durationFrames": 11740
             },
             "background": {
                 "path": "scene-1.png"
@@ -33,7 +37,9 @@
         {
             "voice": "voice-2.mp3",
             "bgm": {
-                "path": "voice-2.mp3"
+                "path": "voice-2.mp3",
+                "duration": 560.744,
+                "durationFrames": 16822
             },
             "background": {
                 "path": "scene-2.png"
@@ -44,7 +50,9 @@
         {
             "voice": "voice-3.mp3",
             "bgm": {
-                "path": "voice-3.mp3"
+                "path": "voice-3.mp3",
+                "duration": 420.284,
+                "durationFrames": 12609
             },
             "background": {
                 "path": "scene-3.png"
@@ -55,7 +63,9 @@
         {
             "voice": "voice-4.mp3",
             "bgm": {
-                "path": "voice-4.mp3"
+                "path": "voice-4.mp3",
+                "duration": 428.722,
+                "durationFrames": 12862
             },
             "background": {
                 "path": "scene-4.png"

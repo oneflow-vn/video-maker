@@ -11,9 +11,7 @@
     "main": "dist/src/index.js",
     "repository": "FelippeChemello/podcast-maker",
     "module": "commonjs",
-    "sideEffects": [
-        "*.css"
-    ],
+    "sideEffects": false,
     "files": [
         "/bin",
         "/dist",

@@ -1,4 +1,3 @@
-import { enableTailwind } from '@remotion/tailwind';
 import { WebpackOverrideFn } from '@remotion/bundler';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 
@@ -9,5 +8,5 @@ export const webpackOverride: WebpackOverrideFn = currentConfiguration => {
 
     currentConfiguration.target = 'node';
 
-    return enableTailwind(currentConfiguration);
+    return currentConfiguration;
 };

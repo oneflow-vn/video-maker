@@ -1,4 +1,10 @@
-import { AbsoluteFill, staticFile, Audio, Series, getInputProps } from 'remotion';
+import {
+    AbsoluteFill,
+    staticFile,
+    Audio,
+    Series,
+    getInputProps,
+} from 'remotion';
 import { useCurrentFrame } from 'remotion';
 // import { LofiLogo } from './Components/LofiLogo';
 import { Background } from './Components/Background';
@@ -8,32 +14,29 @@ import { LofiContentSchema } from './Schema/props.schema';
 import { ProgressStepsTimer } from './Components/ProgressStepsTimer';
 import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
-import { Title } from './Components/LofiTitle';
-import { Subtitle } from './Components/LofiSubtitle';
 import { LofiMain } from './Components/LofiMain';
 
 const { withoutIntro } = getInputProps();
 
-const { 
-    content, 
- } = getInputProps() as LofiContentSchema;
+const { content } = getInputProps() as LofiContentSchema;
 
 export const LofiComposition: React.FC<LofiContentSchema> = () => {
-    const {
-        sections,
-        backgroundPath,
-        duration,
-        backgrounds,
-        title,
-        subtitle,
-    } = content;
+    const { sections, backgroundPath, duration, backgrounds, title, subtitle } =
+        content;
 
     const durationInFrames = duration * 30;
     const frame = useCurrentFrame();
     const introFrames = 120;
 
     return (
-        <AbsoluteFill className="bg-gray-100 justify-center items-center">
+        <AbsoluteFill
+            style={{
+                backgroundColor: '#f3f4f6',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+        >
             <Background backgroundPath={backgroundPath} />
             {backgrounds && <BackgroundSeries backgrounds={backgrounds} />}
 
@@ -58,13 +61,21 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                 <LofiMain title={title} subtitle={subtitle} />
             </AbsoluteFill>
 
-            <div className="p-8 w-1/4 fixed bottom-10 right-0">
+            <div
+                style={{
+                    padding: '2rem',
+                    width: '25%',
+                    position: 'fixed',
+                    bottom: '2.5rem',
+                    right: '0',
+                }}
+            >
                 <ProgressStepsTimer
                     absoluteFrame={frame}
                     durationInFrames={durationInFrames}
                     type={1}
-                    processBarColour={'bg-gray-100'}
-                    countdownTextColour={'text-white'}
+                    processBarColour={'rgb(243 244 246)'}
+                    countdownTextColour={'white'}
                     section={null}
                     subtitle={''}
                 />
