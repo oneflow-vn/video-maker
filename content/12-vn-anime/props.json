@@ -13,9 +13,7 @@
         {
             "voice": "voice-0.mp3",
             "bgm": {
-                "path": "voice-0.mp3",
-                "duration": 260.415,
-                "durationFrames": 7812
+                "path": "voice-0.mp3"
             },
             "background": {
                 "path": "scene-0.png"
@@ -26,9 +24,7 @@
         {
             "voice": "voice-1.mp3",
             "bgm": {
-                "path": "voice-1.mp3",
-                "duration": 260.624,
-                "durationFrames": 7819
+                "path": "voice-1.mp3"
             },
             "background": {
                 "path": "scene-1.png"
@@ -39,9 +35,7 @@
         {
             "voice": "voice-2.mp3",
             "bgm": {
-                "path": "voice-2.mp3",
-                "duration": 278.047,
-                "durationFrames": 8341
+                "path": "voice-2.mp3"
             },
             "background": {
                 "path": "scene-2.png"
@@ -52,9 +46,7 @@
         {
             "voice": "voice-3.mp3",
             "bgm": {
-                "path": "voice-3.mp3",
-                "duration": 249.626,
-                "durationFrames": 7489
+                "path": "voice-3.mp3"
             },
             "background": {
                 "path": "scene-3.png"
@@ -65,9 +57,7 @@
         {
             "voice": "voice-4.mp3",
             "bgm": {
-                "path": "voice-4.mp3",
-                "duration": 254.459,
-                "durationFrames": 7634
+                "path": "voice-4.mp3"
             },
             "background": {
                 "path": "scene-4.png"
@@ -78,9 +68,7 @@
         {
             "voice": "voice-5.mp3",
             "bgm": {
-                "path": "voice-5.mp3",
-                "duration": 241.946,
-                "durationFrames": 7258
+                "path": "voice-5.mp3"
             },
             "background": {
                 "path": "scene-5.png"
@@ -91,9 +79,7 @@
         {
             "voice": "voice-6.mp3",
             "bgm": {
-                "path": "voice-6.mp3",
-                "duration": 246.256,
-                "durationFrames": 7388
+                "path": "voice-6.mp3"
             },
             "background": {
                 "path": "scene-6.png"
@@ -104,9 +90,7 @@
         {
             "voice": "voice-7.mp3",
             "bgm": {
-                "path": "voice-7.mp3",
-                "duration": 237.113,
-                "durationFrames": 7113
+                "path": "voice-7.mp3"
             },
             "background": {
                 "path": "scene-7.png"
@@ -117,9 +101,7 @@
         {
             "voice": "voice-8.mp3",
             "bgm": {
-                "path": "voice-8.mp3",
-                "duration": 237.322,
-                "durationFrames": 7120
+                "path": "voice-8.mp3"
             },
             "background": {
                 "path": "scene-8.png"
@@ -130,9 +112,7 @@
         {
             "voice": "voice-9.mp3",
             "bgm": {
-                "path": "voice-9.mp3",
-                "duration": 242.782,
-                "durationFrames": 7283
+                "path": "voice-9.mp3"
             },
             "background": {
                 "path": "scene-9.png"

@@ -4,7 +4,8 @@ import axios from 'axios';
 import { ContentSection } from 'models/InterfaceJsonContent';
 import { log } from 'utils/log';
 
-const e2eStoryUrl = 'https://n8n.oneflow.vn/webhook/a3d89320-486f-44cd-8402-ac4b7a30ea96';
+const e2eStoryUrl =
+    'https://n8n.oneflow.vn/webhook/a3d89320-486f-44cd-8402-ac4b7a30ea96';
 
 class StoryComposerService {
     private content: any;
@@ -19,10 +20,13 @@ class StoryComposerService {
         this.directory = directory;
     }
 
-    public async execute({ url, loadContent }: { url?: string, loadContent?: boolean } = {}): Promise<any> {
+    public async execute({
+        url,
+        loadContent,
+    }: { url?: string; loadContent?: boolean } = {}): Promise<any> {
         this.loadContent = loadContent;
         if (url) {
-            await this.runE2EStory({url});
+            await this.runE2EStory({ url });
         }
 
         const contentFile = path.join(this.directory, 'content.json');
@@ -52,7 +56,18 @@ class StoryComposerService {
 
         if (this.rawContent && this.rawContent.preface) {
             this.content.title = this.rawContent.preface?.title || '';
-            this.content.subtitle = `Tác giả: ${this.rawContent.preface?.author || ''}`;
+            this.content.subtitle = `Tác giả: ${
+                this.rawContent.preface?.author || ''
+            }`;
+        }
+
+        const openArtFolder = path.join(
+            this.directory,
+            'openart-download-images',
+        );
+
+        if (fs.existsSync(openArtFolder)) {
+            this.composeOpenArt(openArtFolder);
         }
 
         try {
@@ -65,13 +80,52 @@ class StoryComposerService {
         return this.content;
     }
 
-    private async runE2EStory({ url }: { url: string }): Promise<void> {
-        const res = await axios.post(e2eStoryUrl, {
-            url,
-        }, {
-            // 1 hour timeout
-            timeout: 1000 * 60 * 60,
+    private async composeOpenArt(openArtFolder: string) {
+        // list all files in the directory
+        const files = fs.readdirSync(openArtFolder);
+
+        // filename: openart-image_43e99245_1729484218198_1024.jpeg
+        // sort files by timestamp
+        const sortedFiles = files.sort((a, b) => {
+            // openart-image_43e99245_1729484218198_1024.jpeg -> 1729484218198
+            const aTimestamp = parseInt(a.split('_')[2], 10);
+            const bTimestamp = parseInt(b.split('_')[2], 10);
+
+            return aTimestamp - bTimestamp;
         });
+
+        const promises = sortedFiles.map((file, index) => {
+            // copy file to the directory
+            // scene-{index}.jpeg
+            const filename = `scene-${index}.jpeg`;
+            const src = path.join(openArtFolder, file);
+            const dest = path.join(this.directory, filename);
+
+            return new Promise((resolve, reject) => {
+                fs.copyFile(src, dest, err => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(dest);
+                    }
+                });
+            });
+        });
+
+        return Promise.all(promises);
+    }
+
+    private async runE2EStory({ url }: { url: string }): Promise<void> {
+        const res = await axios.post(
+            e2eStoryUrl,
+            {
+                url,
+            },
+            {
+                // 1 hour timeout
+                timeout: 1000 * 60 * 60,
+            },
+        );
 
         this.rawContent = res.data;
 
@@ -80,16 +134,19 @@ class StoryComposerService {
         // fs.writeFileSync(contentFile, JSON.stringify(this.rawContent, null, 4));
 
         return new Promise((resolve, reject) => {
-            fs.writeFile(contentFile, JSON.stringify(this.rawContent, null, 4), (err) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve();
-                }
-            }
+            fs.writeFile(
+                contentFile,
+                JSON.stringify(this.rawContent, null, 4),
+                err => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                },
             );
         });
-    };
+    }
 
     private async loadScenesContent() {
         const scenesFile = path.join(this.directory, 'scenes.json');
@@ -156,7 +213,7 @@ class StoryComposerService {
         );
     }
 
-    private composeScenes(json: any): Promise<any> {
+    private async composeScenes(json: any): Promise<any> {
         if (!Array.isArray(json)) {
             throw new Error('Scenes should be an array');
         }
@@ -165,7 +222,31 @@ class StoryComposerService {
             return this.composeScene(scene, index);
         });
 
+        await this.saveScenesToContentCsv(json);
+
         return Promise.all(promises);
+    }
+
+    private async saveScenesToContentCsv(scenes: any): Promise<void> {
+        const csvPath = path.join(this.directory, 'content.csv');
+        const csvContent = scenes.map((scene: any, index: number) => {
+            return {
+                scene: JSON.stringify(scene.prompt),
+            };
+        });
+
+        // if not exits scenes.csv, save scenes to content.csv
+        if (fs.existsSync(csvPath)) {
+            fs.unlinkSync(csvPath);
+        }
+
+        const csvContentString = csvContent
+            .map((scene: any) => {
+                return `${scene.scene}`;
+            })
+            .join('\n');
+
+        fs.writeFileSync(csvPath, csvContentString);
     }
 
     private updateSection(section: any, index: number): void {
@@ -202,7 +283,7 @@ class StoryComposerService {
                 },
                 index,
             );
-    
+
             this.updateBackground(this.content.sections[index], index);
         } catch (e) {
             log(`Error composing scene ${index}`, 'StoryComposerService');

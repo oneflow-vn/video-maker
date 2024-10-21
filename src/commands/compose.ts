@@ -3,14 +3,17 @@ import path from 'path';
 import fs from 'fs';
 import { getPath } from '../config/defaultPaths';
 
-import { ExportDataService, GetContentService, InitContentService, StoryComposerService } from '../services'
+import {
+    ExportDataService,
+    GetContentService,
+    InitContentService,
+    StoryComposerService,
+} from '../services';
 
 export default class Compose extends Command {
     static description = 'Compose content';
 
-    static examples = [
-        '<%= config.bin %> <%= command.id %> story -d <dir>',
-    ];
+    static examples = ['<%= config.bin %> <%= command.id %> story -d <dir>'];
 
     static flags = {
         dir: Flags.string({
@@ -21,11 +24,10 @@ export default class Compose extends Command {
             char: 'u',
             description: 'Get content from url',
         }),
-        loadContent: Flags.boolean({
+        local: Flags.boolean({
             char: 'l',
-            description: 'Load content remotely',
-            default: true,
-            allowNo: true,            
+            description: 'Get content from local',
+            default: false,
         }),
     };
 
@@ -39,10 +41,7 @@ export default class Compose extends Command {
     ];
 
     public async run(): Promise<void> {
-        const {
-            args,
-            flags,
-        } = await this.parse(Compose);
+        const { args, flags } = await this.parse(Compose);
 
         switch (args.preset) {
             case 'story':
@@ -70,9 +69,11 @@ export default class Compose extends Command {
             fs.mkdirSync(directory);
         }
 
-        content = await new StoryComposerService(content, directory).execute({ url: flags.url, loadContent: flags.loadContent });
+        content = await new StoryComposerService(content, directory).execute({
+            url: flags.url,
+            loadContent: !flags.local,
+        });
 
         await new ExportDataService(content).execute(file);
     }
-
 }
