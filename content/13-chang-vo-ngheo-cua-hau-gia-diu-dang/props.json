@@ -1,0 +1,174 @@
+{
+    "title": "",
+    "subtitle": "",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.png",
+    "duration": 4002.4040000000005,
+    "durationFrames": 120073,
+    "totalHours": 1.111778888888889,
+    "sections": [
+        {
+            "background": {
+                "path": "scene-0.png"
+            },
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-1.png"
+            },
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-2.png"
+            },
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-3.png"
+            },
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3"
+            }
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-5.png"
+            },
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-6.png"
+            },
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-7.png"
+            },
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-8.png"
+            },
+            "voice": "voice-8.mp3",
+            "bgm": {
+                "path": "voice-8.mp3"
+            }
+        },
+        {
+            "voice": "voice-9.mp3",
+            "bgm": {
+                "path": "voice-9.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-10.png"
+            },
+            "voice": "voice-10.mp3",
+            "bgm": {
+                "path": "voice-10.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-11.png"
+            },
+            "voice": "voice-11.mp3",
+            "bgm": {
+                "path": "voice-11.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-12.png"
+            },
+            "voice": "voice-12.mp3",
+            "bgm": {
+                "path": "voice-12.mp3"
+            }
+        },
+        {
+            "background": {
+                "path": "scene-13.png"
+            },
+            "voice": "voice-13.mp3",
+            "bgm": {
+                "path": "voice-13.mp3"
+            }
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.png"
+        },
+        {
+            "path": "scene-1.png"
+        },
+        {
+            "path": "scene-2.png"
+        },
+        {
+            "path": "scene-3.png"
+        },
+        null,
+        {
+            "path": "scene-5.png"
+        },
+        {
+            "path": "scene-6.png"
+        },
+        {
+            "path": "scene-7.png"
+        },
+        {
+            "path": "scene-8.png"
+        },
+        null,
+        {
+            "path": "scene-10.png"
+        },
+        {
+            "path": "scene-11.png"
+        },
+        {
+            "path": "scene-12.png"
+        },
+        {
+            "path": "scene-13.png"
+        }
+    ]
+}
