@@ -43,7 +43,6 @@ class SyntheticService {
         await Promise.all(promises);
     }
 
-
     private updateSection(section: any, index: number): void {
         if (!this.content.sections) {
             this.content.sections = [];
@@ -60,11 +59,10 @@ class SyntheticService {
     }
 
     private updateBackground(section: ContentSection, index: number): void {
-
         if (!section.background) {
             return;
         }
-        
+
         if (!this.content.backgrounds) {
             this.content.backgrounds = [];
         }
@@ -83,7 +81,6 @@ class SyntheticService {
             return;
         }
 
-
         this.content.backgrounds[index] = {
             ...this.content.backgrounds[index],
             ...background,
@@ -91,7 +88,10 @@ class SyntheticService {
         };
     }
 
-    private async synthesizeSection(section: ContentSection, index: number): Promise<void> {
+    private async synthesizeSection(
+        section: ContentSection,
+        index: number,
+    ): Promise<void> {
         section.duration = 0;
         section.durationFrames = 0;
 

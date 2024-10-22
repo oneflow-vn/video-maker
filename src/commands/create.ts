@@ -34,7 +34,7 @@ export default class Create extends Command {
             char: 't',
             description: 'template to use',
             options: ['podcast', 'lofi'],
-            default: 'podcast',
+            default: 'lofi',
         }),
         needTTS: Flags.boolean({
             char: 's',
@@ -239,9 +239,8 @@ const local = async ({
             true,
             'instagram',
         );
+        await new CreateThumbnailService(content).execute(bundle);
     }
-
-    await new CreateThumbnailService(content).execute(bundle);
 
     await new ExportDataService(content).execute(file);
 };

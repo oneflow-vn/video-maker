@@ -264,14 +264,24 @@ class StoryComposerService {
         };
     }
 
+    private isRemoteUrl(url: string): boolean {
+        return url.startsWith('http') || url.startsWith('https');
+    }
+
     private async composeScene(scene: any, index: number): Promise<void> {
         try {
             if (!scene.url) {
                 return;
             }
-            const filename = `scene-${index}.png`;
 
-            if (this.loadContent) {
+            const extRaw = scene.url.split('.').pop();
+            const ext = ['jpg', 'jpeg', 'png', 'webp'].includes(extRaw)
+                ? extRaw
+                : 'png';
+
+            const filename = `scene-${index}.${ext}`;
+
+            if (this.loadContent && this.isRemoteUrl(scene.url)) {
                 await this.downloadFile(scene.url, filename);
             }
 

@@ -27,7 +27,7 @@ export default class Remotion extends Command {
             char: 't',
             description: 'template to use',
             options: ['podcast', 'lofi'],
-            default: 'podcast',
+            default: 'lofi',
         }),
     };
 
