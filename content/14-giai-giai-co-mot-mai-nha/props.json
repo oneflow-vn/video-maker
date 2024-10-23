@@ -1,6 +1,6 @@
 {
-    "title": "",
-    "subtitle": "",
+    "title": "Giai giai có một mái nhà",
+    "subtitle": "Tác giả Zhihu",
     "fps": 30,
     "width": 1920,
     "height": 1080,
@@ -13,7 +13,9 @@
         {
             "voice": "voice-0.mp3",
             "bgm": {
-                "path": "voice-0.mp3"
+                "path": "voice-0.mp3",
+                "duration": 758.674,
+                "durationFrames": 22760
             },
             "background": {
                 "path": "scene-0.webp"
@@ -24,10 +26,12 @@
         {
             "voice": "voice-1.mp3",
             "bgm": {
-                "path": "voice-1.mp3"
+                "path": "voice-1.mp3",
+                "duration": 897.071,
+                "durationFrames": 26912
             },
             "background": {
-                "path": "scene-1.png"
+                "path": "scene-1.webp"
             },
             "duration": 897.071,
             "durationFrames": 26912
@@ -35,10 +39,12 @@
         {
             "voice": "voice-2.mp3",
             "bgm": {
-                "path": "voice-2.mp3"
+                "path": "voice-2.mp3",
+                "duration": 1721.339,
+                "durationFrames": 51640
             },
             "background": {
-                "path": "scene-2.png"
+                "path": "scene-2.webp"
             },
             "duration": 1721.339,
             "durationFrames": 51640
@@ -46,10 +52,12 @@
         {
             "voice": "voice-3.mp3",
             "bgm": {
-                "path": "voice-3.mp3"
+                "path": "voice-3.mp3",
+                "duration": 1361.319,
+                "durationFrames": 40840
             },
             "background": {
-                "path": "scene-3.png"
+                "path": "scene-3.webp"
             },
             "duration": 1361.319,
             "durationFrames": 40840
@@ -57,10 +65,12 @@
         {
             "voice": "voice-4.mp3",
             "bgm": {
-                "path": "voice-4.mp3"
+                "path": "voice-4.mp3",
+                "duration": 2720.758,
+                "durationFrames": 81623
             },
             "background": {
-                "path": "scene-4.png"
+                "path": "scene-4.webp"
             },
             "duration": 2720.758,
             "durationFrames": 81623
@@ -68,10 +78,12 @@
         {
             "voice": "voice-5.mp3",
             "bgm": {
-                "path": "voice-5.mp3"
+                "path": "voice-5.mp3",
+                "duration": 1752.607,
+                "durationFrames": 52578
             },
             "background": {
-                "path": "scene-5.png"
+                "path": "scene-5.webp"
             },
             "duration": 1752.607,
             "durationFrames": 52578
@@ -83,23 +95,23 @@
             "duration": 758.674
         },
         {
-            "path": "scene-1.png",
+            "path": "scene-1.webp",
             "duration": 897.071
         },
         {
-            "path": "scene-2.png",
+            "path": "scene-2.webp",
             "duration": 1721.339
         },
         {
-            "path": "scene-3.png",
+            "path": "scene-3.webp",
             "duration": 1361.319
         },
         {
-            "path": "scene-4.png",
+            "path": "scene-4.webp",
             "duration": 2720.758
         },
         {
-            "path": "scene-5.png",
+            "path": "scene-5.webp",
             "duration": 1752.607
         }
     ]
