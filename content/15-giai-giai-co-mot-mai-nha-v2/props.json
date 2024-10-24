@@ -1,0 +1,262 @@
+{
+    "title": "Giai giai có một mái nhà",
+    "subtitle": "Tác giả Zhihu",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "backgroundPath": "scene-0.webp",
+    "duration": 9211.768,
+    "durationFrames": 276353,
+    "totalHours": 2.5588244444444443,
+    "sections": [
+        {
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3"
+            },
+            "background": {
+                "path": "scene-0.webp"
+            },
+            "duration": 758.674,
+            "durationFrames": 22760
+        },
+        {
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3"
+            },
+            "background": {
+                "path": "scene-1.webp"
+            },
+            "duration": 897.071,
+            "durationFrames": 26912
+        },
+        {
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3"
+            },
+            "background": {
+                "path": "scene-2.webp"
+            },
+            "duration": 1721.339,
+            "durationFrames": 51640
+        },
+        {
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3"
+            },
+            "background": {
+                "path": "scene-3.webp"
+            },
+            "duration": 1361.319,
+            "durationFrames": 40840
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3"
+            },
+            "background": {
+                "path": "scene-4.webp"
+            },
+            "duration": 2720.758,
+            "durationFrames": 81623
+        },
+        {
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3"
+            },
+            "background": {
+                "path": "scene-5.webp"
+            },
+            "duration": 1752.607,
+            "durationFrames": 52578
+        },
+        {
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3"
+            }
+        },
+        {
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3"
+            }
+        },
+        {
+            "voice": "voice-8.mp3",
+            "bgm": {
+                "path": "voice-8.mp3"
+            }
+        },
+        {
+            "voice": "voice-9.mp3",
+            "bgm": {
+                "path": "voice-9.mp3"
+            }
+        },
+        {
+            "voice": "voice-10.mp3",
+            "bgm": {
+                "path": "voice-10.mp3"
+            }
+        },
+        {
+            "voice": "voice-11.mp3",
+            "bgm": {
+                "path": "voice-11.mp3"
+            }
+        },
+        {
+            "voice": "voice-12.mp3",
+            "bgm": {
+                "path": "voice-12.mp3"
+            }
+        },
+        {
+            "voice": "voice-13.mp3",
+            "bgm": {
+                "path": "voice-13.mp3"
+            }
+        },
+        {
+            "voice": "voice-14.mp3",
+            "bgm": {
+                "path": "voice-14.mp3"
+            }
+        },
+        {
+            "voice": "voice-15.mp3",
+            "bgm": {
+                "path": "voice-15.mp3"
+            }
+        },
+        {
+            "voice": "voice-16.mp3",
+            "bgm": {
+                "path": "voice-16.mp3"
+            }
+        },
+        {
+            "voice": "voice-17.mp3",
+            "bgm": {
+                "path": "voice-17.mp3"
+            }
+        },
+        {
+            "voice": "voice-18.mp3",
+            "bgm": {
+                "path": "voice-18.mp3"
+            }
+        },
+        {
+            "voice": "voice-19.mp3",
+            "bgm": {
+                "path": "voice-19.mp3"
+            }
+        },
+        {
+            "voice": "voice-20.mp3",
+            "bgm": {
+                "path": "voice-20.mp3"
+            }
+        },
+        {
+            "voice": "voice-21.mp3",
+            "bgm": {
+                "path": "voice-21.mp3"
+            }
+        },
+        {
+            "voice": "voice-22.mp3",
+            "bgm": {
+                "path": "voice-22.mp3"
+            }
+        },
+        {
+            "voice": "voice-23.mp3",
+            "bgm": {
+                "path": "voice-23.mp3"
+            }
+        },
+        {
+            "voice": "voice-24.mp3",
+            "bgm": {
+                "path": "voice-24.mp3"
+            }
+        },
+        {
+            "voice": "voice-25.mp3",
+            "bgm": {
+                "path": "voice-25.mp3"
+            }
+        },
+        {
+            "voice": "voice-26.mp3",
+            "bgm": {
+                "path": "voice-26.mp3"
+            }
+        },
+        {
+            "voice": "voice-27.mp3",
+            "bgm": {
+                "path": "voice-27.mp3"
+            }
+        },
+        {
+            "voice": "voice-28.mp3",
+            "bgm": {
+                "path": "voice-28.mp3"
+            }
+        },
+        {
+            "voice": "voice-29.mp3",
+            "bgm": {
+                "path": "voice-29.mp3"
+            }
+        },
+        {
+            "voice": "voice-30.mp3",
+            "bgm": {
+                "path": "voice-30.mp3"
+            }
+        },
+        {
+            "voice": "voice-31.mp3",
+            "bgm": {
+                "path": "voice-31.mp3"
+            }
+        }
+    ],
+    "backgrounds": [
+        {
+            "path": "scene-0.webp",
+            "duration": 758.674
+        },
+        {
+            "path": "scene-1.webp",
+            "duration": 897.071
+        },
+        {
+            "path": "scene-2.webp",
+            "duration": 1721.339
+        },
+        {
+            "path": "scene-3.webp",
+            "duration": 1361.319
+        },
+        {
+            "path": "scene-4.webp",
+            "duration": 2720.758
+        },
+        {
+            "path": "scene-5.webp",
+            "duration": 1752.607
+        }
+    ]
+}
