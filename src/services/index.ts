@@ -18,6 +18,7 @@ import PrepareResourceService from './PrepareResourceService';
 import SyntheticService from './SyntheticService';
 import StoryComposerService from './StoryComposerService';
 import InitContentService from './InitContentService';
+import ScenesComposerService from './ScenesComposerService';
 
 export {
     GetContentService,
@@ -39,5 +40,6 @@ export {
     PrepareResourceService,
     SyntheticService,
     StoryComposerService,
-    InitContentService
+    InitContentService,
+    ScenesComposerService
 };

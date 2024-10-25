@@ -8,6 +8,7 @@ import {
     GetContentService,
     InitContentService,
     StoryComposerService,
+    ScenesComposerService
 } from '../services';
 
 export default class Compose extends Command {
@@ -17,8 +18,8 @@ export default class Compose extends Command {
 
     static flags = {
         dir: Flags.string({
-            char: 'd',
-            description: 'Get content directory path',
+            char: 'f',
+            description: 'Get content directory/file path',
         }),
         url: Flags.string({
             char: 'u',
@@ -36,7 +37,7 @@ export default class Compose extends Command {
             name: 'preset',
             required: true,
             description: 'Preset to compose content',
-            options: ['story', 'podcast', 'lofi'],
+            options: ['story', 'podcast', 'lofi', 'scenes'],
         },
     ];
 
@@ -46,6 +47,9 @@ export default class Compose extends Command {
         switch (args.preset) {
             case 'story':
                 await this.composeStory(flags);
+                break;
+            case 'scenes':
+                await this.composeScenes(flags);
                 break;
             default:
         }
@@ -73,6 +77,26 @@ export default class Compose extends Command {
             url: flags.url,
             loadContent: !flags.local,
         });
+
+        await new ExportDataService(content).execute(file);
+    }
+
+    private async composeScenes(flags: any): Promise<void> {
+        const filename = 'props.json';
+        const directory = path.join(process.cwd(), flags.dir || 'content');
+        const filePath = `${directory}/${filename}`;
+
+        if (!fs.existsSync(filePath)) {
+            fs.writeFileSync(filePath, '');
+        }
+
+        let { content, file } = await new GetContentService().execute(filePath);
+
+        if (!fs.existsSync(directory)) {
+            fs.mkdirSync(directory);
+        }
+
+        content = await new ScenesComposerService(content, directory).execute();
 
         await new ExportDataService(content).execute(file);
     }
