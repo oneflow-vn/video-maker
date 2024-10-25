@@ -6,257 +6,373 @@
     "height": 1080,
     "renderData": [],
     "backgroundPath": "scene-0.webp",
-    "duration": 9211.768,
-    "durationFrames": 276353,
-    "totalHours": 2.5588244444444443,
+    "duration": 8008.282,
+    "durationFrames": 240250,
+    "totalHours": 2.2245227777777776,
     "sections": [
         {
             "voice": "voice-0.mp3",
             "bgm": {
-                "path": "voice-0.mp3"
+                "path": "voice-0.mp3",
+                "duration": 232.333,
+                "durationFrames": 6970
             },
             "background": {
                 "path": "scene-0.webp"
             },
-            "duration": 758.674,
-            "durationFrames": 22760
+            "duration": 232.333,
+            "durationFrames": 6970
         },
         {
             "voice": "voice-1.mp3",
             "bgm": {
-                "path": "voice-1.mp3"
+                "path": "voice-1.mp3",
+                "duration": 153.522,
+                "durationFrames": 4606
             },
             "background": {
                 "path": "scene-1.webp"
             },
-            "duration": 897.071,
-            "durationFrames": 26912
+            "duration": 153.522,
+            "durationFrames": 4606
         },
         {
             "voice": "voice-2.mp3",
             "bgm": {
-                "path": "voice-2.mp3"
+                "path": "voice-2.mp3",
+                "duration": 270.864,
+                "durationFrames": 8126
             },
             "background": {
                 "path": "scene-2.webp"
             },
-            "duration": 1721.339,
-            "durationFrames": 51640
+            "duration": 270.864,
+            "durationFrames": 8126
         },
         {
             "voice": "voice-3.mp3",
             "bgm": {
-                "path": "voice-3.mp3"
+                "path": "voice-3.mp3",
+                "duration": 192.575,
+                "durationFrames": 5777
             },
             "background": {
                 "path": "scene-3.webp"
             },
-            "duration": 1361.319,
-            "durationFrames": 40840
+            "duration": 192.575,
+            "durationFrames": 5777
         },
         {
             "voice": "voice-4.mp3",
             "bgm": {
-                "path": "voice-4.mp3"
+                "path": "voice-4.mp3",
+                "duration": 274.103,
+                "durationFrames": 8223
             },
             "background": {
                 "path": "scene-4.webp"
             },
-            "duration": 2720.758,
-            "durationFrames": 81623
+            "duration": 274.103,
+            "durationFrames": 8223
         },
         {
             "voice": "voice-5.mp3",
             "bgm": {
-                "path": "voice-5.mp3"
+                "path": "voice-5.mp3",
+                "duration": 283.585,
+                "durationFrames": 8508
             },
             "background": {
                 "path": "scene-5.webp"
             },
-            "duration": 1752.607,
-            "durationFrames": 52578
+            "duration": 283.585,
+            "durationFrames": 8508
         },
         {
             "voice": "voice-6.mp3",
             "bgm": {
-                "path": "voice-6.mp3"
-            }
+                "path": "voice-6.mp3",
+                "duration": 279.667,
+                "durationFrames": 8390
+            },
+            "duration": 279.667,
+            "durationFrames": 8390
         },
         {
             "voice": "voice-7.mp3",
             "bgm": {
-                "path": "voice-7.mp3"
-            }
+                "path": "voice-7.mp3",
+                "duration": 183.719,
+                "durationFrames": 5512
+            },
+            "duration": 183.719,
+            "durationFrames": 5512
         },
         {
             "voice": "voice-8.mp3",
             "bgm": {
-                "path": "voice-8.mp3"
-            }
+                "path": "voice-8.mp3",
+                "duration": 237.244,
+                "durationFrames": 7117
+            },
+            "duration": 237.244,
+            "durationFrames": 7117
         },
         {
             "voice": "voice-9.mp3",
             "bgm": {
-                "path": "voice-9.mp3"
-            }
+                "path": "voice-9.mp3",
+                "duration": 273.058,
+                "durationFrames": 8192
+            },
+            "duration": 273.058,
+            "durationFrames": 8192
         },
         {
             "voice": "voice-10.mp3",
             "bgm": {
-                "path": "voice-10.mp3"
-            }
+                "path": "voice-10.mp3",
+                "duration": 270.341,
+                "durationFrames": 8110
+            },
+            "duration": 270.341,
+            "durationFrames": 8110
         },
         {
             "voice": "voice-11.mp3",
             "bgm": {
-                "path": "voice-11.mp3"
-            }
+                "path": "voice-11.mp3",
+                "duration": 277.029,
+                "durationFrames": 8311
+            },
+            "duration": 277.029,
+            "durationFrames": 8311
         },
         {
             "voice": "voice-12.mp3",
             "bgm": {
-                "path": "voice-12.mp3"
-            }
+                "path": "voice-12.mp3",
+                "duration": 272.692,
+                "durationFrames": 8181
+            },
+            "duration": 272.692,
+            "durationFrames": 8181
         },
         {
             "voice": "voice-13.mp3",
             "bgm": {
-                "path": "voice-13.mp3"
-            }
+                "path": "voice-13.mp3",
+                "duration": 266.606,
+                "durationFrames": 7998
+            },
+            "duration": 266.606,
+            "durationFrames": 7998
         },
         {
             "voice": "voice-14.mp3",
             "bgm": {
-                "path": "voice-14.mp3"
-            }
+                "path": "voice-14.mp3",
+                "duration": 272.379,
+                "durationFrames": 8171
+            },
+            "duration": 272.379,
+            "durationFrames": 8171
         },
         {
             "voice": "voice-15.mp3",
             "bgm": {
-                "path": "voice-15.mp3"
-            }
+                "path": "voice-15.mp3",
+                "duration": 281.522,
+                "durationFrames": 8446
+            },
+            "duration": 281.522,
+            "durationFrames": 8446
         },
         {
             "voice": "voice-16.mp3",
             "bgm": {
-                "path": "voice-16.mp3"
-            }
+                "path": "voice-16.mp3",
+                "duration": 273.92,
+                "durationFrames": 8218
+            },
+            "duration": 273.92,
+            "durationFrames": 8218
         },
         {
             "voice": "voice-17.mp3",
             "bgm": {
-                "path": "voice-17.mp3"
-            }
+                "path": "voice-17.mp3",
+                "duration": 267.311,
+                "durationFrames": 8019
+            },
+            "duration": 267.311,
+            "durationFrames": 8019
         },
         {
             "voice": "voice-18.mp3",
             "bgm": {
-                "path": "voice-18.mp3"
-            }
+                "path": "voice-18.mp3",
+                "duration": 277.081,
+                "durationFrames": 8312
+            },
+            "duration": 277.081,
+            "durationFrames": 8312
         },
         {
             "voice": "voice-19.mp3",
             "bgm": {
-                "path": "voice-19.mp3"
-            }
+                "path": "voice-19.mp3",
+                "duration": 268.408,
+                "durationFrames": 8052
+            },
+            "duration": 268.408,
+            "durationFrames": 8052
         },
         {
             "voice": "voice-20.mp3",
             "bgm": {
-                "path": "voice-20.mp3"
-            }
+                "path": "voice-20.mp3",
+                "duration": 265.691,
+                "durationFrames": 7971
+            },
+            "duration": 265.691,
+            "durationFrames": 7971
         },
         {
             "voice": "voice-21.mp3",
             "bgm": {
-                "path": "voice-21.mp3"
-            }
+                "path": "voice-21.mp3",
+                "duration": 263.863,
+                "durationFrames": 7916
+            },
+            "duration": 263.863,
+            "durationFrames": 7916
         },
         {
             "voice": "voice-22.mp3",
             "bgm": {
-                "path": "voice-22.mp3"
-            }
+                "path": "voice-22.mp3",
+                "duration": 274.651,
+                "durationFrames": 8240
+            },
+            "duration": 274.651,
+            "durationFrames": 8240
         },
         {
             "voice": "voice-23.mp3",
             "bgm": {
-                "path": "voice-23.mp3"
-            }
+                "path": "voice-23.mp3",
+                "duration": 271.726,
+                "durationFrames": 8152
+            },
+            "duration": 271.726,
+            "durationFrames": 8152
         },
         {
             "voice": "voice-24.mp3",
             "bgm": {
-                "path": "voice-24.mp3"
-            }
+                "path": "voice-24.mp3",
+                "duration": 268.487,
+                "durationFrames": 8055
+            },
+            "duration": 268.487,
+            "durationFrames": 8055
         },
         {
             "voice": "voice-25.mp3",
             "bgm": {
-                "path": "voice-25.mp3"
-            }
+                "path": "voice-25.mp3",
+                "duration": 271.491,
+                "durationFrames": 8145
+            },
+            "duration": 271.491,
+            "durationFrames": 8145
         },
         {
             "voice": "voice-26.mp3",
             "bgm": {
-                "path": "voice-26.mp3"
-            }
+                "path": "voice-26.mp3",
+                "duration": 270.681,
+                "durationFrames": 8120
+            },
+            "duration": 270.681,
+            "durationFrames": 8120
         },
         {
             "voice": "voice-27.mp3",
             "bgm": {
-                "path": "voice-27.mp3"
-            }
+                "path": "voice-27.mp3",
+                "duration": 189.309,
+                "durationFrames": 5679
+            },
+            "duration": 189.309,
+            "durationFrames": 5679
         },
         {
             "voice": "voice-28.mp3",
             "bgm": {
-                "path": "voice-28.mp3"
-            }
+                "path": "voice-28.mp3",
+                "duration": 266.527,
+                "durationFrames": 7996
+            },
+            "duration": 266.527,
+            "durationFrames": 7996
         },
         {
             "voice": "voice-29.mp3",
             "bgm": {
-                "path": "voice-29.mp3"
-            }
+                "path": "voice-29.mp3",
+                "duration": 262.87,
+                "durationFrames": 7886
+            },
+            "duration": 262.87,
+            "durationFrames": 7886
         },
         {
             "voice": "voice-30.mp3",
             "bgm": {
-                "path": "voice-30.mp3"
-            }
+                "path": "voice-30.mp3",
+                "duration": 235.703,
+                "durationFrames": 7071
+            },
+            "duration": 235.703,
+            "durationFrames": 7071
         },
         {
             "voice": "voice-31.mp3",
             "bgm": {
-                "path": "voice-31.mp3"
-            }
+                "path": "voice-31.mp3",
+                "duration": 59.324,
+                "durationFrames": 1780
+            },
+            "duration": 59.324,
+            "durationFrames": 1780
         }
     ],
     "backgrounds": [
         {
             "path": "scene-0.webp",
-            "duration": 758.674
+            "duration": 232.333
         },
         {
             "path": "scene-1.webp",
-            "duration": 897.071
+            "duration": 153.522
         },
         {
             "path": "scene-2.webp",
-            "duration": 1721.339
+            "duration": 270.864
         },
         {
             "path": "scene-3.webp",
-            "duration": 1361.319
+            "duration": 192.575
         },
         {
             "path": "scene-4.webp",
-            "duration": 2720.758
+            "duration": 274.103
         },
         {
             "path": "scene-5.webp",
-            "duration": 1752.607
+            "duration": 283.585
         }
     ]
 }

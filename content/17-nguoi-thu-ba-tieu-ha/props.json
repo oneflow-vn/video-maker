@@ -1,0 +1,91 @@
+{
+    "title": "",
+    "subtitle": "",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "renderData": [],
+    "duration": 4002.4040000000005,
+    "durationFrames": 120073,
+    "totalHours": 1.111778888888889,
+    "sections": [
+        {
+            "voice": "voice-0.mp3",
+            "bgm": {
+                "path": "voice-0.mp3"
+            }
+        },
+        {
+            "voice": "voice-1.mp3",
+            "bgm": {
+                "path": "voice-1.mp3"
+            }
+        },
+        {
+            "voice": "voice-2.mp3",
+            "bgm": {
+                "path": "voice-2.mp3"
+            }
+        },
+        {
+            "voice": "voice-3.mp3",
+            "bgm": {
+                "path": "voice-3.mp3"
+            }
+        },
+        {
+            "voice": "voice-4.mp3",
+            "bgm": {
+                "path": "voice-4.mp3"
+            }
+        },
+        {
+            "voice": "voice-5.mp3",
+            "bgm": {
+                "path": "voice-5.mp3"
+            }
+        },
+        {
+            "voice": "voice-6.mp3",
+            "bgm": {
+                "path": "voice-6.mp3"
+            }
+        },
+        {
+            "voice": "voice-7.mp3",
+            "bgm": {
+                "path": "voice-7.mp3"
+            }
+        },
+        {
+            "voice": "voice-8.mp3",
+            "bgm": {
+                "path": "voice-8.mp3"
+            }
+        },
+        {
+            "voice": "voice-9.mp3",
+            "bgm": {
+                "path": "voice-9.mp3"
+            }
+        },
+        {
+            "voice": "voice-10.mp3",
+            "bgm": {
+                "path": "voice-10.mp3"
+            }
+        },
+        {
+            "voice": "voice-11.mp3",
+            "bgm": {
+                "path": "voice-11.mp3"
+            }
+        },
+        {
+            "voice": "voice-12.mp3",
+            "bgm": {
+                "path": "voice-12.mp3"
+            }
+        }
+    ]
+}
