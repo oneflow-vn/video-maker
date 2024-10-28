@@ -10,7 +10,8 @@ import {
 } from 'remotion';
 // import speechSrc from './speech.mp3';
 // import musicSrc from './music.mp3';
-import { AudioWaveform } from './visualizations/AudioWaveform';
+// import { AudioWaveform } from './visualizations/AudioWaveform';
+import { BarsVisualization } from './visualizations/BarsVisualization';
 import { LofiSectionSchema } from '../Schema/props.schema';
 import { isFirstSection, isPomodoro } from '../Schema/props';
 
@@ -110,12 +111,36 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
         <AbsoluteFill>
             <Sequence from={0} durationInFrames={Infinity}>
                 <Audio src={bgm} volume={volume} />
-                <div className="w-full h-full flex flex-row gap-2 justify-center">
+                <div
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        gap: '2px',
+                        justifyContent: 'center',
+                    }}
+                >
                     <div
-                        className="justify-center items-center flex scale-x-[-1]"
-                        style={{ opacity: '0.8' }}
+                        style={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            display: 'flex',
+                            transform: 'scaleX(-1)',
+                            opacity: '0.8',
+                        }}
                     >
-                        <AudioWaveform audioFilePath={section.bgm.path} />
+                        <BarsVisualization
+                            frequencyData={frequencyData}
+                            width={600}
+                            height={200}
+                            lineThickness={8}
+                            gapSize={8}
+                            roundness={4}
+                            placement={'middle'}
+                            color={'rgba(255, 255, 255, 0.7)'}
+                            maxAmplitude={1}
+                        />
                     </div>
                 </div>
             </Sequence>
