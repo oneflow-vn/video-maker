@@ -15,12 +15,19 @@ import { ProgressStepsTimer } from './Components/ProgressStepsTimer';
 import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
 import { LofiMain } from './Components/LofiMain'
+import { FirefliesOverlay } from './Components/Overlays/FirefliesOverlay';
 
 const { content } = getInputProps() as LofiContentSchema;
 
 export const LofiComposition: React.FC<LofiContentSchema> = () => {
-    const { sections, backgroundPath, duration, backgrounds, title, subtitle } =
-        content;
+    const { sections,
+        backgroundPath,
+        duration,
+        backgrounds,
+        backgroundMusicPath,
+        title,
+        subtitle
+    } = content;
 
     const durationInFrames = duration * 30;
     const frame = useCurrentFrame();
@@ -38,7 +45,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
             <Background backgroundPath={backgroundPath} />
             {backgrounds && <BackgroundSeries backgrounds={backgrounds} />}
 
-            <Audio src={staticFile('beneath_the_moonlight.mp3')} loop={true} volume={0.5}/>
+            {backgroundMusicPath && <Audio src={staticFile(backgroundMusicPath)} loop={true} volume={0.5} />}
 
             <Series>
                 <Series.Sequence durationInFrames={introFrames}>
@@ -80,6 +87,9 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                     subtitle={''}
                 />
             </div>
+
+            <FirefliesOverlay />
+
             <LogoText />
         </AbsoluteFill>
     );

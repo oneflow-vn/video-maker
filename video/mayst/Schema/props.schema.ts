@@ -30,6 +30,7 @@ export const lofiSchema = z.object({
     totalHours: z.number(),
     sections: z.array(lofiSectionSchema),
     backgroundPath: z.string(),
+    backgroundMusicPath: z.string(),
     duration: z.number(),
     backgrounds: z.array(lofiImageDataSchema),
 });

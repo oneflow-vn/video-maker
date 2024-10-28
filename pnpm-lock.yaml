@@ -11,6 +11,9 @@ importers:
       '@google/generative-ai':
         specifier: ^0.17.1
         version: 0.17.1
+      '@gsap/react':
+        specifier: ^2.1.1
+        version: 2.1.1
       '@oclif/core':
         specifier: ^1.26.2
         version: 1.26.2
@@ -89,6 +92,9 @@ importers:
       googleapis-common:
         specifier: ^7.0.1
         version: 7.0.1(encoding@0.1.13)
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
       http:
         specifier: 0.0.1-security
         version: 0.0.1-security
@@ -1598,6 +1604,9 @@ packages:
   '@google/generative-ai@0.17.1':
     resolution: {integrity: sha512-TgWz02c5l2XJlEDys81UVat5+Qg9xqmYah7tQt6xlsBwFvzIFPz64aZFGd1av2sxT22NsssqLATjNsusAIJICA==}
     engines: {node: '>=18.0.0'}
+
+  '@gsap/react@2.1.1':
+    resolution: {integrity: sha512-apGPRrmpqxvl1T6Io1KgT8tFU+IuACI6z4zmT7t8+PASserJeLVRFJdSNUFA2Xb/eVkZI1noE8LIrY/w/oJECw==}
 
   '@humanwhocodes/config-array@0.11.13':
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -4072,6 +4081,9 @@ packages:
   grouped-queue@2.0.0:
     resolution: {integrity: sha512-/PiFUa7WIsl48dUeCvhIHnwNmAAzlI/eHoJl0vu3nsFA366JleY7Ff8EVTplZu5kO0MIdZjKTTnzItL61ahbnw==}
     engines: {node: '>=8.0.0'}
+
+  gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
 
   gtoken@7.0.1:
     resolution: {integrity: sha512-KcFVtoP1CVFtQu0aSk3AyAt2og66PFhZAlkUOuWKwzMLoulHXG5W5wE5xAnHb+yl3/wEFoqGW7/cDGMU8igDZQ==}
@@ -8748,6 +8760,11 @@ snapshots:
 
   '@google/generative-ai@0.17.1': {}
 
+  '@gsap/react@2.1.1':
+    dependencies:
+      gsap: 3.12.5
+      react: 18.2.0
+
   '@humanwhocodes/config-array@0.11.13':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.1
@@ -12256,6 +12273,8 @@ snapshots:
   graphemer@1.4.0: {}
 
   grouped-queue@2.0.0: {}
+
+  gsap@3.12.5: {}
 
   gtoken@7.0.1(encoding@0.1.13):
     dependencies:

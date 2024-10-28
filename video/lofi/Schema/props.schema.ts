@@ -36,6 +36,7 @@ export const lofiSchema = z.object({
 
 export const lofiContentSchema = z.object({
     content: lofiSchema,
+    assetsHost: z.string(),
     destination: z.string(),
     durationInFrames: z.number(),
 });
