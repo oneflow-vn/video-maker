@@ -5,13 +5,16 @@ import { LogoText } from './LogoText';
 import { Title } from './Components/LofiTitle';
 import { Subtitle } from './Components/LofiSubtitle';
 
-// @ts-ignore
-import thumbGirl from '../../assets/thumb-girl-2.png';
+import './style.css';
 
 const { content } = getInputProps() as LofiContentSchema;
 
 export const Thumbnail: React.FC<LofiContentSchema> = () => {
     const { backgroundPath, title, subtitle } = content;
+
+    const blur = {
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+    }
 
     return (
         <AbsoluteFill
@@ -27,12 +30,6 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
             <Background backgroundPath={backgroundPath} />
 
             <AbsoluteFill>
-                <div style={{ position: 'absolute', bottom: 0, right: 10 }}>
-                    <Img src={thumbGirl} width={800} />
-                </div>
-            </AbsoluteFill>
-
-            <AbsoluteFill>
                 <div
                     style={{
                         position: 'absolute',
@@ -41,11 +38,13 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                         width: '100%',
                         height: '100%',
                         display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                        justifyContent: 'flex-end',
+                        alignItems: 'flex-end',
                     }}
                 >
+                    <div style={blur} >lll</div>
                     <div
+                        className="thumbail-title"
                         style={{
                             width: '100%',
                             display: 'flex',
@@ -53,39 +52,11 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                             justifyContent: 'center',
                             alignItems: 'center',
                             marginTop: 16,
-                            transform: 'translateY(100px)',
+                            transform: 'translateY(-100px)',
                         }}
                     >
-                        <Title titleText={title} titleColor={'#fe2858'} />
-                        <Subtitle text={subtitle} color={'#2af0ea'} />
-                    </div>
-                </div>
-            </AbsoluteFill>
-
-            <AbsoluteFill>
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    <div
-                        style={{
-                            fontWeight: 'bold',
-                            color: '#ffbf00',
-                            fontSize: 48,
-                            position: 'absolute',
-                            top: 150,
-                            right: 200,
-                        }}
-                    >
-                        Truyện Khoa Học Viễn Tưởng Hay Nhất
+                        <Title titleText={title} titleColor={'black'} />
+                        <Subtitle text={subtitle} color={'#a8076e'} />
                     </div>
                 </div>
             </AbsoluteFill>

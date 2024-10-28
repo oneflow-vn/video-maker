@@ -26,7 +26,7 @@ export default class Remotion extends Command {
         template: Flags.string({
             char: 't',
             description: 'template to use',
-            options: ['podcast', 'lofi'],
+            options: ['podcast', 'lofi', 'mayst'],
             default: 'lofi',
         }),
     };

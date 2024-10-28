@@ -14,9 +14,7 @@ import { LofiContentSchema } from './Schema/props.schema';
 import { ProgressStepsTimer } from './Components/ProgressStepsTimer';
 import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
-import { LofiMain } from './Components/LofiMain';
-
-const { withoutIntro } = getInputProps();
+import { LofiMain } from './Components/LofiMain'
 
 const { content } = getInputProps() as LofiContentSchema;
 

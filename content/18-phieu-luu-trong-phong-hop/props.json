@@ -1,6 +1,6 @@
 {
-    "title": "",
-    "subtitle": "",
+    "title": "Phiêu Lưu Trong Phòng Họp",
+    "subtitle": "Thung Hạ",
     "fps": 30,
     "width": 1920,
     "height": 1080,
@@ -8,6 +8,8 @@
     "duration": 4002.4040000000005,
     "durationFrames": 120073,
     "totalHours": 1.111778888888889,
+    "backgroundPath": "bg.webp",
+    "backgroundsFlipped": false,
     "sections": [
         {
             "voice": "voice-0.mp3",
@@ -73,18 +75,6 @@
             "voice": "voice-10.mp3",
             "bgm": {
                 "path": "voice-10.mp3"
-            }
-        },
-        {
-            "voice": "voice-11.mp3",
-            "bgm": {
-                "path": "voice-11.mp3"
-            }
-        },
-        {
-            "voice": "voice-12.mp3",
-            "bgm": {
-                "path": "voice-12.mp3"
             }
         }
     ]
