@@ -2,24 +2,24 @@ import { AbsoluteFill, useVideoConfig } from "remotion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMemo, useRef } from "react";
+import { useGsapTimeline } from "../../Utilities/useGsapTimeline";
 
 export const FirefliesOverlay: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
     const totalParticles = 60;
 
     const videoConfig = useVideoConfig();
 
-
-    useGSAP(() => {
+    const containerRef = useGsapTimeline<HTMLDivElement>(() => {
         const w = videoConfig.width;
         const h = videoConfig.height;
+        const timeline = gsap.timeline();
 
         function random(max: number) {
             return Math.random() * max;
         }
 
         function animateParticle(particle: HTMLElement) {
-            gsap.to(particle, {
+            timeline.to(particle, {
                 duration: random(20) + 10,
                 x: random(w),
                 y: random(h),
@@ -36,8 +36,8 @@ export const FirefliesOverlay: React.FC = () => {
                 animateParticle(particle as HTMLElement);
             });
         }
-
-    }, { scope: containerRef, dependencies: [videoConfig] });
+        return timeline;
+    })
 
     const particlesElements = useMemo(() => {
         return Array.from({ length: totalParticles }).map((_, index) => {
