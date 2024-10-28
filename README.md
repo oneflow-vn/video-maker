@@ -62,44 +62,38 @@ $ ./bin/run configure
 
 > To configure image generation, you need to setup [this project](https://github.com/FelippeChemello/modal_flux.1) and use the provided production URL
 
-### Contribute
+### Compose Video
 
-**Clone the project and access the folder**
-
-```sh-session
-$ git clone https://github.com/FelippeChemello/podcast-maker.git && cd podcast-maker
+```sh
+./bin/run compose story -f ./content/18-phieu-luu-trong-phong-hop/
 ```
 
-**Install dependencies**
+### Build Video
 
-```sh-session
-$ pnpm i
+```bash
+./bin/dev create local -c Main -f ./content/18-phieu-luu-trong-phong-hop/
 ```
 
-**Copy .env.local to .env and edit environment variables or configure using CLI**
+### Preview Video
 
-```sh-session
-$ cp .env.local .env
-$ vim .env
+```bash
+./bin/dev remotion preview -c Main -f ./content/18-phieu-luu-trong-phong-hop/
 ```
 
-or
+### Render Video locally
 
-```sh-session
-$ pnpm build
-$ ./bin/run configure
+```bash
+./bin/dev remotion render -c Main -f ./content/18-phieu-luu-trong-phong-hop/
 ```
 
-**Use it**
+### Deploy Video site
 
-```sh-session
-$ ./bin/dev --help
+```bash
+npx remotion lambda sites create video/mayst/index.tsx
 ```
 
-## 📝 License
+### Render Video on lambda
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Made with 💜 by Felippe Chemello 👋 [Check out my LinkedIn](https://www.linkedin.com/in/felippechemello/)
+```bash
+./bin/dev remotion lambda-render -s is0hnubew5 -t mayst -c Main -f ./content/18-phieu-luu-trong-phong-hop/
+```
