@@ -29,6 +29,15 @@ export default class Remotion extends Command {
             options: ['podcast', 'lofi', 'mayst'],
             default: 'lofi',
         }),
+        site: Flags.string({
+            char: 's',
+            description: 'site to use',
+        }),
+        composition: Flags.string({
+            char: 'c',
+            description: 'composition to use',
+            default: 'Main',
+        }),
     };
 
     static args = [
@@ -39,6 +48,7 @@ export default class Remotion extends Command {
             options: [
                 'upgrade',
                 'preview',
+                'lambda-render',
                 'render-example',
                 'render-thumb-example',
             ],
@@ -73,7 +83,7 @@ export default class Remotion extends Command {
 
         let command = '';
 
-        const { template } = flags;
+        const { template, site, composition } = flags;
 
         const compPath = `video/${template}/index.tsx`;
 
@@ -84,11 +94,14 @@ export default class Remotion extends Command {
             case 'preview':
                 command = `pnpm remotion preview ${compPath} --props=${propsPath}`;
                 break;
+            case 'lambda-render':
+                command = `pnpm remotion lambda render ${site} ${composition} out.mp4 --props=${propsPath}`;
+                break;
             case 'render-example':
-                command = `pnpm remotion render ${compPath} Main out.mp4 --props=${propsPath}`;
+                command = `pnpm remotion render ${compPath} ${composition} out.mp4 --props=${propsPath}`;
                 break;
             case 'render-thumb-example':
-                command = `pnpm remotion still ${compPath} Thumbnail thumb.png --props=${propsPath}`;
+                command = `pnpm remotion still ${compPath} ${composition} thumb.png --props=${propsPath}`;
                 break;
         }
 

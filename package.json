@@ -49,6 +49,7 @@
         "@remotion/fonts": "^4.0.221",
         "@remotion/gif": "4.0.223",
         "@remotion/google-fonts": "^4.0.223",
+        "@remotion/lambda": "^4.0.223",
         "@remotion/media-utils": "4.0.223",
         "@remotion/renderer": "4.0.223",
         "@remotion/tailwind": "^4.0.223",
