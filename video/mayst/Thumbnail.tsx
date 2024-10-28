@@ -12,10 +12,6 @@ const { content } = getInputProps() as LofiContentSchema;
 export const Thumbnail: React.FC<LofiContentSchema> = () => {
     const { backgroundPath, title, subtitle } = content;
 
-    const blur = {
-        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
-    }
-
     return (
         <AbsoluteFill
             style={{
@@ -42,17 +38,17 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                         alignItems: 'flex-end',
                     }}
                 >
-                    <div style={blur} >lll</div>
                     <div
                         className="thumbail-title"
                         style={{
                             width: '100%',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent: 'center',
+                            justifyContent: 'flex-end',
                             alignItems: 'center',
                             marginTop: 16,
                             transform: 'translateY(-100px)',
+                            backgroundColor: 'rgba(255, 255, 255, 0.8)',
                         }}
                     >
                         <Title titleText={title} titleColor={'black'} />

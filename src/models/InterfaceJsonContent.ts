@@ -28,6 +28,7 @@ export default interface InterfaceJsonContent {
     durationFrames?: number;
     thumbnail?: string;
     totalHours?: number;
+    backgroundMusic?: string;
     width: number;
     height: number;
     intro?: { text: string; url?: string; shortLink?: string };

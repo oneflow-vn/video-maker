@@ -6,6 +6,7 @@ import InterfaceJsonContent, {
     ContentSection,
 } from '../models/InterfaceJsonContent';
 import { getPath } from 'config/defaultPaths';
+import path from 'path';
 
 export default class PrepareResourceService {
     private content: InterfaceJsonContent;
@@ -33,6 +34,10 @@ export default class PrepareResourceService {
 
             this.copyFileRecursive(this.directory, targetPath);
 
+            if (this.content.backgroundMusic) {
+                await this.prepareBackgroundMusic(this.content.backgroundMusic);
+            }
+
             if (this.content?.chapters?.length > 0) {
                 this.prepareChapters();
             }
@@ -42,6 +47,17 @@ export default class PrepareResourceService {
             log('Error while preparing resources', 'PrepareResourceService');
             throw error;
         }
+    }
+
+    private async prepareBackgroundMusic(backgroundMusic: string) {
+        log('Preparing background music');
+        const tmpPath = await getPath('tmp');
+        const assetsPath = await getPath('assets');
+        const backgroundMusicPath = path.join(assetsPath, backgroundMusic);
+        await this.copyFile(
+            backgroundMusicPath,
+            `${tmpPath}/${backgroundMusic}`,
+        );
     }
 
     private prepareChapters() {
