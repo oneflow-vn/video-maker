@@ -35,11 +35,13 @@ export const LofiMain: React.FC<{
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginTop: '1rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                    marginBottom: '70px'
                 }}
             >
-                <div style={{ marginBottom: '10rem' }}>
-                    <Title titleText={title} titleColor={'#fe2858'} />
-                    <Subtitle text={subtitle} color={'#2af0ea'} />
+                <div>
+                    <Title titleText={title} fontSize={64} titleColor={'#fe2858'} />
+                    <Subtitle text={subtitle} fontSize={36} color={'#2af0ea'} />
                 </div>
             </div>
             <div
