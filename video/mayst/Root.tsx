@@ -2,23 +2,10 @@ import { Composition, useVideoConfig } from 'remotion';
 import { LofiComposition } from './Composition';
 import { getMinutesWithHours, minutesToFrames } from './Utilities/Tools';
 import { LofiContentSchema, lofiSchema } from './Schema/props.schema';
-import { loadFont } from "@remotion/fonts";
 
 import './style.css';
 
-// @ts-ignore
-import fontVarelmo from '../../assets/Fontvn-DVN-Varelmo.ttf';
 import { Thumbnail } from './Thumbnail';
-
-const fontFamily = "Varelmo";
- 
-loadFont({
-  family: fontFamily,
-  url: fontVarelmo,
-  weight: "500",
-}).then(() => {
-  console.log("Font loaded!");
-});
 
 export const RemotionRoot: React.FC = () => {
     const dProps: LofiContentSchema = {
@@ -29,12 +16,13 @@ export const RemotionRoot: React.FC = () => {
             backgroundPath: 'background.png',
             sections: [],
             title: '',
-            subtitle: ''
+            subtitle: '',
+            backgroundMusicPath: ''
         },
         destination: 'youtube',
         durationInFrames: 0,
     };
-    const fps = 30;    
+    const fps = 30;
     return (
         <>
             <Composition

@@ -10,6 +10,7 @@
     "totalHours": 1.111778888888889,
     "backgroundPath": "bg.webp",
     "backgroundsFlipped": false,
+    "noIntro": true,
     "backgroundMusic": "beneath_the_moonlight.mp3",
     "sections": [
         {

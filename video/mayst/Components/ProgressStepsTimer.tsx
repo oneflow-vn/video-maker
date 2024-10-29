@@ -2,6 +2,12 @@ import { interpolate, useCurrentFrame } from 'remotion';
 import React from 'react';
 import { z } from 'zod';
 import { lofiSectionSchema } from '../Schema/props.schema';
+import { loadFont } from "@remotion/google-fonts/Roboto";
+
+
+
+const { fontFamily } = loadFont(); // "Roboto"
+
 
 export const progressStepsTimerInputSchema = z.object({
     absoluteFrame: z.number().nullish(),
@@ -42,7 +48,7 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
         },
     );
 
-    const opacity = interpolate(frame, [140, 170], [0, 1], {
+    const opacity = interpolate(frame, [140, 170], [0, 0.8], {
         extrapolateLeft: 'clamp',
         extrapolateRight: 'clamp',
     });
@@ -70,6 +76,7 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
                     >
                         <span
                             style={{
+                                fontFamily: fontFamily,
                                 fontSize: '4rem',
                                 fontWeight: '500',
                                 color: textColour || 'white',
@@ -131,9 +138,8 @@ function secondsToTimeFormat(seconds: number): string {
     const remainingSeconds = seconds % 60;
 
     const formattedMinutes = `${minutes < 10 ? '0' : ''}${minutes}`;
-    const formattedSeconds = `${
-        remainingSeconds < 10 ? '0' : ''
-    }${remainingSeconds}`;
+    const formattedSeconds = `${remainingSeconds < 10 ? '0' : ''
+        }${remainingSeconds}`;
 
     return hours > 0
         ? `${hours}:${formattedMinutes}:${formattedSeconds}`
