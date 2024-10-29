@@ -33,7 +33,7 @@ export default class Create extends Command {
         template: Flags.string({
             char: 't',
             description: 'template to use',
-            options: ['podcast', 'lofi'],
+            options: ['podcast', 'lofi', 'mayst'],
             default: 'lofi',
         }),
         needTTS: Flags.boolean({
@@ -45,6 +45,12 @@ export default class Create extends Command {
             char: 'r',
             allowNo: true,
             description: 'should render video',
+            default: false,
+        }),
+        renderThumbnail: Flags.boolean({
+            char: 'n',
+            allowNo: true,
+            description: 'should render thumbnail',
             default: false,
         }),
         overwrite: Flags.boolean({
@@ -206,6 +212,7 @@ const local = async ({
     render,
     overwrite,
     template,
+    renderThumbnail,
 }: CreateConfig) => {
     if (!template) {
         throw new Error('Template is required');
@@ -239,6 +246,9 @@ const local = async ({
             true,
             'instagram',
         );
+    }
+
+    if (renderThumbnail) {
         await new CreateThumbnailService(content).execute(bundle);
     }
 

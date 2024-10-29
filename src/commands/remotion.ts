@@ -38,6 +38,11 @@ export default class Remotion extends Command {
             description: 'composition to use',
             default: 'Main',
         }),
+        output: Flags.string({
+            char: 'o',
+            description: 'output file',
+            default: 'out.mp4',
+        }),
     };
 
     static args = [
@@ -83,7 +88,7 @@ export default class Remotion extends Command {
 
         let command = '';
 
-        const { template, site, composition } = flags;
+        const { template, site, composition, output } = flags;
 
         const compPath = `video/${template}/index.tsx`;
 

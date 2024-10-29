@@ -5,9 +5,9 @@
     "width": 1920,
     "height": 1080,
     "renderData": [],
-    "duration": 4002.4040000000005,
-    "durationFrames": 120073,
-    "totalHours": 1.111778888888889,
+    "duration": 1968.222,
+    "durationFrames": 59047,
+    "totalHours": 0.5467283333333334,
     "backgroundPath": "bg.webp",
     "backgroundsFlipped": false,
     "noIntro": false,
@@ -16,68 +16,112 @@
         {
             "voice": "voice-0.mp3",
             "bgm": {
-                "path": "voice-0.mp3"
-            }
+                "path": "voice-0.mp3",
+                "duration": 259.736,
+                "durationFrames": 7792
+            },
+            "duration": 259.736,
+            "durationFrames": 7792
         },
         {
             "voice": "voice-1.mp3",
             "bgm": {
-                "path": "voice-1.mp3"
-            }
+                "path": "voice-1.mp3",
+                "duration": 263.758,
+                "durationFrames": 7913
+            },
+            "duration": 263.758,
+            "durationFrames": 7913
         },
         {
             "voice": "voice-2.mp3",
             "bgm": {
-                "path": "voice-2.mp3"
-            }
+                "path": "voice-2.mp3",
+                "duration": 170.292,
+                "durationFrames": 5109
+            },
+            "duration": 170.292,
+            "durationFrames": 5109
         },
         {
             "voice": "voice-3.mp3",
             "bgm": {
-                "path": "voice-3.mp3"
-            }
+                "path": "voice-3.mp3",
+                "duration": 86.988,
+                "durationFrames": 2610
+            },
+            "duration": 86.988,
+            "durationFrames": 2610
         },
         {
             "voice": "voice-4.mp3",
             "bgm": {
-                "path": "voice-4.mp3"
-            }
+                "path": "voice-4.mp3",
+                "duration": 138.449,
+                "durationFrames": 4153
+            },
+            "duration": 138.449,
+            "durationFrames": 4153
         },
         {
             "voice": "voice-5.mp3",
             "bgm": {
-                "path": "voice-5.mp3"
-            }
+                "path": "voice-5.mp3",
+                "duration": 143.621,
+                "durationFrames": 4309
+            },
+            "duration": 143.621,
+            "durationFrames": 4309
         },
         {
             "voice": "voice-6.mp3",
             "bgm": {
-                "path": "voice-6.mp3"
-            }
+                "path": "voice-6.mp3",
+                "duration": 165.93,
+                "durationFrames": 4978
+            },
+            "duration": 165.93,
+            "durationFrames": 4978
         },
         {
             "voice": "voice-7.mp3",
             "bgm": {
-                "path": "voice-7.mp3"
-            }
+                "path": "voice-7.mp3",
+                "duration": 204.539,
+                "durationFrames": 6136
+            },
+            "duration": 204.539,
+            "durationFrames": 6136
         },
         {
             "voice": "voice-8.mp3",
             "bgm": {
-                "path": "voice-8.mp3"
-            }
+                "path": "voice-8.mp3",
+                "duration": 220.578,
+                "durationFrames": 6617
+            },
+            "duration": 220.578,
+            "durationFrames": 6617
         },
         {
             "voice": "voice-9.mp3",
             "bgm": {
-                "path": "voice-9.mp3"
-            }
+                "path": "voice-9.mp3",
+                "duration": 212.506,
+                "durationFrames": 6375
+            },
+            "duration": 212.506,
+            "durationFrames": 6375
         },
         {
             "voice": "voice-10.mp3",
             "bgm": {
-                "path": "voice-10.mp3"
-            }
+                "path": "voice-10.mp3",
+                "duration": 101.825,
+                "durationFrames": 3055
+            },
+            "duration": 101.825,
+            "durationFrames": 3055
         }
     ]
 }

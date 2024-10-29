@@ -6,4 +6,5 @@ export type CreateConfig = {
     onlyUpload?: boolean;
     render?: boolean;
     overwrite?: boolean;
+    renderThumbnail?: boolean;
 };
