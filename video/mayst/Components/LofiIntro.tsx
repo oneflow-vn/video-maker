@@ -1,7 +1,7 @@
 import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
 
-const fontFamily = 'Varelmo';
+const fontFamily = 'OoohBaby';
 
 const cursor: React.CSSProperties = {
     height: 120,
@@ -14,7 +14,7 @@ const cursor: React.CSSProperties = {
 
 export const LofiIntro = () => {
     const frame = useCurrentFrame();
-    const text = 'Truyện Khoa Viễn';
+    const text = 'Tháng Năm Stories';
     // A new character every 3 frames
     const charsShown = Math.floor(frame / 3);
     const textToShow = text.slice(0, charsShown);
@@ -30,21 +30,22 @@ export const LofiIntro = () => {
     return (
         <AbsoluteFill style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', opacity }}>
             <div
-            style={{
-                fontSize: '9rem',
-                color: 'white',
-                fontWeight: 'bold',
-                fontFamily,
-            }}
-            >
-            {textToShow}
-            <span
                 style={{
-                ...cursor,
-                verticalAlign: 'middle',
-                opacity: Number(cursorShown),
+                    fontSize: '9rem',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontFamily,
+                    textShadow: '0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1)'
                 }}
-            />
+            >
+                {textToShow}
+                <span
+                    style={{
+                        ...cursor,
+                        verticalAlign: 'middle',
+                        opacity: Number(cursorShown),
+                    }}
+                />
             </div>
         </AbsoluteFill>
     );
