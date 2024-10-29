@@ -51,7 +51,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                 <Audio
                     src={staticFile(backgroundMusicPath)}
                     loop={true}
-                    volume={0.5}
+                    volume={0.35}
                 />
             )}
 

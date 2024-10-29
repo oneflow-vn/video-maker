@@ -1,5 +1,5 @@
 import path from 'path';
-import fs from 'fs'
+import fs from 'fs';
 import { renderMedia } from '@remotion/renderer';
 
 import InterfaceJsonContent from '../models/InterfaceJsonContent';
@@ -41,15 +41,25 @@ class RenderVideoService {
             text: '[RenderVideoService] Progress {bar} {percentage}% | ETA: {eta}s | {value}/{total} | Rate: {rate} | Stage: {stage}',
         });
 
-        const durationInFrames = Math.floor(this.getFullDuration() * this.content.fps)
+        const durationInFrames = Math.floor(
+            this.getFullDuration() * this.content.fps,
+        );
 
         await renderMedia({
             serveUrl: bundle,
             onStart: ({ frameCount: total }) => {
                 renderProgressBar.setTotal(total);
             },
-            onProgress: ({ renderedFrames, encodedFrames, stitchStage, renderedDoneIn }) => {
-                renderProgressBar.update(renderedDoneIn ? encodedFrames : renderedFrames, { stage: !renderedDoneIn ? 'rendering' : stitchStage })
+            onProgress: ({
+                renderedFrames,
+                encodedFrames,
+                stitchStage,
+                renderedDoneIn,
+            }) => {
+                renderProgressBar.update(
+                    renderedDoneIn ? encodedFrames : renderedFrames,
+                    { stage: !renderedDoneIn ? 'rendering' : stitchStage },
+                );
             },
             outputLocation: outputVideoPath,
             inputProps: {
@@ -67,7 +77,7 @@ class RenderVideoService {
                 height: format[videoFormat].height,
                 defaultCodec: 'h264',
                 defaultProps: {},
-                props: {}
+                props: {},
             },
             imageFormat: 'jpeg',
             codec: 'h264',
