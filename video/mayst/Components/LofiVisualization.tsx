@@ -133,12 +133,12 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
                         <BarsVisualization
                             frequencyData={frequencyData}
                             width={600}
-                            height={200}
+                            height={140}
                             lineThickness={8}
                             gapSize={8}
                             roundness={4}
                             placement={'middle'}
-                            color={'rgba(255, 255, 255, 0.7)'}
+                            color={'rgba(255, 255, 255, 0.4)'}
                             maxAmplitude={1}
                         />
                     </div>

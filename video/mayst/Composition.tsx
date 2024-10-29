@@ -14,19 +14,21 @@ import { LofiContentSchema } from './Schema/props.schema';
 import { ProgressStepsTimer } from './Components/ProgressStepsTimer';
 import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
-import { LofiMain } from './Components/LofiMain'
+import { LofiMain } from './Components/LofiMain';
 import { FirefliesOverlay } from './Components/Overlays/FirefliesOverlay';
 
 const { content } = getInputProps() as LofiContentSchema;
 
 export const LofiComposition: React.FC<LofiContentSchema> = () => {
-    const { sections,
+    const {
+        sections,
         backgroundPath,
         duration,
         backgrounds,
         backgroundMusicPath,
         title,
-        subtitle
+        subtitle,
+        noIntro,
     } = content;
 
     const durationInFrames = duration * 30;
@@ -45,12 +47,20 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
             <Background backgroundPath={backgroundPath} />
             {backgrounds && <BackgroundSeries backgrounds={backgrounds} />}
 
-            {backgroundMusicPath && <Audio src={staticFile(backgroundMusicPath)} loop={true} volume={0.5} />}
+            {backgroundMusicPath && (
+                <Audio
+                    src={staticFile(backgroundMusicPath)}
+                    loop={true}
+                    volume={0.5}
+                />
+            )}
 
             <Series>
-                <Series.Sequence durationInFrames={introFrames}>
-                    <LofiIntro />
-                </Series.Sequence>
+                {!noIntro && (
+                    <Series.Sequence durationInFrames={introFrames}>
+                        <LofiIntro />
+                    </Series.Sequence>
+                )}
                 {sections.map((section, index) => {
                     const { durationFrames } = section;
                     return (

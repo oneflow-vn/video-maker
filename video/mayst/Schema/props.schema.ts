@@ -27,6 +27,7 @@ export const lofiSectionSchema = z.object({
 export const lofiSchema = z.object({
     title: z.string(),
     subtitle: z.string(),
+    noIntro: z.boolean(),
     totalHours: z.number(),
     sections: z.array(lofiSectionSchema),
     backgroundPath: z.string(),
