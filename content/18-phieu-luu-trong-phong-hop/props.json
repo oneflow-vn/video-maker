@@ -11,7 +11,7 @@
     "backgroundPath": "bg.webp",
     "backgroundsFlipped": false,
     "noIntro": false,
-    "backgroundMusic": "beneath_the_moonlight.mp3",
+    "backgroundMusicPath": "beneath_the_moonlight.mp3",
     "sections": [
         {
             "voice": "voice-0.mp3",

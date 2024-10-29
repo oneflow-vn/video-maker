@@ -9,6 +9,7 @@
     "duration": 9211.768,
     "durationFrames": 276353,
     "totalHours": 2.5588244444444443,
+    "backgroundMusicPath": "beneath_the_moonlight.mp3",
     "sections": [
         {
             "voice": "voice-0.mp3",

@@ -34,8 +34,8 @@ export default class PrepareResourceService {
 
             this.copyFileRecursive(this.directory, targetPath);
 
-            if (this.content.backgroundMusic) {
-                await this.prepareBackgroundMusic(this.content.backgroundMusic);
+            if (this.content.backgroundMusicPath) {
+                await this.prepareBackgroundMusic(this.content.backgroundMusicPath);
             }
 
             if (this.content?.chapters?.length > 0) {
