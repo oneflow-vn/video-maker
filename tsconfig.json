@@ -4,6 +4,9 @@
         "module": "commonjs",
         "outDir": "dist",
         "jsx": "react-jsx",
+        "paths": {
+            "@/*": ["src/*"]
+        },
         "rootDir": ".",
         "strict": true,
         "noImplicitAny": false,
