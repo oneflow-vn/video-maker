@@ -1,0 +1,11 @@
+Model Information:
+* title:	Shape Sorting Box
+* source:	https://sketchfab.com/3d-models/shape-sorting-box-af66b74d486c42ae85be665fc2fc4fb2
+* author:	NoodleMania (https://sketchfab.com/NoodleMania)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Shape Sorting Box" (https://sketchfab.com/3d-models/shape-sorting-box-af66b74d486c42ae85be665fc2fc4fb2) by NoodleMania (https://sketchfab.com/NoodleMania) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 579.66669 566.66669"
+   sodipodi:docname="Odd-e_logo.ai"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath16">
+      <path
+         d="M 0,425 H 425 V 0 H 0 Z"
+         id="path14" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <path
+         d="m 143,286.176 c 41.331,41.33 108.338,41.329 149.668,-0.002 41.331,-41.331 41.331,-108.339 0,-149.669 C 251.338,95.176 184.331,95.177 143,136.508 c -41.33,41.331 -41.33,108.339 0,149.668"
+         clip-rule="evenodd"
+         id="path22" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath206">
+      <path
+         d="m 123.712,211.676 c 0,51.903 42.075,93.978 93.978,93.978 51.904,0 93.979,-42.075 93.979,-93.978 0,-51.903 -42.075,-93.978 -93.979,-93.978 -51.903,0 -93.978,42.075 -93.978,93.978"
+         clip-rule="evenodd"
+         id="path204" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath304">
+      <path
+         d="m 123.712,211.676 c 0,51.903 42.075,93.978 93.978,93.978 51.904,0 93.979,-42.075 93.979,-93.978 0,-51.903 -42.075,-93.978 -93.979,-93.978 -51.903,0 -93.978,42.075 -93.978,93.978"
+         id="path302" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath312">
+      <path
+         d="m 213.353,299.96 c 16.651,16.651 51.388,8.911 77.587,-17.29 26.2,-26.199 33.939,-60.936 17.288,-77.587 -16.651,-16.651 -51.388,-8.911 -77.587,17.29 -26.199,26.199 -33.939,60.936 -17.288,77.587"
+         id="path310" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath320">
+      <path
+         d="m 213.353,299.96 c 16.651,16.651 51.388,8.911 77.587,-17.29 26.2,-26.199 33.939,-60.936 17.288,-77.587 -16.651,-16.651 -51.388,-8.911 -77.587,17.29 -26.199,26.199 -33.939,60.936 -17.288,77.587"
+         id="path318" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="Odd-e_logo"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,566.66667)">
+    <g
+       id="g10">
+      <g
+         id="g12"
+         clip-path="url(#clipPath16)">
+        <g
+           id="g18">
+          <g
+             id="g20"
+             clip-path="url(#clipPath24)">
+             <circle cx="217" cy="211" r="100" fill="none" stroke="#fad052" stroke-width="10" />
+          </g>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>
