@@ -24,9 +24,9 @@ export const simpleExampleSubtitles: Subtitle[] = [
 ];
 
 
-export const StorySimpleExample: React.FC = () => {
+export const StoryMayst: React.FC = () => {
     return (
-        <Story id="StorySimpleExample" width={720} height={720} subtitles={simpleExampleSubtitles} language='zhCN' >
+        <Story id="Mayst" width={720} height={720} subtitles={simpleExampleSubtitles} language='zhCN' >
             <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
             <AbsoluteFill style={{ fontFamily: "Poppins", backgroundColor: "green" }}>
 
