@@ -17,7 +17,8 @@ export const RemotionRoot: React.FC = () => {
             sections: [],
             title: '',
             subtitle: '',
-            backgroundMusicPath: ''
+            backgroundMusicPath: '',
+            noIntro: false
         },
         destination: 'youtube',
         durationInFrames: 0,
