@@ -97,3 +97,11 @@ npx remotion lambda sites create video/mayst/index.tsx
 ```bash
 ./bin/dev remotion lambda-render -s is0hnubew5 -t mayst -c Main -f ./content/18-phieu-luu-trong-phong-hop/
 ```
+
+```bash
+./bin/dev remotion lambda-render -s 8qpsat00y7 -t mayst -c Main -f 
+```
+
+```bash
+./bin/dev remotion lambda-render-thumb -s 8qpsat00y7 -t mayst -c Thumbnail -f 
+```

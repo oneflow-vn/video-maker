@@ -17,7 +17,7 @@ export default class CreateThumbnailService {
 
     public async execute(bundle: string, videoFormat: 'portrait' | 'landscape' | 'square' = 'landscape'): Promise<string> {
         log(`Getting compositions from ${bundle}`, 'CreateThumbnailService');
-        const tmpPath = await getPath('tmp');
+        const tmpPath = await getPath('output');
 
         const thumbnailPath = path.resolve(
             tmpPath,

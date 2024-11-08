@@ -14,7 +14,7 @@ const cursor: React.CSSProperties = {
 
 export const LofiIntro = () => {
     const frame = useCurrentFrame();
-    const text = 'Truyện Khoa Viễn';
+    const text = 'GU TRUYỆN';
     // A new character every 3 frames
     const charsShown = Math.floor(frame / 3);
     const textToShow = text.slice(0, charsShown);

@@ -16,8 +16,6 @@ import { LogoText } from './LogoText';
 import { BackgroundSeries } from './Components/BackgroundSeries';
 import { LofiMain } from './Components/LofiMain';
 
-const { withoutIntro } = getInputProps();
-
 const { content } = getInputProps() as LofiContentSchema;
 
 export const LofiComposition: React.FC<LofiContentSchema> = () => {
@@ -27,6 +25,12 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
     const durationInFrames = duration * 30;
     const frame = useCurrentFrame();
     const introFrames = 120;
+
+    const titleLines = title.split('-');
+
+    const firstLine = titleLines[0];
+
+    const chapter = titleLines.length > 1 ? titleLines[titleLines.length - 1] : '';
 
     return (
         <AbsoluteFill
@@ -40,7 +44,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
             <Background backgroundPath={backgroundPath} />
             {backgrounds && <BackgroundSeries backgrounds={backgrounds} />}
 
-            <Audio src={staticFile('beneath_the_moonlight.mp3')} loop={true} volume={0.5}/>
+            <Audio src={staticFile('beneath_the_moonlight.mp3')} loop={true} volume={0.15}/>
 
             <Series>
                 <Series.Sequence durationInFrames={introFrames}>
@@ -60,7 +64,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
             </Series>
 
             <AbsoluteFill>
-                <LofiMain title={title} subtitle={subtitle} />
+                <LofiMain title={firstLine} subtitle={subtitle} />
             </AbsoluteFill>
 
             <div
@@ -79,7 +83,8 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                     processBarColour={'rgb(243 244 246)'}
                     countdownTextColour={'white'}
                     section={null}
-                    subtitle={''}
+                    subtitle={chapter}
+                    idleOpacity={0.6}
                 />
             </div>
             <LogoText />

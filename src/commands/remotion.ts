@@ -54,6 +54,8 @@ export default class Remotion extends Command {
                 'upgrade',
                 'preview',
                 'lambda-render',
+                'lambda-render-thumb',
+                'lambda-all',
                 'render-example',
                 'render-thumb-example',
             ],
@@ -101,6 +103,12 @@ export default class Remotion extends Command {
                 break;
             case 'lambda-render':
                 command = `pnpm remotion lambda render ${site} ${composition} out.mp4 --props=${propsPath}`;
+                break;
+            case 'lambda-render-thumb':
+                command = `pnpm remotion lambda still ${site} ${composition} out.png --props=${propsPath}`;
+                break;
+            case 'lambda-all':
+                command = `pnpm remotion lambda render ${site} Main out.mp4 --props=${propsPath} && pnpm remotion lambda still ${site} Thumbnail out.png --props=${propsPath}`;
                 break;
             case 'render-example':
                 command = `pnpm remotion render ${compPath} ${composition} out.mp4 --props=${propsPath}`;

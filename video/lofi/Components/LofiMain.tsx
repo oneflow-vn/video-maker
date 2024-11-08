@@ -13,6 +13,7 @@ export const LofiMain: React.FC<{
         extrapolateLeft: 'clamp',
         extrapolateRight: 'clamp',
     });
+
     return (
         <div
             style={{
@@ -33,25 +34,31 @@ export const LofiMain: React.FC<{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                     marginTop: '1rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    paddingLeft: '70px',
+                    paddingBottom: '10px',
+                    marginBottom: '70px'
                 }}
             >
-                <div style={{ marginBottom: '10rem' }}>
-                    <Title titleText={title} titleColor={'#fe2858'} />
-                    <Subtitle text={subtitle} color={'#2af0ea'} />
+                <div>
+                    <Title titleText={title} fontSize={48} titleColor={'rgb(200 200 200)'} />
+                    <Subtitle text={subtitle} fontSize={36} color={'rgb(209 209 209)'} />
                 </div>
             </div>
             <div
                 style={{
                     width: '50%',
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginTop: '1rem',
                 }}
-            ></div>
+            >
+            </div>
         </div>
     );
 };

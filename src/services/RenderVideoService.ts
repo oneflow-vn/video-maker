@@ -27,9 +27,12 @@ class RenderVideoService {
         videoFormat: 'portrait' | 'landscape' | 'square',
         withIntro: boolean,
         destination?: 'youtube' | 'instagram',
+        slug?: string,
     ): Promise<string> {
         log(`Getting compositions from ${bundle}`, 'RenderVideoService');
-        const tmpPath = await getPath('tmp');
+        const tmpPath = await getPath('output');
+
+        slug = slug || this.content.slug || `video-${Date.now()}`;
 
         const outputVideoPath = path.resolve(
             tmpPath,

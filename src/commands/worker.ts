@@ -23,7 +23,7 @@ export default class Worker extends Command {
 
         switch (args.worker) {
             case 'renderer':
-                await renderer();
+                // await renderer();
                 break;
         }
     }

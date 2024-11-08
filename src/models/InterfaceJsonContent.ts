@@ -43,6 +43,7 @@ export default interface InterfaceJsonContent {
     duration?: number;
     date: string;
     backgrounds?: ContentImage[];
+    slug?: string;
     renderData?: {
         text: string;
         duration: number;

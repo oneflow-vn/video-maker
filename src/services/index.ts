@@ -19,6 +19,7 @@ import SyntheticService from './SyntheticService';
 import StoryComposerService from './StoryComposerService';
 import InitContentService from './InitContentService';
 import ScenesComposerService from './ScenesComposerService';
+import SyncContentService from './SyncContentService';
 
 export {
     GetContentService,
@@ -41,5 +42,6 @@ export {
     SyntheticService,
     StoryComposerService,
     InitContentService,
-    ScenesComposerService
+    ScenesComposerService,
+    SyncContentService
 };

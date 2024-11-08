@@ -51,7 +51,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                 <Audio
                     src={staticFile(backgroundMusicPath)}
                     loop={true}
-                    volume={0.35}
+                    volume={0.1}
                 />
             )}
 
@@ -98,7 +98,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                 />
             </div>
 
-            <FirefliesOverlay />
+            {/* <FirefliesOverlay /> */}
 
             <LogoText />
         </AbsoluteFill>

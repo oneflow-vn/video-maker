@@ -4,10 +4,9 @@ import { interpolate, useCurrentFrame } from 'remotion';
 type SubtitleProps = {
     text: string;
     color: string;
+    fontSize?: number;
 };
 
-const fontSize = 60;
-
-export const Subtitle: React.FC<SubtitleProps> = ({ text, color }) => {
+export const Subtitle: React.FC<SubtitleProps> = ({ text, color, fontSize = 60 }) => {
     return <div style={{ color, fontSize }}>{text}</div>;
 };

@@ -5,12 +5,13 @@ import React from 'react';
 import { loadFont } from '@remotion/google-fonts/Roboto';
 
 const { fontFamily } = loadFont(); // "Titan One"
-const fontSize = 120;
 
 export const Title: React.FC<{
     titleText: string;
     titleColor: string;
-}> = ({ titleText, titleColor }) => {
+    fontSize: number;
+}> = ({ titleText, titleColor, fontSize = 120 }) => {
+
     return (
         <div
             style={{

@@ -7,6 +7,23 @@ import { log } from 'utils/log';
 const e2eStoryUrl =
     'https://n8n.oneflow.vn/webhook/a3d89320-486f-44cd-8402-ac4b7a30ea96';
 
+const DESC_TMP = `[Truyện Audio] {title} - {author} | Tháng Năm Stories
+-------------------------------------------------------------------
+
+Tác giả: {author}
+Thể loại: {genre}
+Nguồn: Sưu tầm
+Trạng thái: Full
+
+-------------------------------------------------------------------
+{desc}
+
+-------------------------------------------------------------------
+Tháng năm Stories, thang nam stories, #thangnamstories
+#truyenhay #truyenaudio #truyendothi #truyenngontinh 
+#truyenaudio #doctruyen #doctruyendemkhuya 
+`;
+
 class StoryComposerService {
     private content: any;
     private directory: string;
@@ -41,7 +58,7 @@ class StoryComposerService {
                 this.rawContent = this.rawContent[0];
             }
         }
-
+        
         await this.loadVoicesContent();
 
         if (this.voicesJson) {
@@ -70,14 +87,51 @@ class StoryComposerService {
             this.composeOpenArt(openArtFolder);
         }
 
-        try {
-            this.content.backgroundPath =
-                this.content.sections[0]?.background?.path;
-        } catch (e) {
-            console.log('Error', e);
+        // compose covers
+        if (this.rawContent?.covers) {
+            await this.composeCovers(this.rawContent.covers);
         }
 
+        if(this.rawContent?.Title) { 
+            this.content.title = this.rawContent.Title;
+        }
+
+        if(this.rawContent?.author) {
+            this.content.subtitle = `Tác giả: ${this.rawContent.author}`;
+        }
+
+        this.content.backgroundMusicPath = "beneath_the_moonlight.mp3";
+
+        await this.composeDesc()
+
         return this.content;
+    }
+
+    private async composeDesc() {
+        const descFile = path.join(this.directory, 'desc.txt');
+
+        const desc = DESC_TMP;
+
+        const descContent = desc
+            .replaceAll('{title}', this.rawContent.title || this.rawContent.Title)
+            .replaceAll('{author}', this.rawContent.author)
+            .replaceAll('{genre}', this.rawContent.genre)
+            .replaceAll('{desc}', this.rawContent.desc);
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                descFile,
+                descContent,
+                err => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(descFile);
+                    }
+                },
+            );
+        });
+
     }
 
     private async composeOpenArt(openArtFolder: string) {
@@ -180,7 +234,7 @@ class StoryComposerService {
         await this.composeVoices(this.voicesJson);
     }
 
-    private composeVoices(json: any): Promise<any> {
+    private async composeVoices(json: any): Promise<any> {
         if (!Array.isArray(json)) {
             throw new Error('Voices should be an array');
         }
@@ -190,6 +244,41 @@ class StoryComposerService {
         });
 
         return Promise.all(promises);
+    }
+
+    private async composeCovers(covers: any): Promise<void> {
+        if (!Array.isArray(covers)) {
+            throw new Error('Covers should be an array');
+        }
+
+        this.content.covers = [];
+
+        const promises = covers.map((cover: any, index) => {
+            return this.composeCover(cover, index);
+        });
+
+        await Promise.all(promises);
+
+        if (this.content.covers.length > 0) {
+            this.content.backgroundPath = 'cover-0.png';
+        }
+    }
+
+    private async composeCover(cover: any, index: number): Promise<void> {
+        if (!cover.url) {
+            return;
+        }
+
+        const filename = `cover-${index}.png`;
+
+        if (this.loadContent) {
+            console.log('Downloading cover', cover.url);
+            await this.downloadFile(cover.url, filename);
+        }
+
+        this.content.covers[index] = {
+            ...cover,
+        };
     }
 
     private async composeVoice(voice: any, index: number): Promise<void> {

@@ -25,7 +25,7 @@ export default class PrepareResourceService {
                 throw new Error('Content is missing');
             }
 
-            const targetPath = await getPath('tmp');
+            const targetPath = await getPath('public');
 
             log(
                 `Copying files from ${this.directory} to ${targetPath}`,
@@ -34,9 +34,14 @@ export default class PrepareResourceService {
 
             this.copyFileRecursive(this.directory, targetPath);
 
-            if (this.content.backgroundMusicPath) {
-                await this.prepareBackgroundMusic(this.content.backgroundMusicPath);
-            }
+            const assetsPath = await getPath('assets');
+
+            log(
+                `Copying files from ${assetsPath} to ${targetPath}`,
+                'PrepareResourceService',
+            );
+
+            this.copyFileRecursive(assetsPath, targetPath);
 
             if (this.content?.chapters?.length > 0) {
                 this.prepareChapters();
@@ -47,17 +52,6 @@ export default class PrepareResourceService {
             log('Error while preparing resources', 'PrepareResourceService');
             throw error;
         }
-    }
-
-    private async prepareBackgroundMusic(backgroundMusic: string) {
-        log('Preparing background music');
-        const tmpPath = await getPath('tmp');
-        const assetsPath = await getPath('assets');
-        const backgroundMusicPath = path.join(assetsPath, backgroundMusic);
-        await this.copyFile(
-            backgroundMusicPath,
-            `${tmpPath}/${backgroundMusic}`,
-        );
     }
 
     private prepareChapters() {

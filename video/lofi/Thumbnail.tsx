@@ -13,6 +13,12 @@ const { content } = getInputProps() as LofiContentSchema;
 export const Thumbnail: React.FC<LofiContentSchema> = () => {
     const { backgroundPath, title, subtitle } = content;
 
+    const titleLines = title.split('-');
+
+    const firstLine = titleLines[0];
+
+    const chapter = titleLines.length > 1 ? titleLines[titleLines.length - 1] : '';
+
     return (
         <AbsoluteFill
             style={{
@@ -53,11 +59,15 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                             justifyContent: 'center',
                             alignItems: 'center',
                             marginTop: 16,
-                            transform: 'translateY(100px)',
+                            transform: 'translateY(200px)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+
                         }}
                     >
-                        <Title titleText={title} titleColor={'#fe2858'} />
-                        <Subtitle text={subtitle} color={'#2af0ea'} />
+                        <Title titleText={firstLine} fontSize={100} titleColor={'#fe2858'} />
+                        {chapter && <Title titleText={chapter} fontSize={80} titleColor={'#fe2858'} />}
+
+                        <Subtitle text={subtitle} fontSize={52} color={'#2af0ea'} />
                     </div>
                 </div>
             </AbsoluteFill>

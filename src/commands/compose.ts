@@ -8,7 +8,8 @@ import {
     GetContentService,
     InitContentService,
     StoryComposerService,
-    ScenesComposerService
+    ScenesComposerService,
+    SyncContentService
 } from '../services';
 
 export default class Compose extends Command {
@@ -17,7 +18,7 @@ export default class Compose extends Command {
     static examples = ['<%= config.bin %> <%= command.id %> story -d <dir>'];
 
     static flags = {
-        dir: Flags.string({
+        filename: Flags.string({
             char: 'f',
             description: 'Get content directory/file path',
         }),
@@ -37,7 +38,7 @@ export default class Compose extends Command {
             name: 'preset',
             required: true,
             description: 'Preset to compose content',
-            options: ['story', 'podcast', 'lofi', 'scenes'],
+            options: ['story', 'podcast', 'lofi', 'scenes', 'sync'],
         },
     ];
 
@@ -51,16 +52,36 @@ export default class Compose extends Command {
             case 'scenes':
                 await this.composeScenes(flags);
                 break;
+            case 'sync':
+                await this.syncContent(flags);
+                break;
             default:
         }
 
         this.config;
     }
 
+    private async syncContent(flags): Promise<void> {
+        const directory = await getPath('content');
+        const results = await new SyncContentService().execute(directory);
+
+        for (const result of results) {
+           await this.composeStory({
+                filename: result.contentDir,
+                local: flags.local,
+            });
+        }
+    }
+
     private async composeStory(flags: any): Promise<void> {
         const filename = 'props.json';
-        const directory = path.join(process.cwd(), flags.dir || 'content');
-        const filePath = `${directory}/${filename}`;
+        let directory = path.join(process.cwd(), flags.filename || 'content');
+        let filePath = `${directory}/${filename}`;
+
+        if (flags.filename && fs.existsSync(flags.filename)) {
+            directory = fs.statSync(flags.filename).isDirectory() ? flags.filename : path.dirname(flags.filename);
+            filePath = fs.statSync(flags.filename).isDirectory() ? `${flags.filename}/${filename}` : flags.filename;
+        }
 
         if (!fs.existsSync(filePath)) {
             // init content

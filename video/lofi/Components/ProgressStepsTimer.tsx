@@ -12,6 +12,7 @@ export const progressStepsTimerInputSchema = z.object({
     section: lofiSectionSchema.nullish(),
     subtitle: z.string().nullish(),
     durationInFrames: z.number().default(0),
+    idleOpacity: z.number().default(1),
 });
 
 export type ProgressStepsTimerInputSchema = z.infer<
@@ -24,6 +25,7 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
     processBarColour = 'rgb(148 163 184)',
     subtitle = '',
     durationInFrames = 0,
+    idleOpacity = 1,
 }) => {
     const frame = useCurrentFrame();
 
@@ -42,7 +44,7 @@ export const ProgressStepsTimer: React.FC<ProgressStepsTimerInputSchema> = ({
         },
     );
 
-    const opacity = interpolate(frame, [140, 170], [0, 1], {
+    const opacity = interpolate(frame, [140, 170], [0, idleOpacity], {
         extrapolateLeft: 'clamp',
         extrapolateRight: 'clamp',
     });
