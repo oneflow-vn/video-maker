@@ -29,6 +29,10 @@ class SyntheticService {
             await this.synthesizeSections();
         }
 
+        // add 3 secs 
+        this.content.duration += 10;
+        this.content.durationFrames = Math.round(this.content.duration * this.content.fps);
+
         return this.content;
     }
 

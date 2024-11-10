@@ -104,6 +104,10 @@ class StoryComposerService {
 
         await this.composeDesc()
 
+        if (this.rawContent?.slug) {
+            this.content.slug = this.rawContent.slug;
+        }
+
         return this.content;
     }
 

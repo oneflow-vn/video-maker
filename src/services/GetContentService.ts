@@ -59,4 +59,27 @@ export default class GetContentService {
             process.exit(1);
         }
     }
+
+    public async getBulkContent(): Promise<{
+        content: InterfaceJsonContent[];
+        files: string[];
+    }> {
+        const contentPath = await getPath('content');
+        const filesNames = fs.readdirSync(contentPath);
+
+        const allFiles = filesNames.map((file) => path.resolve(contentPath, file));
+
+        // filter only folders that has a props.json file
+        const files = allFiles.filter((file) => {
+            const isDirectory = fs.statSync(file).isDirectory();
+            if (!isDirectory) {
+                return false;
+            }
+
+            const propsPath = path.resolve(file, 'props.json');
+            return fs.existsSync(propsPath);
+        });
+
+        return { files, content: [] };
+    }
 }

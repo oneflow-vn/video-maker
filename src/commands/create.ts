@@ -17,6 +17,7 @@ import {
     GenerateImageService,
     PrepareResourceService,
     SyntheticService,
+    CleanTmpService,
 } from '../services';
 import { getLatestFileCreated } from '../utils/getFiles';
 
@@ -66,6 +67,10 @@ export default class Create extends Command {
         onlyUpload: Flags.boolean({
             description:
                 'Only upload result to destination (only works to YouTube and Instagram). Your video should be created separately, placed on tmp folder and be the last file created on it.',
+        }),
+        bulk: Flags.boolean({
+            char: 'b',
+            description: 'Create content in bulk',
         }),
     };
 
@@ -213,9 +218,30 @@ const local = async ({
     overwrite,
     template,
     renderThumbnail,
+    bulk,
+    clean,
 }: CreateConfig) => {
     if (!template) {
         throw new Error('Template is required');
+    }
+
+    if(bulk) {
+        const { files } = await new GetContentService().getBulkContent();
+        
+        for(const file of files) {
+            await local({
+                filename: file,
+                render,
+                overwrite,
+                template,
+                renderThumbnail,
+                bulk: false,
+                clean: true,
+            });
+
+            // Wait 3 minutes to cool down
+            await new Promise((resolve) => setTimeout(resolve, 180000));
+        }
     }
 
     let { content, file, directory } = await new GetContentService().execute(
@@ -253,4 +279,8 @@ const local = async ({
     }
 
     await new ExportDataService(content).execute(file);
+
+    if (clean) {
+        await new CleanTmpService().execute();
+    }
 };

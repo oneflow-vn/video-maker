@@ -36,6 +36,7 @@ class RenderVideoService {
 
         const outputVideoPath = path.resolve(
             tmpPath,
+            slug,
             `${this.content.timestamp}.mp4`,
         );
 
@@ -44,9 +45,9 @@ class RenderVideoService {
             text: '[RenderVideoService] Progress {bar} {percentage}% | ETA: {eta}s | {value}/{total} | Rate: {rate} | Stage: {stage}',
         });
 
-        const durationInFrames = Math.floor(
-            this.getFullDuration() * this.content.fps,
-        );
+        const duration = this.getFullDuration() + 10
+
+        const durationInFrames = Math.floor(duration* this.content.fps);
 
         await renderMedia({
             serveUrl: bundle,
@@ -64,6 +65,7 @@ class RenderVideoService {
                     { stage: !renderedDoneIn ? 'rendering' : stitchStage },
                 );
             },
+            concurrency: 6,
             outputLocation: outputVideoPath,
             inputProps: {
                 content: this.content,

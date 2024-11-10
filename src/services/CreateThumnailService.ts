@@ -15,12 +15,20 @@ export default class CreateThumbnailService {
         this.content = content;
     }
 
-    public async execute(bundle: string, videoFormat: 'portrait' | 'landscape' | 'square' = 'landscape'): Promise<string> {
-        log(`Getting compositions from ${bundle}`, 'CreateThumbnailService');
+    public async execute(
+        bundle: string, 
+        videoFormat: 'portrait' | 'landscape' | 'square' = 'landscape',
+        slug?: string,
+    ): Promise<string> {
+        log(`Getting compositions from ${bundle}`, 
+            'CreateThumbnailService');
         const tmpPath = await getPath('output');
+
+        slug = slug || this.content.slug || `video-${Date.now()}`;
 
         const thumbnailPath = path.resolve(
             tmpPath,
+            slug,
             `${this.content.timestamp}.jpeg`,
         );
 

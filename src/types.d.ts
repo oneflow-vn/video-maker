@@ -7,4 +7,6 @@ export type CreateConfig = {
     render?: boolean;
     overwrite?: boolean;
     renderThumbnail?: boolean;
+    bulk?: boolean;
+    clean?: boolean;
 };

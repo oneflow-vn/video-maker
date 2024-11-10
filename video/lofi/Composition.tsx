@@ -72,7 +72,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                     padding: '2rem',
                     width: '25%',
                     position: 'fixed',
-                    bottom: '2.5rem',
+                    bottom: '60px',
                     right: '0',
                 }}
             >

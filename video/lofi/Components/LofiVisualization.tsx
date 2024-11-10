@@ -98,7 +98,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
     const frequencyData = visualizationValues.slice(0, 0.7 * nSamples);
     const isFirst = isFirstSection(section);
 
-    const volume = interpolate(
+    const volume = section.durationFrames < 600 ? 1 : interpolate(
         frame,
         [0, 300, section.durationFrames - 300, section.durationFrames],
         [1, 1, 1, 1],
@@ -106,6 +106,7 @@ export const LofiVisualization: React.FC<{ section: LofiSectionSchema }> = ({
             extrapolateLeft: 'clamp',
         },
     );
+    
     return (
         <AbsoluteFill>
             <Sequence from={0} durationInFrames={Infinity}>
