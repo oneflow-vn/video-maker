@@ -100,6 +100,18 @@ class StoryComposerService {
             this.content.subtitle = `Tác giả: ${this.rawContent.author}`;
         }
 
+        if (this.rawContent?.name) {
+            this.content.title = this.rawContent.name;
+        }
+
+        if (this.rawContent?.subtitle) {
+            this.content.title = `${this.content.title} - ${this.rawContent.subtitle}`;
+        }
+
+        if (this.rawContent?.label) {
+            this.content.label = this.rawContent.label;
+        }
+
         this.content.backgroundMusicPath = "beneath_the_moonlight.mp3";
 
         await this.composeDesc()
@@ -108,19 +120,23 @@ class StoryComposerService {
             this.content.slug = this.rawContent.slug;
         }
 
+        await this.composeContent();
+
         return this.content;
     }
 
     private async composeDesc() {
         const descFile = path.join(this.directory, 'desc.txt');
 
-        const desc = DESC_TMP;
+        const desc =  this.rawContent.description || DESC_TMP;
 
         const descContent = desc
-            .replaceAll('{title}', this.rawContent.title || this.rawContent.Title)
+            .replaceAll('{Title}', this.rawContent.Title)
+            .replaceAll('{title}', this.rawContent.title)
             .replaceAll('{author}', this.rawContent.author)
             .replaceAll('{genre}', this.rawContent.genre)
             .replaceAll('{desc}', this.rawContent.desc);
+        
 
         return new Promise((resolve, reject) => {
             fs.writeFile(
@@ -136,6 +152,24 @@ class StoryComposerService {
             );
         });
 
+    }
+
+    private async composeContent() {
+        const contentFile = path.join(this.directory, 'content.txt');
+
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                contentFile,
+                this.rawContent.cleaned || this.rawContent.content,
+                err => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(contentFile);
+                    }
+                },
+            );
+        });
     }
 
     private async composeOpenArt(openArtFolder: string) {

@@ -15,9 +15,11 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
 
     const titleLines = title.split('-');
 
-    const firstLine = titleLines[0];
+    const chapter = (titleLines.length > 1 ? titleLines[titleLines.length - 1] : '').trim();
 
-    const chapter = titleLines.length > 1 ? titleLines[titleLines.length - 1] : '';
+    const firstLine = title.replace(` - ${chapter}`, '').trim();
+
+    const label = content.label;
 
     return (
         <AbsoluteFill
@@ -48,7 +50,7 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                         height: '100%',
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center',
+                        alignItems: 'flex-end',
                     }}
                 >
                     <div
@@ -58,16 +60,17 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: 16,
-                            transform: 'translateY(200px)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                            // marginTop: 16,
+                            paddingBottom: 50,
+                            // transform: 'translateY(240px)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
 
                         }}
                     >
-                        <Title titleText={firstLine} fontSize={100} titleColor={'#fe2858'} />
-                        {chapter && <Title titleText={chapter} fontSize={80} titleColor={'#fe2858'} />}
+                        <Title titleText={firstLine} fontSize={100} titleColor={'#ffbf00'} />
+                        {chapter && <Title titleText={chapter} fontSize={80} titleColor={'rgb(54 255 37)'} />}
 
-                        <Subtitle text={subtitle} fontSize={52} color={'#2af0ea'} />
+                        <Subtitle text={subtitle} fontSize={52} color={'rgb(255 255 255)'} />
                     </div>
                 </div>
             </AbsoluteFill>
@@ -89,13 +92,15 @@ export const Thumbnail: React.FC<LofiContentSchema> = () => {
                         style={{
                             fontWeight: 'bold',
                             color: '#ffbf00',
+                            backgroundColor: 'rgba(0, 0, 0, 0.6)',
                             fontSize: 48,
                             position: 'absolute',
                             top: 150,
                             right: 200,
+                            
                         }}
                     >
-                        Truyện Khoa Học Viễn Tưởng Hay Nhất
+                        {label}
                     </div>
                 </div>
             </AbsoluteFill>

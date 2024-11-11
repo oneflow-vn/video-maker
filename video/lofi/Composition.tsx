@@ -28,9 +28,9 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
 
     const titleLines = title.split('-');
 
-    const firstLine = titleLines[0];
+    const chapter = (titleLines.length > 1 ? titleLines[titleLines.length - 1] : '').trim();
 
-    const chapter = titleLines.length > 1 ? titleLines[titleLines.length - 1] : '';
+    const firstLine = title.replace(` - ${chapter}`, '').trim();
 
     return (
         <AbsoluteFill
@@ -84,7 +84,7 @@ export const LofiComposition: React.FC<LofiContentSchema> = () => {
                     countdownTextColour={'white'}
                     section={null}
                     subtitle={chapter}
-                    idleOpacity={0.6}
+                    idleOpacity={0.8}
                 />
             </div>
             <LogoText />
